@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gabriola'), url('../fonts/gabriola.woff') format('woff');
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+    font-family: 'Gabriola', sans-serif;
+}
+
+html, body {
+    height: 100vh;
+
+    font-size: 25px;
+
+    overflow-x: hidden;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+section.about-me,
+section.my-work,
+section.blog, 
+section.contact {
+    display: none;
+
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 5;
+}
+
+section.active {
+    display: block;
+
+    background-color: #fff;
+}
+
+.no-margin {
+    margin: 0% !important;
+    padding: 0% !important;
+}
+
+.splash-screen {
+    position: relative;
+
+    z-index: 25;
+}
+
+.splash-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0%;
+    padding: 0%;
+
+    height: 33vh;
+
+    text-align: center;
+    vertical-align: middle;
+
+    -webkit-transition: background-color 0.5s ease-out, 
+                            color 0.5s ease-out, 
+                            font-size 1s ease-out,
+                            transform 1s ease-out;
+    -moz-transition: background-color 0.5s ease-out, 
+                            color 0.5s ease-out,
+                            font-size 1s ease-out,
+                            transform 1s ease-out;
+    transition: background-color 0.5s ease-out, 
+                            color 0.5s ease-out,
+                            font-size 1s ease-out,
+                            transform 1s ease-out;
+}
+
+.section-link {    
+    font-size: 500%;
+}
+
+.section-link:link, .section-link:visited {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.narci {
+    margin: 0% auto;
+
+    height: 34vh;
+
+    font-size: 600%;
+    text-align: center;
+    vertical-align: middle;
+
+    line-height: 34vh;
+
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+}
+
+
+.section-hover {
+    color: #fff;
+}
+
+.about-me-hover {
+    background-color: #2ecc71;
+}
+
+.my-work-hover {
+    background-color: #3498db;
+}
+
+.blog-hover {
+    background-color: #9b59b6;
+}
+
+.contact-hover {
+    background-color: #95a5a6;
+}
+
+
+.expand {
+    color: #fff;
+    transform: scaleX(2.0) scaleY(3.03);
+}
+
+.expand-about-me {
+    transform-origin: 0% 0% 0;
+    background-color: #2ecc71;
+}
+
+.expand-my-work {
+    transform-origin: 100% 0% 0;
+    background-color: #3498db;
+}
+
+.expand-blog {
+    transform-origin: 0% 100% 0;
+    background-color: #9b59b6;
+}
+
+.expand-contact {
+    transform-origin: 100% 100% 0;
+    background-color: #95a5a6;
+}
+
+.slide-up {
+    animation: slide-up 1s 2s ease-in forwards;
+}
+
+@keyframes slide-up {
+    from {
+        /*Need to maintain current transformation*/
+        transform: translateY(0vh);
+    }
+
+    to {
+        transform: translateY(-101vh);
+    }
+}

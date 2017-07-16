@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gabriola'), url('../fonts/gabriola.woff') format('woff');
+}
+
+* {
+}
+
+html, body {
+    margin: 0;
+    color: #3498db;
+    
+    font-size: 25px;
+}
+
+a {
+}
+
+h1,h2 {
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    font-size: 250%;
+    font-weight: 100;
+} 
+
+h2 {
+    font-size: 225%;
+    font-weight: 200;
+}
+
+h3 {
+    font-size: 175%;
+    font-weight: 300;
+}
+
+h2, h3 {
+    margin: auto 0;
+
+    /*color: #217dbb;*/
+    /*color: #000;*/
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+.pageFill {
+    height: 100vh;
+    width: 100%;
+}
+
+.fixedImage {
+    margin: 0;
+
+    overflow: hidden;
+
+    background-color: #d4d4d4;
+
+    background-image: url("../../res/images/Bloopy V2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.textBlock {
+    margin: 0;
+    position: relative;
+
+    font-family: "Bubbler One", sans-serif;
+
+    height: 20%;
+    line-height: 20vh;
+
+    text-align: center;
+    vertical-align: middle;
+
+    /*color: #a7d3ef;*/
+    color: #d4d4d4;
+    background-color: #333;
+}
+
+.topBlock {
+    top: 0%;
+}
+
+.middleBlock {
+    top: 37.5%;
+}
+
+.bottomBlock {
+    top: 70%;
+}
+
+.topBlock, .bottomBlock {
+    height: 15%;
+    line-height: 15vh;
+}
+
+
+.bigIcon {
+    display: inline-block;
+    margin: 20px 0;
+
+    color:  #3498db;
+
+    font-size: 400%;
+    line-height: 0px;
+}
+
+.ion-social-github,
+.ion-social-youtube,
+.ion-earth {
+    -webkit-transition: color 0.45s;
+    -moz-transition: color 0.45s;
+    transition: color 0.45s;
+}
+
+.ion-social-github:hover {
+    color: #171516;
+}
+
+.ion-earth:hover {
+    color: #2ecc71;
+}
+
+.ion-social-youtube:hover {
+    color: #bb0000;
+}
+
+.splash {
+    display: block;
+
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.splash .bgVideo {
+    position: fixed;
+    top: 46%;
+    left: 50%;
+
+    overflow: hidden;
+
+    z-index: -100;
+
+    min-width: 125%;
+    min-height: 125%;
+    width: auto;
+    height: auto;
+
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+.splash .overlayVideo {
+    margin: 0;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: -50;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(225, 240, 250, 0.5);
+    /*Try using the background image thing then set background-size to be cover*/
+}

@@ -1,0 +1,22 @@
+.contact-icon {
+    font-size: 750%;
+}
+
+.ion-social-github,
+.ion-social-youtube {
+    -webkit-transition: color 0.45s;
+    -moz-transition: color 0.45s;
+    transition: color 0.45s;
+}
+
+.ion-social-github:hover {
+    color: #171516;
+}
+
+.ion-earth:hover {
+    color: #2ecc71;
+}
+
+.ion-social-youtube:hover {
+    color: #bb0000;
+}

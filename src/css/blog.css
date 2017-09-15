@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gabriola'), url('../../fonts/gabriola.woff') format('woff');
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+    font-family: 'Gabriola', sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-family: 'Gabriola', sans-serif;
+    color: #333;
+
+    margin: 5vh 5vw;
+}
+
+.blog {
+    display: flex;
+}
+
+.blog-post {}

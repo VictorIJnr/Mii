@@ -1,69 +1,125 @@
 .navigation {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     margin: 0px;
+    padding: 0px;
 
-    top: -10vh;
-    left: -7vw;
+    top: -5vh;
+    left: -3vw;
 
     color: inherit;
-    background-color: #fff;
 
-    width: 35%;
+    width: 30vw;
 
     list-style: none;
-    font-size: 200%;
+    font-size: 100%;
 
-    z-index: 100;
+    z-index: 1000;
+}
+
+.bottom {
+    top: 90vh;
+}
+
+.right {
+    right: 2.5vw;
+    left: initial;
+}
+
+.row-nav {
+    flex-direction: row;
+    width: initial;
 }
 
 .navigation:first-child {
     padding-top: 10vh;
 }
 
-.navigation a:link, 
-.navigation a:visited {
-    display: block;
-
-    color: #555;
-    background-color: #fff;
-    text-decoration: none;
-
-    -webkit-transition: background-color 0.5s ease,
-                            color 0.5s ease;
-    -moz-transition: background-color 0.5s ease,
-                            color 0.5s ease;
-    transition: background-color 0.5s ease,
-                            color 0.5s ease;
+.bottom.navigation:first-child {
+    padding-top: 0vh;
 }
 
-.navigation a:hover {
+.navigation a {
+    position: relative;
+    line-height: 125%;
+    padding-bottom: -5px;
+}
+
+.navigation a:link, 
+.navigation a:visited {
+    display: inline-block;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+/* .navigation a:hover,
+.navigation a.active {
     text-decoration: none;
     color: #fff;
-    background-color: #555;
+    background-color: #e5a952;
+} */
+
+.navigation a::after {
+    border-bottom: 1px solid transparent;
+    width: 0%;
+    height: 0%;
+    content: '';
+
+    box-sizing: inherit;
+    position: absolute;
+
+    bottom: 0%;
+    left: 0%;
+
+    -webkit-transition: border-color 0.5s ease-out, 
+                            width 0.25s ease-out, 
+                            height 0.25s ease-out 0.25s;
+    transition: border-color 0.5s ease-out, 
+                    width 0.25s ease-out, 
+                    height 0.25s ease-out 0.25s;
+}
+
+.navigation a:hover::after {
+    width: 100%;  
+    /* height: 90%; */
+    
+    border-color: #fff;
+}
+
+.row-nav.navigation a:link, 
+.row-nav.navigation a:visited {
+    display: inline-block;
+}
+
+.navigation.row-nav a {
+    margin-left: 5vw;
 }
 
 .navigation-container {
     text-align: center;
 
-    color: #333;
+    color: inherit;
     background-color: #fff;
     font-size: inherit;
 }
 
-.top-left {
-    right: -7vw;
-    left: initial;
-}
-
 .tilt {
-    transform-origin: 0 0;
-    transform: rotateZ(-40deg) translate(-14vw, 14vh);
+    transform-origin: 0% 0%;
+    /* transform: rotateZ(-45deg)  translate(-29.4vw, -55vh); */
+    transform: rotateZ(-45deg) translate(-51vw, 10.705vh); 
+    /* transform: translate(-40.4vw, 9.956vh) rotateZ(-45deg);  */
+    /*I used trig to get the translation values, mathematically, ideal values would be approx (-42.4vw, 2.65vw)
+    after using trig to calculate the distance to top corner is 15(root 2)*/
+    width: 100%; 
 }
 
-.top-left.tilt {
-    transform-origin: 0 100%;
-    transform: rotateZ(40deg) translate(-2vw, -25vh);
+.right.tilt {
+    transform-origin: 100% 0%;
+    /* transform: rotateZ(45deg)  translate(26.5vw, -55vh); */
+    transform: rotateZ(45deg) translate(51.5vw, 10.705vh);
 }

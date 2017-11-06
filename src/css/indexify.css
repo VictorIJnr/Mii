@@ -27,12 +27,13 @@
     box-sizing: border-box;
 
     font-family: 'Gabriola', sans-serif;
-    color: #333;
 }
 
 html, body {
     height: 100vh;
     width: 100vw;
+
+    color: #ddd;
 
     font-size: 25px;
     text-align: center;
@@ -99,6 +100,8 @@ section.active {
 }
 
 .splash-screen {
+    display: flex;
+    align-items: center;
     position: relative;
 
     color: #ddd;
@@ -149,18 +152,11 @@ section.active {
 
 .narci {
     display: inline-block;
-    position: relative;
 
-    margin: 0%;
+    margin-left: 2.5vw;
 
-    height: 34vh;
-
-    font-size: 600%;
+    font-size: 350%;
     color: #ddd;
-    text-align: center;
-    vertical-align: middle;
-
-     line-height: 34vh; 
 
     -webkit-transition: color 0.5s ease-out;
     -moz-transition: color 0.5s ease-out;

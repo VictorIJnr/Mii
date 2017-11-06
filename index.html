@@ -1,95 +1,76 @@
 <html>
-    <head>
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-        
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        <head>
+            <script
+                src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"></script>
-        
-        <title>Victor Igodifo</title> 
-
-        <script src="./src/js/particles.min.js"></script>    
-        <script src="./src/js/index.js"></script>
-
-        <link href="./src/css/indexify.css" rel="stylesheet">
-        <link href="./src/css/contactify.css" rel="stylesheet">
-        <link href="./src/css/navigation.css" rel="stylesheet">
-        <link href="./src/css/ionicons.min.css" rel="stylesheet">
-        <link href="./src/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
-    </head>
-
-    <body class="no-margin">
-
-
-        <section class="splash-screen">
-            <div id="particles"></div>
             
-            <div class="row">
-                <div class="col-md-6 splash-section about-me">
-                    <img class="back-image" src="./res/images/about-me.png" alt="">
-                    <button class="section-link about-me" href="">About Me</button>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+                    crossorigin="anonymous"></script>
+            
+            <title>Victor Igodifo</title> 
+    
+            <script src="./src/js/particles.min.js"></script>    
+            <script src="./src/js/index.js"></script>
+    
+            <link href="./src/css/bootstrap.min.css" rel="stylesheet">
+            <link href="./src/css/indexify.css" rel="stylesheet">
+            <link href="./src/css/contactify.css" rel="stylesheet">
+            <link href="./src/css/navigation.css" rel="stylesheet">
+            <link href="./src/css/ionicons.min.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
+        </head>
+    
+        <body class="no-margin">
+            <section class="splash-screen">
+                <div id="particles"></div>
+    
+                <nav class="navigation-container">
+                    <ul class="navigation row-nav right">
+                        <li><a class="about-me" href="">About Me</a></li>
+                        <li><a href="">My Work</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </nav>
+    
+                <p class="narci">VictorIJnr</p>
+    
+            </section>
+    
+            <section class="blog">
+                <div class="navigation-container">
+                    <ul class="navigation tilt">
+                        <li><a href="">Home</a></li>
+    
+                        <li><a href="">Bloopy</a></li>
+                    </ul>
                 </div>
-
-                <div class="col-md-6 splash-section my-work">
-                    <img class="back-image" src="./res/images/my-work.png" alt="">
-                    <button class="section-link my-work" href="">My Work</button>
+                <section id="current-blog"></section>
+            </section>  
+    
+            <section class="contact">
+                <div class="navigation-container">
+                    <ul class="navigation tilt">
+                        <li><a href="">Home</a></li>
+                        
+                        <li><a href="">Github</a></li>
+    
+                        <li><a href="">Contact Form</a></li>
+                    </ul>
                 </div>
-            </div>
-
-            <p class="narci">VictorIJnr</p>
-
-            <div class="row">
-                <div class="col-md-6 splash-section blog">
-                    <button class="section-link blog" href="">Blog</button>
+    
+                <div class="row github no-margin">
+                    <img class="background-image" src="./res/images/SlideshowCode.png" alt="Background">
+    
+                    <a class="contact-icon" href="https://github.com/VictorIJnr" target="_blank">
+                        <i class="ion-social-github"></i>
+                    </a>
                 </div>
-
-                <div class="col-md-6 splash-section contact"> 
-                    <button class="section-link contact">Contact</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-me">
-        </section>  
-
-        <section class="my-work">
-        </section>  
-
-        <section class="blog">
-            <div class="navigation-container">
-                <ul class="navigation tilt">
-                    <li><a href="">Home</a></li>
-
-                    <li><a href="">Bloopy</a></li>
-                </ul>
-            </div>
-            <section id="current-blog"></section>
-        </section>  
-
-        <section class="contact">
-            <div class="navigation-container">
-                <ul class="navigation tilt">
-                    <li><a href="">Home</a></li>
-                    
-                    <li><a href="">Github</a></li>
-
-                    <li><a href="">Contact Form</a></li>
-                </ul>
-            </div>
-
-            <div class="row github no-margin">
-                <img class="background-image" src="./res/images/SlideshowCode.png" alt="Background">
-
-                <a class="contact-icon" href="https://github.com/VictorIJnr" target="_blank">
-                    <i class="ion-social-github"></i>
-                </a>
-            </div>
-        </section>  
-    </body>
-</html>
+            </section>  
+        </body>
+    </html>
+    

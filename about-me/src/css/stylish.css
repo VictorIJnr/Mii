@@ -140,23 +140,22 @@ h2, h3 {
 }
 
 .splash .bgVideo {
-    position: fixed;
+    position: absolute;
     top: 46%;
     left: 50%;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 
     z-index: -100;
 
-    min-width: 125%;
-    min-height: 125%;
-    width: auto;
-    height: auto;
+    min-width: 125vw;
+    height: 125vh;
 
     -ms-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+    /*Change to only scale on mobile, desktop is fine*/
+    transform: translate(-50%, -50%) scale(2);
 
     background-size: cover; 
     background-attachment: fixed;

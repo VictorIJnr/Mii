@@ -23,3 +23,35 @@
 .overlay img {
    opacity: 0.6;
 }
+
+.slideshow {
+    height: 20vh;
+}
+
+.slideshow div {
+    height: 100%;
+}
+
+.slideshow img:not(.slick-current) {
+    display: block;
+    margin: auto;
+    height: 50%;
+}
+
+.slideshow img {
+    transition: transform 0.5s ease;
+}
+
+
+
+.slick-current img {
+    transform: scale(2);
+}
+
+.slick-slide {
+    margin: 0vh 7.5vw;
+}
+
+.slick-list {
+    margin: 0vh -7.5vw;
+}

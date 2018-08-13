@@ -1,0 +1,41 @@
+header {
+    height: 10vh;
+    border-bottom: 1.5px solid burlywood;
+
+    font-family: "Macondo Swash Caps", sans-serif;
+    /* font-family: "Bubbler One", sans-serif; */
+    /* font-family: "Roboto", sans-serif; */
+
+    color: #444;
+}
+
+header.row {
+    margin: 0 !important;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+}
+
+header div:first-of-type {
+    justify-content: center;
+}
+
+header div:last-of-type {
+    justify-content: flex-end;
+}
+
+header div h1 {
+    margin: 0;
+}
+
+.drop-down {
+    background: transparent;
+    border: none;
+}
+
+.drop-down:hover {
+    cursor: pointer;
+}

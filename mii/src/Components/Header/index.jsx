@@ -6,16 +6,33 @@ import PickerList from "../PickerList";
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            selected: "mii"
+        };
     }
 
     render() {
         let pickers = [
-            <Picker text="About Me" path=""/>,
-            <Picker text="Blog" path="blog"/>,
-            <Picker text="; )" path="cheeky"/>,
-            <Picker text="Contact" path="contact"/>
+            <Picker text="About Me" path="/" />,
+            <Picker text="Blog" path="/blog" />,
+            <Picker text="; )" path="/cheeky" />,
+            <Picker text="Contact" path="/contact" />
         ];
+
+        switch (this.props.selected) {
+            case "mii":
+                pickers[0] = <Picker selected text="About Me" path="/" />;
+                break;
+            case "blog":
+                pickers[1] = <Picker selected text="Blog" path="/blog" />;
+                break;
+            case "cheeky":
+                pickers[2] = <Picker selected text="; )" path="/cheeky" />;
+                break;
+            case "contact":
+                pickers[3] = <Picker selected text="Contact" path="/contact" />;
+                break;
+        }
 
         return (<header className="row">
             <div className="col-md-3">

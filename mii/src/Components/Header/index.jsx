@@ -17,17 +17,15 @@ class Header extends Component {
             <Picker text="Contact" path="contact"/>
         ];
 
-        return (
-            <header className="row">
-                <div className="col-md-3">
-                    <h1>VictorIJnr</h1>
-                </div>
+        return (<header className="row">
+            <div className="col-md-3">
+                <h1>VictorIJnr</h1>
+            </div>
 
-                <div className="col-md-9">
-                    <PickerList pickers={pickers}/>
-                </div>
-            </header>
-        );
+            <div className="col-md-9">
+                <PickerList pickers={pickers}/>
+            </div>
+        </header>);
     }
 }
 

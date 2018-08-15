@@ -1,12 +1,12 @@
 a, a:active, a:focus {
     outline: 0;
+    color: #444;
 }
 
 a.picker {
     height: 100%;
 
     background-color: #f7f7f7;
-    color: #444;
 
     transition: color 0.5s ease-out, background-color 0.5s ease-out;
 }
@@ -20,6 +20,17 @@ a.picker:hover {
 
 .picker {
     position: relative;
+}
+
+.picker::before, .selected::before {
+    content:"";
+    position: absolute;
+    top: 20%;
+    left: 0px;
+    box-sizing: inherit;
+
+    height: 60%;
+    border-left: 1px solid #bbb;
 }
 
 .picker::after {
@@ -45,4 +56,12 @@ a.picker:hover {
 
 .picker h2 {
     margin: 0;
+}
+
+.selected {
+    color: burlywood;
+}
+
+.selected::before {
+    border-left: 1px solid burlywood;
 }

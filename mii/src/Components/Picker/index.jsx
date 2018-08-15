@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./stylish.css";
+import { Link } from "react-router-dom";
 
 class Picker extends Component {
 
@@ -7,7 +8,7 @@ class Picker extends Component {
         let classes = "picker nav-link " + (this.props.selected ? "selected" : "");
 
         return (
-            <a className={classes} href={this.props.path}>{this.props.text}</a>
+            <Link className={classes} to={this.props.path}>{this.props.text}</Link>
         )
     }
 

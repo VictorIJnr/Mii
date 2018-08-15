@@ -3,11 +3,6 @@
   font-family: "Macondo Swash Caps", sans-serif;
 }
 
-.site {
-    height: 100vh;
-    background-color: #f7f7f7;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

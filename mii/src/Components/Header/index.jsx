@@ -13,7 +13,7 @@ class Header extends Component {
 
     render() {
         let pickers = [
-            <Picker text="About Me" path="/" />,
+            <Picker text="Home" path="/" />,
             <Picker text="Blog" path="/blog" />,
             <Picker text="; )" path="/cheeky" />,
             <Picker text="Contact" path="/contact" />
@@ -21,7 +21,7 @@ class Header extends Component {
 
         switch (this.props.selected) {
             case "mii":
-                pickers[0] = <Picker selected text="About Me" path="/" />;
+                pickers[0] = <Picker selected text="Home" path="/" />;
                 break;
             case "blog":
                 pickers[1] = <Picker selected text="Blog" path="/blog" />;

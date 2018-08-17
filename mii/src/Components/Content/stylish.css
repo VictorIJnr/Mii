@@ -1,0 +1,35 @@
+.content {
+    position: relative;
+    display: flex;
+    margin: 0vh auto;
+    padding: 10vh 0vw;
+
+    width: 65vw;
+
+    font-family: "Roboto", sans-serif;
+    color: #333;
+}
+
+.content div:first-child {
+    margin-top: 3.5vh;
+}
+
+.content h1:not(:first-child),
+.content h2, 
+.content h3 { 
+    margin-top: 7.5vh;
+}
+
+.content h1,
+.content h2, 
+.content h3 {
+    margin-bottom: 2vh;
+
+    font-family: "Macondo Swash Caps", sans-serif;
+    text-align: left;
+    border-bottom: 1px solid burlywood;
+}
+
+.content a {
+    color: rgb(230, 171, 94);
+}

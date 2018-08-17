@@ -20,7 +20,7 @@ class PickerList extends Component {
             allPickers.push(<li className="nav-item">{picker}</li>);
         });
 
-        return (<nav className="navbar navbar-expand-sm">
+        return (<nav className="navbar navbar-expand-md">
             <ul className="navbar-nav">
                 {allPickers}
             </ul>

@@ -1,46 +1,51 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import Slider from "react-slick";
 import "../stylish.css";
 
 import donny from "../../../assets/images/Donny.png";
 import cofu from "../../../assets/images/SlideshowCode.png";
 import refu from "../../../assets/images/my-work.png";
+import nuto from "../../../assets/images/starry.jpeg";
 
 class Slideshow extends Component {
 
     constructor(props) {
         super(props);
-        this.slideshow = React.createRef();
+        this.initSlide = React.createRef();
     }
 
     componentDidMount() {
-        let slider = this.slideshow.current;
-        console.log(slider);
-        // slider.getElementsByClassName("slick-dots");
+        this.initSlide.current.focus();
     }
 
     render() {
         let slicky = {
             dots: true,
-            arrows: true,
-            infinite: true
+            arrows: false,
+            infinite: true,
+            centerMode: true,
+            // variableWidth: true,
+            fade: true
+            // adaptiveHeight: true
         };
 
-        return (<div className="slideshow">
-            <Slider {...slicky} ref={this.slideshow}>
-                {/* {this.props.children} */}
+        return (<Slider autoFocus {...slicky} className="slideshow">
+            {/* {this.props.children} */}
 
-                <div>
-                    <img src={donny} alt="First slide" />
-                </div>
-                <div>
-                    <img src={cofu} alt="Second slide" />
-                </div>
-                <div>
-                    <img src={refu} alt="Third slide" />
-                </div>
-            </Slider>
-        </div>);
+            <div ref={this.initSlide}>
+                <img src={donny} alt="First slide" />
+            </div>
+            <div>
+                <img src={cofu} alt="Second slide" />
+            </div>
+            <div>
+                <img src={nuto} alt="Third slide" />
+            </div>
+            <div>
+                <img src={refu} alt="Fourth slide" />
+            </div>
+        </Slider>);
     }
 
 }

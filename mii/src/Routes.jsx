@@ -5,7 +5,6 @@ import Mii from "./Routes/Mii";
 import Blog from "./Routes/Blog";
 import Cheeky from "./Routes/Cheeky";
 import Contact from "./Routes/Contact";
-import Header from "./Components/Header";
 
 class Routes extends Component {
 

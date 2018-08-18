@@ -32,6 +32,8 @@ class Header extends Component {
             case "contact":
                 pickers[3] = <Picker selected text="Contact" path="/contact" />;
                 break;
+            default:
+                break;
         }
 
         return (<header className="row">

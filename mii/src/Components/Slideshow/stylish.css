@@ -5,12 +5,21 @@
 
 .slideshow div {
     background-color: inherit;
+    /* margin: 0 auto; */
 }
 
-.slideshow img {
+.slick-slide {
+    overflow: hidden;
+}
+
+.slick-track {
     margin: 0 auto;
-    height: auto;
-    width: 50vh;
+}
+
+.slick-slide img {
+    margin: 0 auto;
+    height: 67vh;
+    width: auto;
 }
 
 /* .slick-dots > li {
@@ -27,15 +36,18 @@
     border: none;
     outline: none;
     background: transparent;
-
     transition: color 0.5s ease;
 }
 
-.slick-prev::before, 
-.slick-next::before {
-    font-size: 30px;
+.slick-arrow::before {
+    color: burlywood;
 }
 
+.slick-prev::before,
+.slick-next::before {
+    font-size: 30px;
+    color: burlywood;
+}
 
 .slick-prev:hover,
 .slick-prev:focus,
@@ -44,4 +56,34 @@
     color: #444;
     outline: none;
     background: transparent;
+}
+
+.slideshow .slick-dots li button {
+    position: relative;
+    width: 10px;
+    height: 25px;
+}
+
+.slideshow .slick-dots li button::before {
+    content: '';
+    background: burlywood;
+    color: burlywood;
+    height: 20px;
+    width: 3px;
+    border-radius: 2px;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: all .3s ease-in-out;
+    opacity: 0.6;
+}
+
+.slideshow .slick-dots li.slick-active button::before {
+    height: 40px;
+    opacity: 1;
+}
+
+.slideshow .slick-dots li button:hover::before {
+    height: 30px;
+    opacity: 0.8;
 }

@@ -18,8 +18,11 @@
 
 .slick-slide img {
     margin: 0 auto;
-    height: 67vh;
-    width: auto;
+    height: auto;
+    width: 100%;
+
+    min-width: 101%;
+    min-height: 101%;
 }
 
 /* .slick-dots > li {
@@ -28,6 +31,22 @@
 
 .slick-dots > li.slick-active > button::before {
     color: burlywood;
+}
+
+
+/* Okay, hear me out with these next two selectors.
+    So, because of where each arrow is rendered within its 
+    box, I have to slightly adjust their positioning so 
+    that everything looks centered. Somehow this works fine
+    in the default theme for the slick website,
+    but not for me...
+*/
+.slick-prev {
+    left: -2.5% !important;
+}
+
+.slick-next {
+    right: -1.1% !important;
 }
 
 .slick-prev,
@@ -60,6 +79,7 @@
 
 .slideshow .slick-dots li button {
     position: relative;
+    top: 150%;
     width: 10px;
     height: 25px;
 }

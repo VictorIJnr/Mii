@@ -1,23 +1,45 @@
 import React, { Component } from "react";
+import Slider from "react-slick";
+import "../stylish.css";
+
 import donny from "../../../assets/images/Donny.png";
 import cofu from "../../../assets/images/SlideshowCode.png";
 import refu from "../../../assets/images/my-work.png";
 
 class Slideshow extends Component {
 
+    constructor(props) {
+        super(props);
+        this.slideshow = React.createRef();
+    }
+
+    componentDidMount() {
+        let slider = this.slideshow.current;
+        console.log(slider);
+        // slider.getElementsByClassName("slick-dots");
+    }
+
     render() {
-        return (<div className="carousel slide" data-ride="carousel">
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img className="d-block w-100" src={donny} alt="First slide" />
+        let slicky = {
+            dots: true,
+            arrows: true,
+            infinite: true
+        };
+
+        return (<div className="slideshow">
+            <Slider {...slicky} ref={this.slideshow}>
+                {/* {this.props.children} */}
+
+                <div>
+                    <img src={donny} alt="First slide" />
                 </div>
-                <div className="carousel-item">
-                    <img className="d-block w-100" src={cofu} alt="Second slide" />
+                <div>
+                    <img src={cofu} alt="Second slide" />
                 </div>
-                <div className="carousel-item">
-                    <img className="d-block w-100" src={refu} alt="Third slide" />
+                <div>
+                    <img src={refu} alt="Third slide" />
                 </div>
-            </div>
+            </Slider>
         </div>);
     }
 

@@ -10,7 +10,7 @@
     color: #333;
 }
 
-.content div:first-child {
+.content > div:first-child {
     margin-top: 3.5vh;
 }
 

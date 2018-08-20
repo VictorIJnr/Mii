@@ -27,7 +27,7 @@ a[data-toggle="collapse"] {
 }
 
 #sneaky {
-    font-size: 0;
+    display: none;
 }
 
 #wrapper {

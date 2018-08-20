@@ -3,9 +3,12 @@ import Slider from "react-slick";
 import "../stylish.css";
 
 import donny from "../../../assets/images/Donny.png";
-// import cofu from "../../../assets/images/SlideshowCode.png";
+import cofu from "../../../assets/images/SlideshowCode.png";
 import refu from "../../../assets/images/my-work.png";
 import nuto from "../../../assets/images/starry.jpeg";
+
+import Overlay from "../Overlay";
+import Slide from "../Slide";
 
 class Slideshow extends Component {
 
@@ -37,7 +40,7 @@ class Slideshow extends Component {
                     this tag shouldn't be here either. But I've spent too much time debugging
                     this part of this website that I'm settling for this workaround. For now,
                     this'll be gone soon. Mark my words. At 00:09 on the 20th of August 2018, I
-                    vowed to get rid of this cheeky little beaky a tag. 
+                    vowed to get rid of this cheeky little beaky a tag. <br/> <br/>
 
                     I fixed it. It's been 5 minutes and I fixed it using a z-index... Great...
                     There's no real reason for this tag to be here now. Or you for that matter. 
@@ -55,18 +58,24 @@ class Slideshow extends Component {
             </div>
 
             <Slider {...slicky}>
-                {/* {this.props.children} */}
-
-                <div ref={this.initSlide}>
-                    <img src={donny} alt="First slide" />
+                <div ref={this.initSlide} className="my-slide">
+                    <Slide github="https://github.com/VictorIJnr/Is-Your-Country-A-Shithole-"
+                                website="https://shithole.herokuapp.com/">
+                        <h2>IYCASH</h2>
+                        <p>
+                            Empirical analysis to determine whether or not a country is a 
+                            "shithole" in the eyes of Donald Trump
+                        </p>
+                        <img src={donny} alt="First slide" />
+                    </Slide>
                 </div>
-                {/* <div>
+                <div className="my-slide">
                     <img src={cofu} alt="Second slide" />
-                </div> */}
-                <div>
+                </div>
+                <div className="my-slide">
                     <img src={nuto} alt="Third slide" />
                 </div>
-                <div>
+                <div className="my-slide">
                     <img src={refu} alt="Fourth slide" />
                 </div>
             </Slider>

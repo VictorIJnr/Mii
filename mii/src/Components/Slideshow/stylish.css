@@ -9,6 +9,14 @@ a[data-toggle="collapse"] {
     z-index: 5;
 }
 
+#help p {
+    display: inline-block;
+    margin: 0;
+    padding: 1% 5%;
+    width: 81.25%;
+
+    border: 1px solid burlywood;
+}
 
 #helper {
     display: inline-block;
@@ -39,13 +47,46 @@ a[data-toggle="collapse"] {
     /* margin: 0 auto; */
 }
 
-.slideshow p {
-    display: inline-block;
-    margin: 0;
-    padding: 1% 5%;
-    width: 81.25%;
 
-    border: 1px solid burlywood;
+div.slide-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 33%;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.8);
+
+    color: aliceblue;
+
+    z-index: 10;
+}
+
+.slide-overlay {
+    padding: 0vh 2.5%;
+}
+
+.slide-overlay p {
+    text-align: left;
+}
+
+.slide-overlay a i::before {
+    margin: 0 1vw;
+    transition: color 0.4s ease;
+}
+
+.slide-overlay a i.fa-github:hover::before {
+    color: #4078c0;
+    /* font-size: 3em; */
+}
+.slide-overlay a i.fa-globe:hover::before {
+    color: #55efc4;
+    /* font-size: 3em; */
+}
+
+div.my-slide {
+    position: relative;
+    height: 55vh;
 }
 
 .slick-slide {
@@ -57,12 +98,9 @@ a[data-toggle="collapse"] {
 }
 
 .slick-slide img {
-    margin: 0 auto;
-    height: 55vh;
+    /* margin: 0 auto; */
+    height: 100%;
     width: 100%;
-
-    min-width: 101%;
-    min-height: 101%;
 }
 
 /* .slick-dots > li {

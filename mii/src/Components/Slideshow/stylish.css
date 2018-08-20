@@ -1,22 +1,18 @@
 a[data-toggle="collapse"] {
     display: inline-block;
     position: absolute;
+    left: 0;
+
     text-align: left;
     font-size: 2em;
 
     z-index: 5;
 }
 
-#help {
-    position: relative;
-    width: 100%;
-}
 
 #helper {
     display: inline-block;
-    position: relative;
-    margin: 0 auto;
-    width: 80%;
+    /* position: relative; */
     
     text-align: center;
     font-family: 'Playfair Display', serif;

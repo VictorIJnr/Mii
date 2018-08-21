@@ -23,10 +23,15 @@ div.slide-overlay {
     color: aliceblue;
 
     z-index: 10;
+    transition: height 0.5s ease;
 }
 
 .slide-overlay {
     padding: 0vh 2.5%;
+}
+
+.slide-overlay.hidden {
+    height: 0%;
 }
 
 .slide-overlay p {

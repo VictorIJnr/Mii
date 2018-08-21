@@ -4,14 +4,13 @@ import "../stylish.css";
 class Overlay extends Component {
 
     render() {
-        console.log(this);
         let headerText, overlayText;
         this.props.children.forEach(child => {
             if(child.type === "p") overlayText = child.props.children;
             else if(child.type === "h2") headerText = child.props.children;
         });
 
-        return (<div className="slide-overlay">
+        return (<div className={"slide-overlay" + this.props.className}>
             <h2>{headerText}</h2>
             <p>
                 {overlayText}

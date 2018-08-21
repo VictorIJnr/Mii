@@ -10,6 +10,10 @@
     /* margin: 0 auto; */
 }
 
+.slick-current {
+    z-index: 20;
+}
+
 
 div.slide-overlay {
     position: absolute;
@@ -23,15 +27,16 @@ div.slide-overlay {
     color: aliceblue;
 
     z-index: 10;
-    transition: height 0.5s ease;
+    transition: all 0.45s ease;
 }
 
 .slide-overlay {
     padding: 0vh 2.5%;
 }
 
-.slide-overlay.hidden {
-    height: 0%;
+.hidden {
+    height: 0% !important;
+    opacity: 0 !important;
 }
 
 .slide-overlay p {

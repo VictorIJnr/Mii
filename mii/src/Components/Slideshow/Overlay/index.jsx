@@ -7,8 +7,8 @@ class Overlay extends Component {
         console.log(this);
         let headerText, overlayText;
         this.props.children.forEach(child => {
-            if(child.type == "p") overlayText = child.props.children;
-            else if(child.type == "h2") headerText = child.props.children;
+            if(child.type === "p") overlayText = child.props.children;
+            else if(child.type === "h2") headerText = child.props.children;
         });
 
         return (<div className="slide-overlay">

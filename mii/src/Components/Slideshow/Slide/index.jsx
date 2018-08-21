@@ -10,8 +10,8 @@ class Slide extends Component {
 
         let headerText, overlayText, slideContent;
         this.props.children.forEach(child => {
-            if (child.type == "p") overlayText = child.props.children;
-            if (child.type == "h2") headerText = child.props.children;
+            if (child.type === "p") overlayText = child.props.children;
+            if (child.type === "h2") headerText = child.props.children;
             else slideContent = child;
         });
 

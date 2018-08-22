@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "../stylish.css";
 
 import donny from "../../../assets/images/Donny.png";
-import cofu from "../../../assets/images/SlideshowCode.png";
+import booky from "../../../assets/images/Bookstream.png";
 import refu from "../../../assets/images/my-work.png";
 import nuto from "../../../assets/images/starry.jpeg";
 
@@ -52,13 +52,28 @@ class Slideshow extends Component {
                     </Slide>
                 </div>
                 <div className="my-slide">
-                    <img src={cofu} alt="Second slide" />
+                    <Slide github="https://github.com/VictorIJnr/Cutex">
+                        <h2>Cutex</h2>
+                        <p>
+                            Contextual triggering and speech recognition for Artificially 
+                            Intelligent Assistants <br/><br/>
+                            Hopefully serving as the basis for my SH project
+                        </p>
+                        <img src="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg"
+                                alt="Cutex" />
+                    </Slide>
                 </div>
                 <div className="my-slide">
-                    <img src={nuto} alt="Third slide" />
-                </div>
-                <div className="my-slide">
-                    <img src={refu} alt="Fourth slide" />
+                    <Slide github="https://github.com/VictorIJnr/P2-Databases"
+                                website="https://thebookstream.herokuapp.com/">
+                        <h2>Bookstream</h2>
+                        <p>
+                            The second CS3101-Databases practical <br/><br/>
+                            There's not really much here, apart from the splash and login screens,
+                            unless the St Andrews server decides to cooperate for once
+                        </p>
+                        <img src={booky} alt="Bookstream" />
+                    </Slide>
                 </div>
             </Slider>
         </div>);

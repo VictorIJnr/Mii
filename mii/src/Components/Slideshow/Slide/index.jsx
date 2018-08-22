@@ -50,6 +50,8 @@ class Slide extends Component {
                 <p>{overlayText}</p>
             </Overlay>
             {slideContent}
+
+            <p id="hover-me" className={this.state.hover ? "hidden" : ""}>Hover Me!</p>
         </div>);
     }
 

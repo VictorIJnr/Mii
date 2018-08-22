@@ -65,20 +65,6 @@ div.slide-overlay h2 {
     text-align: left;
 }
 
-.slide-overlay a i::before {
-    margin: 0 1vw;
-    transition: color 0.4s ease;
-}
-
-.slide-overlay a i.fa-github:hover::before {
-    color: #4078c0;
-    /* font-size: 3em; */
-}
-.slide-overlay a i.fa-globe:hover::before {
-    color: #55efc4;
-    /* font-size: 3em; */
-}
-
 div.my-slide {
     position: relative;
     height: 55vh;

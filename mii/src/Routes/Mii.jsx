@@ -10,8 +10,8 @@ class Mii extends Component {
             <Header selected="mii" />
             <Content>
                 <h1 id="friendly">
-                    <a href="https://www.amazon.co.uk/gp/video/detail/B0160ASALE/
-                                ref=atv_dp_pb_core?autoplay=1&t=3868">
+                    <a href="https://www.amazon.co.uk/gp/video/
+                                detail/B015RPBRF4/ref=atv_dp_season_select_atf">
                         Hello Friend...
                     </a>
                 </h1>

@@ -45,7 +45,8 @@ class Slide extends Component {
         return (
         <div className="my-slide" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
             <Overlay className={this.state.hover ? "" : " hidden"}
-            github={this.props.github} website={this.props.website}>
+            github={this.props.github} website={this.props.website}
+            video={this.props.video} app={this.props.app}>
                 <h2>{headerText}</h2>
                 <p>{overlayText}</p>
             </Overlay>

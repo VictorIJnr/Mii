@@ -4,6 +4,7 @@ import "../stylish.css";
 
 import donny from "../../../assets/images/Donny.png";
 import booky from "../../../assets/images/Bookstream.png";
+import bloopy from "../../../assets/images/Bloopy.png";
 import refu from "../../../assets/images/my-work.png";
 import nuto from "../../../assets/images/starry.jpeg";
 
@@ -49,6 +50,20 @@ class Slideshow extends Component {
                             "shithole" in the eyes of Donald Trump
                         </p>
                         <img src={donny} alt="Is Your Country A Shithole" />
+                    </Slide>
+                </div>
+                <div className="my-slide">
+                    <Slide app="https://play.google.com/store/apps/details?
+                                id=com.victorjunior.bloopy&hl=en_GB"
+                            video="https://youtu.be/LLco2mpWQ-o"
+                            website="http://victorsepq.weebly.com/">
+                        <h2>Bloopy</h2>
+                        <p>
+                            An endless runner I made for my EPQ when I was 17<br/><br/>
+                            Available to download on Android, don't expect too much though, I 
+                            used this to learn Java and the Android SDK
+                        </p>
+                        <img src={bloopy} alt="Bloopy" />
                     </Slide>
                 </div>
                 <div className="my-slide">

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Mii from "./Routes/Mii";
 import Blog from "./Routes/Blog";
@@ -9,12 +9,14 @@ import Contact from "./Routes/Contact";
 class Routes extends Component {
 
     render() {
-        return (<Switch>
-            <Route exact path="/" component={Mii}/>
-            <Route exact path="/blog" component={Blog}/>
-            <Route exact path="/cheeky" component={Cheeky}/>
-            <Route exact path="/contact" component={Contact}/>
-        </Switch>);
+        return (<BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Mii}/>
+                <Route exact path="/blog" component={Blog}/>
+                <Route exact path="/cheeky" component={Cheeky}/>
+                <Route exact path="/contact" component={Contact}/>
+            </Switch>
+        </BrowserRouter>);
     }
 
 }

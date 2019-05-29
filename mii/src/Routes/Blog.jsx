@@ -1,11 +1,44 @@
 import React, { Component } from "react";
+import ReactMarkdown from "react-markdown";
+import axios from "axios";
+import { ApolloClient, InMemoryCache } from "apollo-boost";
+import { createHttpLink } from "apollo-link-http";
+
 import Header from "../Components/Header";
 import Content from "../Components/Content";
 import Cutex from "../assets/Cutex";
 
 class Blog extends Component {
+    constructor(props) {
+        super(props);
+
+        let githubURL = "https://api.github.com/graphql";
+
+        let link = createHttpLink({
+            uri: githubURL,
+            fetch: require("node-fetch")
+        });
+
+        this.clientQL = ApolloClient({
+            uri: githubURL,
+            cache: new InMemoryCache(),
+            link
+        });
+    }
+
+    /**
+     * Getting an access token to retrieve a raw README from GitHub
+     */
+    authenticate() {
+        
+    }
 
     render() {
+
+
+        let blogSource = "";
+        axios.get();
+
         return (<div className="site">
             <Header selected="blog" />
             <Content>
@@ -26,7 +59,8 @@ class Blog extends Component {
                     linking out to stuff I find to be rather interesting. 
                     That's not much better is it?
                 </p>
-                <Cutex />
+                <ReactMarkdown source={}/>
+                {/* <Cutex /> */}
             </Content>
         </div>);
     }

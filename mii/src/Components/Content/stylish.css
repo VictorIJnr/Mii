@@ -1,3 +1,13 @@
+blockquote {
+    background-color: #DEDEDE;
+
+    padding-left: 10px;
+    border-left: solid 10px #FFC982;
+
+    font-style: italic;
+    color: #5E5E5E;
+}
+
 #friendly {
     margin-top: 33vh;
     text-align: center;
@@ -29,7 +39,7 @@
 .content h1:not(:first-child),
 .content h2, 
 .content h3 { 
-    margin-top: 7.5vh;
+    margin-top: 4.25vh;
 }
 
 .content h1,
@@ -43,5 +53,5 @@
 }
 
 .content a {
-    color: rgb(230, 171, 94);
+    color: #e6ab5e;
 }

@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://victorijnr.com",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "apollo-boost": "^0.4.0",
     "apollo-client": "^2.6.0",
     "apollo-link-context": "^1.0.17",

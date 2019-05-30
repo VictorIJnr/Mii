@@ -5,6 +5,7 @@ import axios from "axios";
 
 import Header from "../Components/Header";
 import Content from "../Components/Content";
+import Loader from "../Components/Loader";
 
 import { myToken } from "../config/tokens.json";
 
@@ -43,7 +44,7 @@ class Blog extends Component {
         if (!this.state.loaded) this.genReadMe();
         let projRender = (this.state.loaded) 
             ? <ReactMarkdown source={this.state.data} escapeHtml={false}/>
-            : <div></div>;
+            : <Loader />;
 
         return (<div className="site">
             <Header selected="blog" />

@@ -5,8 +5,6 @@ import "../stylish.css";
 import donny from "../../../assets/images/Donny.png";
 import booky from "../../../assets/images/Bookstream.png";
 import bloopy from "../../../assets/images/Bloopy.png";
-import refu from "../../../assets/images/my-work.png";
-import nuto from "../../../assets/images/starry.jpeg";
 
 import Slide from "../Slide";
 import Helper from "../../Helper";

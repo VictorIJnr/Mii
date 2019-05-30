@@ -1,29 +1,44 @@
 {
-    "name": "mii",
-    "version": "0.1.0",
-    "private": true,
-    "homepage": "https://victorijnr.com",
-    "dependencies": {
-        "apollo-boost": "^0.4.0",
-        "apollo-client": "^2.6.0",
-        "axios": "^0.18.0",
-        "react": "^16.4.2",
-        "react-dom": "^16.4.2",
-        "react-markdown": "^4.0.8",
-        "react-router-dom": "^4.3.1",
-        "react-scripts": "^3.0.1",
-        "react-slick": "^0.23.1",
-        "typescript": "^3.4.5"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
-    },
-    "devDependencies": {
-        "gh-pages": "^1.2.0"
-    }
+  "name": "mii",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://victorijnr.com",
+  "dependencies": {
+    "apollo-boost": "^0.4.0",
+    "apollo-client": "^2.6.0",
+    "apollo-link-context": "^1.0.17",
+    "axios": "^0.18.0",
+    "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-markdown": "^4.0.8",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^3.0.1",
+    "react-slick": "^0.23.1",
+    "typescript": "^3.4.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

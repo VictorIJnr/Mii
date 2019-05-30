@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import ReactMarkdown from "react-markdown";
-import axios from "axios";
-import { ApolloClient, InMemoryCache } from "apollo-boost";
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-boost";
 import { createHttpLink } from "apollo-link-http";
+import { setContext } from "apollo-link-context";
+import gql from "graphql-tag";
+
+import axios from "axios";
 
 import Header from "../Components/Header";
 import Content from "../Components/Content";
 import Cutex from "../assets/Cutex";
+
+import { myToken } from "../config/tokens.json";
 
 class Blog extends Component {
     constructor(props) {
@@ -14,30 +20,53 @@ class Blog extends Component {
 
         let githubURL = "https://api.github.com/graphql";
 
-        let link = createHttpLink({
-            uri: githubURL,
-            fetch: require("node-fetch")
+        let httpLink = createHttpLink({
+            uri: githubURL
         });
 
-        this.clientQL = ApolloClient({
+        const authLink = setContext((_, { headers }) => {
+            // Return the headers to the context so httpLink can read them
+            return {
+              headers: {
+                ...headers,
+                authorization: `bearer ${myToken}`,
+              }
+            }
+          });
+
+        // Making a client to query the GitHub API
+        this.clientQL = new ApolloClient({
             uri: githubURL,
             cache: new InMemoryCache(),
-            link
+            link: authLink.concat(httpLink)
         });
     }
 
     /**
-     * Getting an access token to retrieve a raw README from GitHub
+     * Randomly selecting a README from one of my repos
      */
-    authenticate() {
-        
+    genReadMe() {
+        const repoRoulette = ["Angelic", "Cutex", "distbu", "onesie"];
+        const myRepo = repoRoulette[Math.floor(Math.random() * repoRoulette.length)];
+
+        this.clientQL.query({
+            query: gql`{
+                user(login: VictorIJnr) {
+                    repository(name: ${myRepo}) {
+                        homepageUrl 
+                        url
+                    }
+                }
+            }`
+        })
+        .then(res => {
+            console.log(res.data.user.repository);
+        })
+        .catch(err => console.log(JSON.stringify(err)));
     }
 
     render() {
-
-
-        let blogSource = "";
-        axios.get();
+        this.genReadMe();
 
         return (<div className="site">
             <Header selected="blog" />
@@ -59,8 +88,8 @@ class Blog extends Component {
                     linking out to stuff I find to be rather interesting. 
                     That's not much better is it?
                 </p>
-                <ReactMarkdown source={}/>
-                {/* <Cutex /> */}
+                {/* <ReactMarkdown source={}/> */}
+                <Cutex />
             </Content>
         </div>);
     }

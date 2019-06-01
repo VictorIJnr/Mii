@@ -1,0 +1,12 @@
+.repo-view {
+    margin: 2.5vh 0vw;
+    
+    border: 1px solid burlywood;
+    border-radius: 10px;
+}
+
+.repo-view h1:first-of-type {
+    border-bottom: 1px solid burlywood;
+
+    text-align: center;
+}

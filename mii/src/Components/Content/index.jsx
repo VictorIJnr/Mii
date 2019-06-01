@@ -6,6 +6,7 @@ class Content extends Component {
     render() {
         return (<div className="content row">
             <div className="col-md-2">
+                {this.props.leftCol}
             </div>
 
             <div className="col-md-8">

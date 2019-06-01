@@ -71,32 +71,38 @@ class Mii extends Component {
         ? <RepoWrapper repos={this.state.repos}/>
         : <Loader />;
 
+        let repoSelecter = (<ul>
+            {this.state.repos.map((repo, i) => (<li>
+                {repo.name}
+            </li>))}
+        </ul>);
+
         return (<div>
             <Header selected="mii" />
             <Content>
                 <div className="center-text">
                     <p id="friendly">
-                        <a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">
+                        <h1><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">
                             Hello friend! 
-                        </a> I'm Victor, a University of St Andrews undergrad, 
-                        currently in graduation limbo. And this is, rather evidently, my website.
+                        </a></h1>
+                        I'm Victor, a University of St Andrews undergrad, 
+                        currently in graduation limbo. Welcome to my website!
                         {/* I've hidden a couple "easter eggs" here and there; small stuff, like
                         some of my favourite TV shows, video games, youtube channels, and the like.
                         After all, you came here to get to know me. Right?*/}
                     </p>
 
                     <p>
-                        Here's a couple stuff I'm currently working on. This'll be pulled from &nbsp;
+                        Here's a couple stuff I'm currently working on. This'll be pulled from&nbsp;
                         <a href="https://github.com/VictorIJnr">my GitHub</a> so what you see here will
                         probably change by tomorrow. Oh, you'll also see a private repo or two here,
-                        but that's gonna be our little secret. 
+                        but that can be our little secret. 
                     </p>
                 </div>
-
-                {repoRender}
             </Content>
-            <Content>
-                
+
+            <Content leftCol={repoSelecter}>
+                {repoRender}
             </Content>
         </div>);
     }

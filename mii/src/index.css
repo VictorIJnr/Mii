@@ -16,13 +16,13 @@ blockquote {
 }
 
 #friendly {
-    margin-top: 33vh;
+    /* margin-top: 33vh; */
     text-align: center;
     vertical-align: middle;
     border: none;
 }
 
-#friendly > a {
+#friendly > h1 > a {
     text-decoration: none;
     color: inherit;
     cursor: default;

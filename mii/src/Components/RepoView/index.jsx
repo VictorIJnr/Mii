@@ -71,8 +71,6 @@ class RepoView extends Component {
         let languages = this.renameLangs(this.props.repo.languages.nodes);
         let langRender = [];
 
-        console.log(languages);
-
         languages.forEach((lang, i) => {
             langRender.push(<FontAwesomeIcon icon={this.getIcon(lang.name)} size="2x" key={i} title={lang.name} />);
         });

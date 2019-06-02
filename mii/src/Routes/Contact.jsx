@@ -21,11 +21,13 @@ class Contact extends Component {
                 <p id="kenobi" style={hidden}>General Kenobi!</p>
                 <p>
                     It crossed my mind that some people that'll look at this may want to speak to me.
-                    Fine. I'm currently debating whether I should have a form here, you know, since
-                    emails are a thing. But so are DOS attacks, and I'm <em>clearly</em> a 
-                    worthwhile target. So for now, you've got a GitHub link as well as a mailto.
+                    It'd probably help if I give you some way to reach me, right? When I first made 
+                    this website, I was debating whether I should have a form here, you know, since 
+                    emails are a thing. But so are RUDY attacks, and I'm <em>clearly</em> a worthwhile 
+                    target<span style={{display: "none"}}>Evil Corp who?</span>. In the end, I've given 
+                    you a mailto. But if you're <b><i>really</i></b> cool, check out my GitHub.
                     <br/><br/>
-                    <i>You're Welcome.</i> 
+                    I know. I know. How kind of me, right? :D
                 </p>
 
                 <div style={centered}>

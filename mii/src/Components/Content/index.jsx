@@ -7,7 +7,7 @@ class Content extends Component {
         let padless = (this.props.padless) ? " padless" : "";
 
         return (<div className={`content row ${(this.props.className) ? this.props.className : ""}`}>
-            <div className={"col-md-2" + padless}>
+            <div id="left-col" className={"col-md-2" + padless}>
                 {this.props.leftCol}
             </div>
 

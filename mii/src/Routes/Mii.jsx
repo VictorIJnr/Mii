@@ -83,17 +83,23 @@ class Mii extends Component {
                     </a></h1>
                     <p>
                         I'm Victor, a University of St Andrews undergrad, 
-                        currently in graduation limbo. Welcome to my website!
-                        {/* I've hidden a couple "easter eggs" here and there; small stuff, like
-                        some of my favourite TV shows, video games, youtube channels, and the like.
-                        After all, you came here to get to know me. Right?*/}
+                        currently in graduation limbo. Welcome to my website! Deployed with
+                        Netlify and built with React 
+                    </p>
+                    <p className="hidden" style={{height: "2vh"}}>
+                    I've hidden a couple "easter eggs" here and there; small stuff, like
+                    some of my favourite TV shows, video games, youtube channels, and the like.
+                    There's already been a rather subtle one out in the open. But enough about
+                    Mario Kart, I won't keep you any longer. After all, you came here to get to 
+                    know me. Right?
                     </p>
 
                     <p>
-                        Here's a couple stuff I'm currently working on. This'll be pulled from&nbsp;
+                        Here's a couple stuff I'm currently working on - in fact they're the 
+                        repositories I've pushed to most recently. This'll be pulled from&nbsp;
                         <a href="https://github.com/VictorIJnr">my GitHub</a> so what you see here will
-                        probably change by tomorrow. Oh, you'll also see a private repo or two here,
-                        but that can be our little secret. 
+                        probably change by tomorrow. You'll also see a private repo or two here,
+                        just so you can see the kind of ideas I come up with. 
                     </p>
                 </div>
             </Content>

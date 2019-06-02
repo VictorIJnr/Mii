@@ -54,8 +54,9 @@ class Blog extends Component {
                     That is, until I decide that I fancy writing a couple blog posts. I'll just
                     have a selection of READMEs from some of my projects appear here. Don't worry,
                     they're not <i>that</i> boring. I hope. I like to make then somewhat fun :D.
-                    I've made it such that the READMEs for some private repos appear here as well,
-                    so it's like our little secret.
+                    Remember how it was possible for a private repo or two to appear on the index
+                    page? Well, I've done the same thing here as well; it's like our little secret.
+                    
                 </p>
                 
                 <p>

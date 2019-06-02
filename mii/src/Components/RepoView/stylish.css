@@ -1,12 +1,32 @@
+#repo-desc {
+    width: 70%;
+
+    text-align: center;
+}
+
 .repo-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     margin: 2.5vh 0vw;
-    
-    border: 1px solid burlywood;
-    border-radius: 10px;
+}
+
+.repo-view a:hover {
+    text-decoration: none;
 }
 
 .repo-view h1:first-of-type {
     border-bottom: 1px solid burlywood;
 
     text-align: center;
+}
+
+.repo-lang > * {
+    margin: 0vh 2.5vw;
+}
+
+.fa-layers-text {
+    color: burlywood;
 }

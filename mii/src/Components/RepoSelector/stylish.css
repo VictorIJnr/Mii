@@ -1,0 +1,32 @@
+ul.repo-selector {
+    width: 100%;
+    padding: 0;
+
+    text-align: center;
+    list-style-type: none;
+}
+
+repo-selector > li {
+    width: 100%;
+
+    background-color: burlywood;
+    color: #F7F7F7;
+}
+
+button {
+    width: 100%;
+
+    border: none;
+
+    color: inherit;
+    background-color: inherit;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.repo-selected {
+    color: burlywood;
+    background-color: #F7F7F7;
+}

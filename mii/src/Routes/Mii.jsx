@@ -71,12 +71,6 @@ class Mii extends Component {
         ? <RepoWrapper repos={this.state.repos}/>
         : <Loader />;
 
-        let repoSelecter = (<ul>
-            {this.state.repos.map((repo, i) => (<li>
-                {repo.name}
-            </li>))}
-        </ul>);
-
         return (<div>
             <Header selected="mii" />
             <Content>
@@ -101,9 +95,7 @@ class Mii extends Component {
                 </div>
             </Content>
 
-            <Content leftCol={repoSelecter}>
-                {repoRender}
-            </Content>
+            {repoRender}
         </div>);
     }
 

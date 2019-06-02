@@ -3,39 +3,34 @@ import React, { Component } from "react";
 import RepoView from "../RepoView";
 
 import "./stylish.css";
-import Loader from "../Loader";
+import Content from "../Content";
+import RepoSelector from "../RepoSelector";
 
 /**
 * Wrapper for the RepoView Component.
 */
 class RepoWrapper extends Component {
-    render() {
-        let myRepos = this.props.repos;
-        let reposSplit = [];
-        let repoRender = [];
-        
-        while (myRepos.length) reposSplit.push(myRepos.splice(0, 2));
-    
-        reposSplit.forEach(repos => {
-            if (repos.length == 2) {
-                repoRender.push(<div className="row">
-                    <RepoView className="col-md-5" repo={repos[0]}/>
-                    <div className="col-md-2"></div>
-                    <RepoView className="col-md-5" repo={repos[1]}/>
-                </div>);
-            }
-            else {
-                repoRender.push(<div className="row">
-                    <div className="col-md-3"></div>
-                    <RepoView className="col-md-6" repo={repos[0]}/>
-                    <div className="col-md-3"></div>
-                </div>);
-            }
-        });
+    constructor(props) {
+        super(props);
 
-        return (<div className="repo-wrapper">
+        this.handleSelection = this.handleSelection.bind(this);
+
+        this.state = {
+            selected: 0
+        };
+    }
+
+    handleSelection(index) {
+        this.setState({selected: index});
+    }
+
+    render() {
+        let repoRender = <RepoView repo={this.props.repos[this.state.selected]}/>;
+        let repoSelector = <RepoSelector selectRepo={this.handleSelection} repos={this.props.repos}/>;
+
+        return (<Content padless className="repo-wrapper" leftCol={repoSelector}>
             {repoRender}
-        </div>);
+        </Content>);
     }
 }
 

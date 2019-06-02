@@ -37,6 +37,14 @@ blockquote {
     color: #5E5E5E;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+}
+
 #friendly {
     /* margin-top: 33vh; */
     text-align: center;

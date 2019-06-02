@@ -36,19 +36,22 @@ class Mii extends Component {
         });
 
         this.state = {loaded: false, repos: []};
-        this.genRepoViews();
+        this.pullRepoInfo();
     }
 
-    genRepoViews() {
+    /**
+    * Gets information for repositories to be displayed on the main page.
+    * Once the information is loaded, the state of the site is updated accordingly.
+    */
+    pullRepoInfo() {
         this.clientQL.query({
             query: gql`{
                 viewer {
-                    repositories(first: 3, orderBy: {direction: DESC, field: UPDATED_AT}) {
+                    repositories(first: 3, orderBy: {direction: DESC, field: PUSHED_AT}) {
                         nodes {
                             name
                             description
                             url
-                            updatedAt
                             languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
                                 nodes {
                                     name
@@ -74,11 +77,11 @@ class Mii extends Component {
         return (<div>
             <Header selected="mii" />
             <Content>
-                <div className="center-text">
-                    <p id="friendly">
-                        <h1><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">
-                            Hello friend! 
-                        </a></h1>
+                <div id="friendly" className="center-text">
+                    <h1><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">
+                        Hello friend! 
+                    </a></h1>
+                    <p>
                         I'm Victor, a University of St Andrews undergrad, 
                         currently in graduation limbo. Welcome to my website!
                         {/* I've hidden a couple "easter eggs" here and there; small stuff, like

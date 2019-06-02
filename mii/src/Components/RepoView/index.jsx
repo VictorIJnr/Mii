@@ -6,30 +6,6 @@ import { faCss3Alt, faDocker, faHtml5,
 
 import "./stylish.css";
 
-/**
- * 
- * {
-  viewer {
-    repositories(first: 3, orderBy: {direction: DESC, field: UPDATED_AT}) {
-      nodes {
-        name
-        description
-        url
-        languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
-          nodes {
-            name
-          }
-        }
-        stargazers {
-          totalCount
-        }
-      }
-    }
-  }
-}
-
- */
-
 class RepoView extends Component {
     getIcon(language) {
         switch(language) {
@@ -70,18 +46,29 @@ class RepoView extends Component {
     render() {
         let languages = this.renameLangs(this.props.repo.languages.nodes);
         let langRender = [];
+        let numStars = this.props.repo.stargazers.totalCount;
+        let starRender = [];
 
+        // Rendering each language and its appropriate icon.
         languages.forEach((lang, i) => {
             langRender.push(<FontAwesomeIcon icon={this.getIcon(lang.name)} size="2x" key={i} title={lang.name} />);
         });
 
+        if (numStars <= 10)
+            for (let i = 0; i < numStars; i++) starRender.push(<FontAwesomeIcon icon={faStar} />);
+        else {
+            starRender.push(<FontAwesomeIcon icon={faStar} />);
+            starRender.push(`x ${numStars}`);
+        }
+
         return (<div className={`repo-view${this.props.className ? " " + this.props.className : ""}`}>
             <h1><a href={this.props.repo.url}>{this.props.repo.name}</a></h1>
-            {this.props.repo.stargazers.totalCount}
-            <FontAwesomeIcon icon={faStar}/>
             <p id="repo-desc">{this.props.repo.description}</p>
             <div className="repo-lang">
                 {langRender}
+            </div>
+            <div title={`${numStars} ${(numStars === 1) ? "star" : "stars"}`} id="repo-stars">
+                {starRender}
             </div>
         </div>);
     }

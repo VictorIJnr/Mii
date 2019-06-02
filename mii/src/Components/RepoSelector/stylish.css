@@ -8,22 +8,21 @@ ul.repo-selector {
 
 ul.repo-selector > li {
     width: 100%;
+    
+    font-family: "Playfair Display", serif;
+    font-style: italic !important;
+    color: #F7F7F7;
 
     background-color: burlywood;
-    color: #F7F7F7;
 }
 
-button {
+ul.repo-selector button {
     width: 100%;
 
     border: none;
 
     color: inherit;
     background-color: inherit;
-}
-
-button:focus {
-    outline: 0;
 }
 
 ul.repo-selector > li.repo-selected {

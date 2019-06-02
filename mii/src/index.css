@@ -5,6 +5,28 @@ body,
     padding: 0;
 }
 
+a i::before {
+    margin: 0 1vw;
+    transition: color 0.4s ease;
+}
+
+a i.fa-github:hover::before {
+    color: #4078c0;
+}
+
+a i.fa-globe:hover::before,
+a i.fa-at:hover::before {
+    color: #55efc4;
+}
+
+a i.fa-youtube:hover::before {
+    color: #ff0000;
+}
+
+a i.fa-google-play:hover::before {
+    color: #34a853;
+}
+
 blockquote {
     background-color: #DEDEDE;
 

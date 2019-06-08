@@ -17,6 +17,7 @@ class Mii extends Component {
         super(props);
 
         let githubURL = "https://api.github.com/graphql";
+        myToken = (typeof myToken === "undefined") ? process.env.GIT_TOKEN: myToken;
 
         const authLink = setContext((_, { headers }) => {
             // Return the headers to the context so httpLink can read them

@@ -10,14 +10,18 @@ import Content from "../Components/Content";
 import Loader from "../Components/Loader";
 import RepoWrapper from "../Components/RepoWrapper";
 
-import { myToken } from "../config/tokens.json";
+let myToken;
+
+if (process.env.DEPLOY_URL)
+    myToken = process.env.GIT_TOKEN;
+else 
+    import { myToken } from "../config/tokens.json";
 
 class Mii extends Component {
     constructor(props) {
         super(props);
 
         let githubURL = "https://api.github.com/graphql";
-        myToken = (typeof myToken === "undefined") ? process.env.GIT_TOKEN: myToken;
 
         const authLink = setContext((_, { headers }) => {
             // Return the headers to the context so httpLink can read them

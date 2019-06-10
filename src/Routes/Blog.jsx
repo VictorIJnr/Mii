@@ -7,7 +7,15 @@ import Header from "../Components/Header";
 import Content from "../Components/Content";
 import Loader from "../Components/Loader";
 
-import { myToken } from "../config/tokens.json";
+let myToken;
+
+if (process.env.DEPLOY = "Netlify") {
+    myToken = process.env.GIT_TOKEN;
+}
+else {
+    let tokens = require("../config/tokens.json");
+    myToken = tokens.myToken;
+}
 
 class Blog extends Component {
     constructor(props) {

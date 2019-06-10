@@ -12,10 +12,13 @@ import RepoWrapper from "../Components/RepoWrapper";
 
 let myToken;
 
-if (process.env.DEPLOY_URL)
+if (process.env.DEPLOY_URL) {
     myToken = process.env.GIT_TOKEN;
-else 
-    import { myToken } from "../config/tokens.json";
+}
+else {
+    let tokens = require("../config/tokens.json");
+    myToken = tokens.myToken;
+}
 
 class Mii extends Component {
     constructor(props) {

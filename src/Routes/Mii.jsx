@@ -12,7 +12,7 @@ import RepoWrapper from "../Components/RepoWrapper";
 
 let myToken;
 
-if (process.env.DEPLOY_URL) {
+if (process.env.DEPLOY = "Netlify") {
     myToken = process.env.GIT_TOKEN;
 }
 else {

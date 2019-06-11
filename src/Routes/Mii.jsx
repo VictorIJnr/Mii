@@ -10,15 +10,7 @@ import Content from "../Components/Content";
 import Loader from "../Components/Loader";
 import RepoWrapper from "../Components/RepoWrapper";
 
-let myToken;
-
-if (process.env.DEPLOY) {
-    myToken = process.env.GIT_TOKEN;
-}
-else {
-    let tokens = require("../config/tokens.json");
-    myToken = tokens.myToken;
-}
+import { myToken } from "../config/tokens.json";
 
 class Mii extends Component {
     constructor(props) {

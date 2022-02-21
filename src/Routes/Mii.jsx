@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-boost";
 import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
+
 import gql from "graphql-tag";
 
 import Header from "../Components/Header";
@@ -12,6 +14,9 @@ import RepoWrapper from "../Components/RepoWrapper";
 
 import { myToken } from "../config/tokens.json";
 
+/**
+ * Component describing the "Mii" page.
+ */
 class Mii extends Component {
     constructor(props) {
         super(props);
@@ -32,7 +37,7 @@ class Mii extends Component {
         this.clientQL = new ApolloClient({
             uri: githubURL,
             cache: new InMemoryCache(),
-            link: authLink.concat(createHttpLink({uri: githubURL}))
+            link: authLink.concat(createHttpLink({ uri: githubURL }))
         });
 
         this.state = {loaded: false, repos: []};
@@ -47,12 +52,12 @@ class Mii extends Component {
         this.clientQL.query({
             query: gql`{
                 viewer {
-                    repositories(first: 3, orderBy: {direction: DESC, field: PUSHED_AT}) {
+                    repositories(first: 3, orderBy: { direction: DESC, field: PUSHED_AT }) {
                         nodes {
                             name
                             description
                             url
-                            languages(first: 10, orderBy: {direction: DESC, field: SIZE}) {
+                            languages(first: 10, orderBy: { direction: DESC, field: SIZE }) {
                                 nodes {
                                     name
                                 }
@@ -66,13 +71,11 @@ class Mii extends Component {
             }`
         }).then(res => {
             this.setState({loaded: true, repos: res.data.viewer.repositories.nodes});
-        });
+        }).catch(err => console.error(`I couldn't do it :( ${err}`));
     }
 
     render() {
-        let repoRender = (this.state.loaded) 
-        ? <RepoWrapper repos={this.state.repos}/>
-        : <Loader />;
+        let repoRender = this.state.loaded ? <RepoWrapper repos={this.state.repos}/> : <Loader />;
 
         return (<div>
             <Header selected="mii" />
@@ -82,9 +85,7 @@ class Mii extends Component {
                         Hello friend! 
                     </a></h1>
                     <p>
-                        I'm Victor, a University of St Andrews undergrad, 
-                        currently in graduation limbo. Welcome to my website! Deployed with
-                        Netlify and built with React 
+                        I'm Victor, a software engineer in test at Everbridge. Welcome to my website!
                     </p>
                     <p className="hidden" style={{height: "2vh"}}>
                     I've hidden a couple "easter eggs" here and there; small stuff, like

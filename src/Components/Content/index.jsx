@@ -1,25 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
+
 import "./stylish.css";
 
-class Content extends Component {
+function Content(props) {
 
-    render() {
-        let padless = (this.props.padless) ? " padless" : "";
+    let padless = (props.padless) ? " padless" : "";
 
-        return (<div className={`content row ${(this.props.className) ? this.props.className : ""}`}>
-            <div id="left-col" className={"col-md-2" + padless}>
-                {this.props.leftCol}
-            </div>
+    return <div className={`content row ${(props.className) ? props.className : ""}`}>
+        <div id="left-col" className={"col-md-2" + padless}>
+            {props.leftCol}
+        </div>
 
-            <div className={"col-md-8" + padless}>
-                {this.props.children}
-            </div>
-            
-            <div className={"col-md-2" + padless}>
-            </div>
-        </div>);
-    }
-
+        <div className={"col-md-8" + padless}>
+            {props.children}
+        </div>
+        
+        <div className={"col-md-2" + padless} />
+    </div>;
 }
 
 export default Content;

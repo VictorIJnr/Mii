@@ -28,9 +28,9 @@ class RepoWrapper extends Component {
         let repoRender = <RepoView repo={this.props.repos[this.state.selected]}/>;
         let repoSelector = <RepoSelector selectRepo={this.handleSelection} repos={this.props.repos}/>;
 
-        return (<Content padless className="repo-wrapper" leftCol={repoSelector}>
+        return <Content padless className="repo-wrapper" leftCol={repoSelector}>
             {repoRender}
-        </Content>);
+        </Content>;
     }
 }
 

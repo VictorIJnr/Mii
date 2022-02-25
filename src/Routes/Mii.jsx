@@ -12,7 +12,7 @@ import Content from "../Components/Content";
 import Loader from "../Components/Loader";
 import RepoWrapper from "../Components/RepoWrapper";
 
-import { myToken } from "../config/tokens.json";
+import tokens from "../config/tokens.json";
 
 /**
  * Component describing the "Mii" page.
@@ -28,7 +28,7 @@ class Mii extends Component {
             return {
               headers: {
                 ...headers,
-                authorization: `bearer ${myToken}`,
+                authorization: `bearer ${tokens.myToken}`,
               }
             }
         });

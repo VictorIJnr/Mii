@@ -1,21 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
+
 import "./stylish.css";
 
-class PickerList extends Component {
+function PickerList(props) {
+    let allPickers = [];
+    props.pickers.forEach(picker => allPickers.push(<li className="nav-item">{picker}</li>));
 
-    render() {
-        let allPickers = [];
-        this.props.pickers.forEach(picker => 
-            allPickers.push(<li className="nav-item">{picker}</li>)
-        );
-
-        return (<nav className="navbar navbar-expand-md">
-            <ul className="navbar-nav">
-                {allPickers}
-            </ul>
-        </nav>);
-    }
-
+    return <nav className="navbar navbar-expand-md">
+        <ul className="navbar-nav">
+            {allPickers}
+        </ul>
+    </nav>;
 }
 
 export default PickerList;

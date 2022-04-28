@@ -1,17 +1,14 @@
-import React, { Component } from "react";
-import "./stylish.css";
+import React from "react";
+
 import { Link } from "react-router-dom";
 
-class Picker extends Component {
+import "./stylish.css";
 
-    render() {
-        let classes = "picker nav-link " + (this.props.selected ? "selected" : "");
+function Picker() {
 
-        return (
-            <Link className={classes} to={this.props.path}>{this.props.text}</Link>
-        )
-    }
+    let classes = "picker nav-link " + (this.props.selected ? "selected" : "");
 
+    return <Link className={classes} to={this.props.path}>{this.props.text}</Link>
 }
 
 export default Picker;

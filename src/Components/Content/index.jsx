@@ -3,7 +3,6 @@ import React from "react";
 import "./stylish.css";
 
 function Content(props) {
-
     let padless = (props.padless) ? " padless" : "";
 
     return <div className={`content row ${(props.className) ? props.className : ""}`}>

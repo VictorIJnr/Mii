@@ -11,7 +11,7 @@ function RepoSelector(props) {
     }
 
     return <ul className="repo-selector">
-        {this.props.repos.map((repo, i) => 
+        {props.repos.map((repo, i) => 
             (<li className={selectedRepo === i ? "repo-selected" : ""} key={i}>
                 <button onClick={() => setSelection(i)}>{repo.name}</button>
             </li>)

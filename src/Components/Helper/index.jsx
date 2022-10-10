@@ -4,7 +4,7 @@ import "./stylish.css";
 function Helper(props) {
     return <div id="wrapper">
         <a href="#help" data-toggle="collapse"><i className="far fa-question-circle"></i></a>
-        <a id="sneaky">
+        <p id="sneaky">
             You're not supposed to be here are you? No. No you're not. Don't worry,
             this tag shouldn't be here either. But I've spent too much time debugging
             this part of this website that I'm settling for this workaround. For now,
@@ -14,7 +14,7 @@ function Helper(props) {
             I fixed it. It's been 5 minutes and I fixed it using a z-index... Great...
             There's no real reason for this tag to be here now. Or you for that matter. 
             You can stop inspecting now. Go on. Shoo.
-        </a>
+        </p>
         <div id="helper">
             <div id="help" className="collapse show">
                 <p>{props.children}</p>

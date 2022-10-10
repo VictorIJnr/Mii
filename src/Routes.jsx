@@ -7,18 +7,16 @@ import Cheeky from "./Routes/Cheeky";
 import Contact from "./Routes/Contact";
 
 class Routes extends Component {
-
     render() {
-        return (<BrowserRouter>
+        return <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Mii}/>
                 <Route exact path="/blog" component={Blog}/>
                 <Route exact path="/cheeky" component={Cheeky}/>
                 <Route exact path="/contact" component={Contact}/>
             </Switch>
-        </BrowserRouter>);
+        </BrowserRouter>;
     }
-
 }
 
 export default Routes;

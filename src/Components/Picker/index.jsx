@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 import "./stylish.css";
 
-function Picker() {
+function Picker(props) {
+    let classes = "picker nav-link " + (props.selected ? "selected" : "");
 
-    let classes = "picker nav-link " + (this.props.selected ? "selected" : "");
-
-    return <Link className={classes} to={this.props.path}>{this.props.text}</Link>
+    return <Link className={classes} to={props.path}>{props.text}</Link>
 }
 
 export default Picker;

@@ -77,7 +77,7 @@ class Mii extends Component {
     render() {
         let repoRender = this.state.loaded ? <RepoWrapper repos={this.state.repos}/> : <Loader />;
 
-        return (<div>
+        return <div>
             <Header selected="mii" />
             <Content>
                 <div id="friendly" className="center-text">
@@ -106,9 +106,8 @@ class Mii extends Component {
             </Content>
 
             {repoRender}
-        </div>);
+        </div>;
     }
-
 }
 
 export default Mii;

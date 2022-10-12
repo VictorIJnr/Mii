@@ -2,19 +2,21 @@ import React from "react";
 
 import "./stylish.css";
 
+/**
+ * Standardises large amounts of content on the page.
+ * Ensures that each page can be rendered with some level of consistency. 
+ */
 function Content(props) {
     let padless = (props.padless) ? " padless" : "";
 
-    return <div className={`content row ${(props.className) ? props.className : ""}`}>
-        <div id="left-col" className={"col-md-2" + padless}>
-            {props.leftCol}
-        </div>
+    return <div className={`content${(props.className) ? ` ${props.className}` : ""}`}>
+        <div className={"content-gutter" + padless} />
 
-        <div className={"col-md-8" + padless}>
+        <div id="main-content" className={padless}>
             {props.children}
         </div>
         
-        <div className={"col-md-2" + padless} />
+        <div className={"content-gutter" + padless} />
     </div>;
 }
 

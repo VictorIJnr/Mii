@@ -1,0 +1,45 @@
+#friendly {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    border: none;
+}
+
+#friendly > * {
+    display: flex;
+}
+
+#friendly > .hidden {
+    display: none;
+}
+
+#greeting {
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+#greeting > h1 > a {
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+}
+
+#greeting h1,
+#greeting h2,
+#greeting h3 {
+    border-bottom: none;
+}
+
+#greeting h1:not(:first-child),
+#greeting h2, 
+#greeting h3 { 
+    margin-top: 0vh;
+}
+
+#greeting h3 {
+    font-size: 1.5rem;
+}

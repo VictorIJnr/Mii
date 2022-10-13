@@ -1,0 +1,21 @@
+.info-bubble {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    
+    background-color: #5F27CD;
+    border-radius: 1rem;
+
+    /* margin-top: 2vh;
+    margin-right: 1vw; */
+    padding: 1vh 1vw;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.info-bubble > h2 {
+    text-align: center;
+}

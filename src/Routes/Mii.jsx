@@ -2,7 +2,9 @@ import React from "react";
 
 import Content from "../Components/Content";
 
+import "../animations.css"
 import "./stylish.css";
+import InfoBubble from "../Components/InfoBubble";
 
 /**
  * Component describing the "Mii" page.
@@ -13,15 +15,15 @@ function Mii(props) {
     let isBeingFriendly = Math.random() < 0.25
 
     let greeting = isBeingFriendly
-        ? <h1><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
-        : <h1>Hi!</h1>
+        ? <h1 className="fade-up"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
+        : <h1 className="fade-up">Hi!</h1>
 
     return <Content>
         <div id="friendly">
             <div id="greeting">
                 {greeting}
-                <h2>I'm Victor,</h2>
-                <h3>a software engineer in test at Everbridge. Welcome to my website!</h3>
+                <h2 className="fade-up delay">I'm Victor,</h2>
+                <h3 className="fade-up long-delay">a software engineer in test at Everbridge. Welcome to my website!</h3>
             </div>
             <p className="hidden" style={{height: "2vh"}}>
             I've hidden a couple "easter eggs" here and there; small stuff, like
@@ -30,6 +32,17 @@ function Mii(props) {
             Mario Kart, I won't keep you any longer. After all, you came here to get to 
             know me. Right?
             </p>
+        </div>
+        <div>
+            <InfoBubble infoTitle="About Me">
+            </InfoBubble>
+            <InfoBubble infoTitle="Projects">
+            </InfoBubble>
+            <InfoBubble infoTitle="Contact">
+            </InfoBubble>
+            <InfoBubble infoTitle="Interests">
+                <p>I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs</p>
+            </InfoBubble>
         </div>
     </Content>
 }

@@ -21,9 +21,12 @@ function Mii(props) {
     return <Content>
         <div id="friendly">
             <div id="greeting">
-                {greeting}
-                <h2 className="fade-up delay">I'm Victor,</h2>
-                <h3 className="fade-up long-delay">a software engineer in test at Everbridge. Welcome to my website!</h3>
+                {/* {greeting} */}
+                <h1 className="fade-up">Lorem ipsum.</h1>
+                {/* <h2 className="fade-up delay">I'm Victor,</h2> */}
+                <h2 className="fade-up delay">Dolor sit amet.</h2>
+                {/* <h3 className="fade-up long-delay">a software engineer in test at Everbridge. Welcome to my website!</h3> */}
+                <h3 className="fade-up long-delay">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!</h3>
             </div>
             <p className="hidden" style={{height: "2vh"}}>
             I've hidden a couple "easter eggs" here and there; small stuff, like
@@ -33,7 +36,7 @@ function Mii(props) {
             know me. Right?
             </p>
         </div>
-        <div>
+        <div id="mii-info-bubbles" className="load-post-greeting">
             <InfoBubble infoTitle="About Me">
             </InfoBubble>
             <InfoBubble infoTitle="Projects">

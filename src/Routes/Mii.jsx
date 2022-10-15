@@ -15,18 +15,18 @@ function Mii(props) {
     let isBeingFriendly = Math.random() < 0.25
 
     let greeting = isBeingFriendly
-        ? <h1 className="fade-up"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
-        : <h1 className="fade-up">Hi!</h1>
+        ? <h1 className="fade-in"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
+        : <h1 className="fade-in">Hi!</h1>
 
     return <Content>
         <div id="friendly">
             <div id="greeting">
                 {/* {greeting} */}
-                <h1 className="fade-up">Lorem ipsum.</h1>
-                {/* <h2 className="fade-up delay">I'm Victor,</h2> */}
-                <h2 className="fade-up delay">Dolor sit amet.</h2>
-                {/* <h3 className="fade-up long-delay">a software engineer in test at Everbridge. Welcome to my website!</h3> */}
-                <h3 className="fade-up long-delay">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!</h3>
+                <h1 className="fade-in">Lorem ipsum.</h1>
+                {/* <h2 className="fade-in delay">I'm Victor,</h2> */}
+                <h2 className="fade-in delay">Dolor sit amet.</h2>
+                {/* <h3 className="fade-in long-delay">a software engineer in test at Everbridge. Welcome to my website!</h3> */}
+                <h3 className="fade-in long-delay">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!</h3>
             </div>
             <p className="hidden" style={{height: "2vh"}}>
             I've hidden a couple "easter eggs" here and there; small stuff, like

@@ -53,31 +53,3 @@
 #mii-info-bubbles {
     display: none;
 }
-
-.load-post-greeting {
-    
-}
-
-@keyframes fade-in-extra-delayed {
-    
-}
-
-@keyframes grow-greeting {
-    0% {
-        padding-bottom: 0rem;
-    }
-
-    33% {
-        padding-bottom: 1.5rem;
-    }
-
-    67% {
-        padding-bottom: 3rem;
-        padding-top: 3rem;
-    }
-
-    100% {
-        padding-bottom: 4.5rem;
-        padding-top: 4.5rem;
-    }
-}

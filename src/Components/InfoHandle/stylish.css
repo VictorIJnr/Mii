@@ -1,4 +1,4 @@
-.info-bubble {
+.info-handle {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -16,6 +16,6 @@
     text-align: center;
 }
 
-.info-bubble > h2 {
+.info-handle > h2 {
     text-align: center;
 }

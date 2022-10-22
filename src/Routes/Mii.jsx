@@ -4,7 +4,7 @@ import Content from "../Components/Content";
 
 import "../animations.css"
 import "./stylish.css";
-import InfoBubble from "../Components/InfoBubble";
+import InfoHandle from "../Components/InfoHandle";
 
 /**
  * Component describing the "Mii" page.
@@ -36,16 +36,17 @@ function Mii(props) {
             know me. Right?
             </p>
         </div>
-        <div id="mii-info-bubbles" className="load-post-greeting">
-            <InfoBubble infoTitle="About Me">
-            </InfoBubble>
-            <InfoBubble infoTitle="Projects">
-            </InfoBubble>
-            <InfoBubble infoTitle="Contact">
-            </InfoBubble>
-            <InfoBubble infoTitle="Interests">
+        <div id="mii-info-handles" className="load-post-greeting">
+            <InfoHandle infoTitle="About Me">
+                
+            </InfoHandle>
+            <InfoHandle infoTitle="Projects">
+            </InfoHandle>
+            <InfoHandle infoTitle="Contact">
+            </InfoHandle>
+            <InfoHandle infoTitle="Interests">
                 <p>I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs</p>
-            </InfoBubble>
+            </InfoHandle>
         </div>
     </Content>
 }

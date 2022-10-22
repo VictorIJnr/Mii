@@ -6,16 +6,15 @@ import { faGem } from "@fortawesome/free-solid-svg-icons";
 import "./stylish.css";
 
 /**
- * Displays a little bit of information.
- * That's all.
- * Well, maybe it adds a little link to a new page.
+ * Allows navigation to new information.
+ * Prior to linking to the information, shows a preview of what the user can expect.
  */
-function InfoBubble(props) {
-    return <div className="info-bubble">
+function InfoHandle(props) {
+    return <div className="info-handle">
         <FontAwesomeIcon icon={faGem} size="2x"/>
         <h2>{props.infoTitle}</h2>
         {props.children}
     </div>
 }
 
-export default InfoBubble;
+export default InfoHandle;

@@ -22,7 +22,7 @@ function Contact(props) {
                 It'd probably help if I give you some way to reach me, right? When I first made 
                 this website, I was debating whether I should have a form here, you know, since 
                 emails are a thing. But so are RUDY attacks, and I'm <em>clearly</em> a worthwhile 
-                target<span style={{display: "none"}}>Evil Corp who?</span>. In the end, I've given 
+                target<span style={hidden}>Evil Corp who?</span>. In the end, I've given 
                 you a mailto. But if you're <b><i>really</i></b> cool, check out my GitHub.
                 <br/><br/>
                 I know. I know. How kind of me, right? :D

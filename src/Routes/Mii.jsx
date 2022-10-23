@@ -1,10 +1,13 @@
 import React from "react";
 
 import Content from "../Components/Content";
+import InfoHandle from "../Components/InfoHandle";
+
+import { faCat, faComments, faHeadphones, faLaptopCode, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 
 import "../animations.css"
 import "./stylish.css";
-import InfoHandle from "../Components/InfoHandle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * Component describing the "Mii" page.
@@ -18,7 +21,9 @@ function Mii(props) {
         ? <h1 className="fade-in"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
         : <h1 className="fade-in">Hi!</h1>
 
-    return <Content>
+    let interestsIcon = Math.random() < 0.5 ? faCat : faHeadphones;
+
+    return <Content noRightGutter={true}>
         <div id="friendly">
             <div id="greeting">
                 {/* {greeting} */}
@@ -36,16 +41,22 @@ function Mii(props) {
             know me. Right?
             </p>
         </div>
-        <div id="mii-info-handles" className="load-post-greeting">
-            <InfoHandle infoTitle="About Me">
-                
+        {/* <div id="mii-info-handles" className="load-post-greeting"> */}
+        <div id="mii-info-handles">
+            {/* I would like to change this to be the hand-wave pro icon. */}
+            <InfoHandle caption="Home" icon={faUserAlt}>
             </InfoHandle>
-            <InfoHandle infoTitle="Projects">
+            <InfoHandle caption="Projects" icon={faLaptopCode}>
+                Fun stuff I've been working on.<br />
+                Maybe there's a non-public Git repo here <FontAwesomeIcon />
             </InfoHandle>
-            <InfoHandle infoTitle="Contact">
+            <InfoHandle caption="Contact" icon={faComments}>
+                The best ways to get in touch with me!
             </InfoHandle>
-            <InfoHandle infoTitle="Interests">
-                <p>I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs</p>
+            
+            {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
+            <InfoHandle caption="Interests" icon={interestsIcon}>
+                I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs
             </InfoHandle>
         </div>
     </Content>

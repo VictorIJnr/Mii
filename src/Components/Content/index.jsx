@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./stylish.css";
 
@@ -16,8 +17,25 @@ function Content(props) {
             {props.children}
         </div>
         
-        <div className={"content-gutter" + padless} />
+        {!props.noRightGutter && <div className={"content-gutter" + padless} />}
     </div>;
+}
+
+Content.propTypes = {
+    // A CSS class to apply custom styling to the content.
+    className: PropTypes.string,
+
+    // Whether padding should be removed from the content.
+    padless: PropTypes.bool,
+
+    // Whether the right gutter should be removed 
+    noRightGutter: PropTypes.bool
+}
+
+Content.defaultProps = {
+    className: "",
+    padless: false,
+    noRightGutter: true
 }
 
 export default Content;

@@ -2,12 +2,13 @@ import React from "react";
 
 import Content from "../Components/Content";
 import InfoHandle from "../Components/InfoHandle";
+import LinkedInfoHandle from "../Components/LinkedInfoHandle";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCat, faComments, faHeadphones, faLaptopCode, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 
 import "../animations.css"
 import "./stylish.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * Component describing the "Mii" page.
@@ -26,6 +27,7 @@ function Mii(props) {
     return <Content noRightGutter={true}>
         <div id="friendly">
             <div id="greeting">
+                {/* Add state to make sure we don't animate after having already loaded the home page. */}
                 {/* {greeting} */}
                 <h1 className="fade-in">Lorem ipsum.</h1>
                 {/* <h2 className="fade-in delay">I'm Victor,</h2> */}
@@ -44,20 +46,20 @@ function Mii(props) {
         {/* <div id="mii-info-handles" className="load-post-greeting"> */}
         <div id="mii-info-handles">
             {/* I would like to change this to be the hand-wave pro icon. */}
-            <InfoHandle caption="Home" icon={faUserAlt}>
-            </InfoHandle>
-            <InfoHandle caption="Projects" icon={faLaptopCode}>
+            <LinkedInfoHandle caption="Home" icon={faUserAlt}>
+            </LinkedInfoHandle>
+            <LinkedInfoHandle path="/cheeky" caption="Projects" icon={faLaptopCode}>
                 Fun stuff I've been working on.<br />
                 Maybe there's a non-public Git repo here <FontAwesomeIcon />
-            </InfoHandle>
-            <InfoHandle caption="Contact" icon={faComments}>
+            </LinkedInfoHandle>
+            <LinkedInfoHandle path="/contact" caption="Contact" icon={faComments}>
                 The best ways to get in touch with me!
-            </InfoHandle>
+            </LinkedInfoHandle>
             
             {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
-            <InfoHandle caption="Interests" icon={interestsIcon}>
+            <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon}>
                 I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs
-            </InfoHandle>
+            </LinkedInfoHandle>
         </div>
     </Content>
 }

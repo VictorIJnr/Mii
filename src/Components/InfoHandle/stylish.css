@@ -1,11 +1,18 @@
-.info-handle-wrapper {
+.info-handle-wrapper,
+.linked-info-handle-wrapper {
     overflow-x: hidden;
 }
 
 .info-handle {
     display: flex;
     flex-direction: row;
-    
+}
+
+/*
+    LinkedInfoHandles need to manage translations themselves.
+    Otherwise, we end up navigating when we click on whitespace.
+*/
+.info-handle:not(.linked-info-handle .info-handle) {
     transform: translateX(67%);
 }
 
@@ -30,7 +37,7 @@
 }
 
 .info-handle {
-    transition: all 1s;
+    transition: all 1s ease-in-out;
 }
 
 .info-handle-summary {
@@ -44,8 +51,6 @@
     padding-left: 1vw;
 }
 
-.info-handle:hover {
-    cursor: pointer;
-
+.info-handle:not(.linked-info-handle .info-handle):hover {
     transform: translateX(0%);
 }

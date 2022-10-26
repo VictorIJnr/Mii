@@ -1,0 +1,10 @@
+.linked-info-handle {
+    transform: translateX(67%);
+    transition: transform 1s ease-in-out;
+
+    overflow-x: hidden;
+}
+
+.linked-info-handle:hover {
+    transform: translateX(0%);
+}

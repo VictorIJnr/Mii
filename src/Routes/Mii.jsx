@@ -1,11 +1,7 @@
 import React from "react";
 
 import Content from "../Components/Content";
-import InfoHandle from "../Components/InfoHandle";
-import LinkedInfoHandle from "../Components/LinkedInfoHandle";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCat, faComments, faHeadphones, faLaptopCode, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import NavigationBar from "../Components/NavigationBar";
 
 import "../animations.css"
 import "./stylish.css";
@@ -21,8 +17,6 @@ function Mii(props) {
     let greeting = isBeingFriendly
         ? <h1 className="fade-in"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
         : <h1 className="fade-in">Hi!</h1>
-
-    let interestsIcon = Math.random() < 0.5 ? faCat : faHeadphones;
 
     return <Content noRightGutter={true}>
         <div id="friendly">
@@ -43,24 +37,7 @@ function Mii(props) {
             know me. Right?
             </p>
         </div>
-        {/* <div id="mii-info-handles" className="load-post-greeting"> */}
-        <div id="mii-info-handles">
-            {/* I would like to change this to be the hand-wave pro icon. */}
-            <LinkedInfoHandle caption="Home" icon={faUserAlt}>
-            </LinkedInfoHandle>
-            <LinkedInfoHandle path="/cheeky" caption="Projects" icon={faLaptopCode}>
-                Fun stuff I've been working on.<br />
-                Maybe there's a non-public Git repo here <FontAwesomeIcon />
-            </LinkedInfoHandle>
-            <LinkedInfoHandle path="/contact" caption="Contact" icon={faComments}>
-                The best ways to get in touch with me!
-            </LinkedInfoHandle>
-            
-            {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
-            <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon}>
-                I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs
-            </LinkedInfoHandle>
-        </div>
+        <NavigationBar />
     </Content>
 }
 

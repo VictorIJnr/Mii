@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import classNames from "classnames";
+
 import { Link } from "react-router-dom";
 
 import InfoHandle from "../InfoHandle";
+
+import "./stylish.css";
 
 /**
  * Provides navigation capabilities to InfoHandles.
@@ -16,10 +20,14 @@ function LinkedInfoHandle(props) {
 
     delete spreadProps.children;
 
-    return <div className="linked-info-handle">
-        <Link to={props.path}>
-            <InfoHandle {...props}>{props.children}</InfoHandle>
-        </Link>
+    let linkedHandleClass = classNames("linked-info-handle", {
+        "selected-info-handle": props.isSelected
+    })
+
+    return <div className="linked-info-handle-wrapper">
+        <div className={linkedHandleClass}>
+            <Link to={props.path}><InfoHandle {...props}>{props.children}</InfoHandle></Link>
+        </div>
     </div>
 }
 

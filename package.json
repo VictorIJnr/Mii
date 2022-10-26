@@ -12,6 +12,7 @@
     "apollo-client": "^2.6.0",
     "apollo-link-context": "^1.0.17",
     "axios": "^0.26.0",
+    "classnames": "^2.3.2",
     "graphql": "^15.8.0",
     "graphql-tag": "^2.12.6",
     "prop-types": "^15.8.1",

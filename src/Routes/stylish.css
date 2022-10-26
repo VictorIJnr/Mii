@@ -48,10 +48,3 @@
 #greeting h3 {
     font-size: 1.5rem;
 }
-
-#mii-info-handles {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center ;
-}

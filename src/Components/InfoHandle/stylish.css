@@ -26,7 +26,9 @@
     justify-content: center;
     align-items: center;
 
-    border-right: 2px solid burlywood;
+    color: var(--dark-theme-font-colour);
+
+    border-right: 2px solid var(--dark-theme-orange);
 }
 
 .info-handle-caption > h2 {

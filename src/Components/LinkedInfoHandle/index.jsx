@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import classNames from "classnames";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import InfoHandle from "../InfoHandle";
 
@@ -19,14 +19,25 @@ function LinkedInfoHandle(props) {
     };
 
     delete spreadProps.children;
+    
+    var location = useLocation();
+    var isSelected = location.pathname == props.path;
+
+    console.log(location);
+    console.log(props.path);
 
     let linkedHandleClass = classNames("linked-info-handle", {
-        "selected-info-handle": props.isSelected
-    })
+        "selected-info-handle": isSelected
+    });
+
+    var childInfoHandle = <InfoHandle {...props}>{props.children}</InfoHandle>;
+    var infoHandle = isSelected
+        ? childInfoHandle
+        : <Link to={props.path}>{childInfoHandle}</Link>;
 
     return <div className="linked-info-handle-wrapper">
         <div className={linkedHandleClass}>
-            <Link to={props.path}><InfoHandle {...props}>{props.children}</InfoHandle></Link>
+            {infoHandle}
         </div>
     </div>
 }

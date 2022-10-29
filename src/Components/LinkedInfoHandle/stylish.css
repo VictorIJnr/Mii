@@ -5,6 +5,14 @@
     overflow-x: hidden;
 }
 
-.linked-info-handle:hover {
+.linked-info-handle:hover:not(.selected-info-handle) {
     transform: translateX(0%);
+}
+
+.linked-info-handle a:hover {
+    text-decoration: none;
+}
+
+.selected-info-handle .info-handle-caption {
+    color: var(--dark-theme-orange);
 }

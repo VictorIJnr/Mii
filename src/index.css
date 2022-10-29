@@ -7,7 +7,7 @@ body,
     display: flex;
 
     /* background-color: #f7f7f7; */
-    background-color: #2F3640;
+    background-color: var(--bg-colour);
     margin: 0;
     padding: 0;
 }

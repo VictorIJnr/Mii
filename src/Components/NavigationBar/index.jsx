@@ -12,7 +12,7 @@ function NavigationBar(props) {
      
     return <div id="nav-info-handles">
         {/* I would like to change this to be the hand-wave pro icon. */}
-        <LinkedInfoHandle caption="Home" icon={faUserAlt}>
+        <LinkedInfoHandle path="/" caption="Home" icon={faUserAlt}>
             Go back to the home page. Maybe you'll discover a secret, who knows?
         </LinkedInfoHandle>
         <LinkedInfoHandle path="/cheeky" caption="Projects" icon={faLaptopCode}>

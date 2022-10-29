@@ -11,7 +11,7 @@
     margin: 0;
 
     font-family: "Roboto", sans-serif;
-    color: #CCC;
+    color: var(--dark-theme-font-colour);
 }
 
 .content h1:not(:first-child),
@@ -27,11 +27,11 @@
 
     font-family: 'desire-pro', serif;
     text-align: left;
-    border-bottom: 1px solid burlywood;
+    border-bottom: 1px solid var(--dark-theme-orange);
 }
 
 .content a {
-    color: #e6ab5e;
+    color: var(--dark-theme-orange);
     /* color: #5F27CD; */
     /* color: #af93e6; */
 }

@@ -5,6 +5,7 @@ config/
 # dependencies
 node_modules
 package-lock.json
+.npmrc
 
 # testing
 */coverage

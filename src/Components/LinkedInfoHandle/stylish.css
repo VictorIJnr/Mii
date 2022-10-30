@@ -1,12 +1,24 @@
 .linked-info-handle {
     transform: translateX(67%);
-    transition: transform 1s ease-in-out;
+    transition: all 1s ease-in-out;
 
     overflow-x: hidden;
 }
 
+.linked-info-handle .info-handle-summary {
+    color: var(--dark-theme-orange);
+}
+
 .linked-info-handle:hover:not(.selected-info-handle) {
     transform: translateX(0%);
+}
+
+.linked-info-handle:hover:not(.selected-info-handle) .info-handle-summary {
+    animation-name: pulse-font-colour;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
 
 .linked-info-handle a:hover {
@@ -14,5 +26,15 @@
 }
 
 .selected-info-handle .info-handle-caption {
-    color: var(--dark-theme-orange);
+    color: var(--dark-theme-font-colour);
+}
+
+@keyframes pulse-font-colour {
+    from {
+        color: var(--dark-theme-orange);
+    }
+
+    to {
+        color: var(--dark-theme-font-colour);
+    }
 }

@@ -5,6 +5,7 @@
     justify-content: center ;
 }
 
-.selected {
-    
+#nav-info-handles svg {
+    --fa-primary-color: var(--dark-theme-orange);
+    --fa-secondary-color: var(--dark-theme-font-colour);
 }

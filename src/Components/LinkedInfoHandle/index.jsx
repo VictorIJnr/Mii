@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import classNames from "classnames";
 
+import { faGem } from "@fortawesome/pro-duotone-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 
 import InfoHandle from "../InfoHandle";
@@ -20,18 +21,17 @@ function LinkedInfoHandle(props) {
 
     delete spreadProps.children;
     
-    var location = useLocation();
-    var isSelected = location.pathname == props.path;
-
-    console.log(location);
-    console.log(props.path);
+    let location = useLocation();
+    let isSelected = location.pathname == props.path;
 
     let linkedHandleClass = classNames("linked-info-handle", {
         "selected-info-handle": isSelected
     });
 
-    var childInfoHandle = <InfoHandle {...props}>{props.children}</InfoHandle>;
-    var infoHandle = isSelected
+    let displayIcon = isSelected ? props.selectedIcon : props.icon;
+
+    let childInfoHandle = <InfoHandle {...spreadProps} icon={displayIcon}>{props.children}</InfoHandle>;
+    let infoHandle = isSelected
         ? childInfoHandle
         : <Link to={props.path}>{childInfoHandle}</Link>;
 
@@ -46,11 +46,15 @@ LinkedInfoHandle.propTypes = {
     ...InfoHandle.propTypes,
 
     // The path that should be navigated to upon clicking the InfoHandle.
-    path: PropTypes.string
+    path: PropTypes.string,
+
+    // The Font Awesome Icon to use in the caption if this LinkedInfoHandle is displayed on its path.
+    selectedIcon: PropTypes.object
 }
 
 LinkedInfoHandle.defaultProps = {
-    path: "/"
+    path: "/",
+    selectedIcon: faGem
 }
 
 export default LinkedInfoHandle;

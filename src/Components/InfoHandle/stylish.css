@@ -3,17 +3,23 @@
     overflow-x: hidden;
 }
 
-.info-handle {
-    display: flex;
-    flex-direction: row;
-}
-
 /*
     LinkedInfoHandles need to manage translations themselves.
     Otherwise, we end up navigating when we click on whitespace.
 */
 .info-handle:not(.linked-info-handle .info-handle) {
     transform: translateX(67%);
+}
+
+.info-handle {
+    display: flex;
+    flex-direction: row;
+
+    transition: all 1s ease-in-out;
+}
+
+.info-handle:not(.linked-info-handle .info-handle):hover {
+    transform: translateX(0%);
 }
 
 .info-handle-caption {
@@ -26,7 +32,7 @@
     justify-content: center;
     align-items: center;
 
-    color: var(--dark-theme-font-colour);
+    color: var(--dark-theme-orange);
 
     border-right: 2px solid var(--dark-theme-orange);
 }
@@ -35,11 +41,8 @@
     margin: 0vh 0vw;
     margin-left: 1vw;
 
+    color: var(--dark-theme-font-colour);
     text-align: center;
-}
-
-.info-handle {
-    transition: all 1s ease-in-out;
 }
 
 .info-handle-summary {
@@ -51,8 +54,7 @@
     text-align: center;
 
     padding-left: 1vw;
-}
 
-.info-handle:not(.linked-info-handle .info-handle):hover {
-    transform: translateX(0%);
+    transition: all 1s ease-in-out;
+    color: var(--dark-theme-font-colour);
 }

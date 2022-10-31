@@ -1,17 +1,17 @@
 .fade-in {
-    animation: fade-in 0.8s;
+    animation: fade-in 0.7s;
 }
 
 .fade-in.delay {
-    animation: fade-in-delay 1.6s;
+    animation: fade-in-delay 1.4s;
 }
 
 .fade-in.long-delay {
-    animation: fade-in-long-delay 2.4s;
+    animation: fade-in-long-delay 2.1s;
 }
 
 .load-post-greeting {
-    animation: fade-in-post-greeting 3.2s;
+    animation: fade-in-post-greeting 2.8s;
 }
 
 @keyframes fade-in {

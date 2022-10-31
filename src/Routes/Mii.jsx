@@ -3,8 +3,8 @@ import React from "react";
 import Content from "../Components/Content";
 import NavigationBar from "../Components/NavigationBar";
 
-import "../animations.css"
 import "./stylish.css";
+import "../animations.css"
 
 /**
  * Component describing the "Mii" page.
@@ -37,7 +37,7 @@ function Mii(props) {
             know me. Right?
             </p>
         </div>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
     </Content>
 }
 

@@ -1,13 +1,14 @@
 #friendly {
     display: flex;
     flex: 1;
-    flex-direction: row;
+    flex-direction: column;
 
     border: none;
 }
 
 #friendly > * {
     display: flex;
+    flex: 1;
 }
 
 #friendly > .hidden {
@@ -21,10 +22,12 @@
     flex-direction: column;
     justify-content: center;
 
-    align-items: flex-start;
-
     padding-bottom: 4.5rem;
     padding-top: 4.5rem;
+}
+
+#greeting > * {
+    /* flex: 1; */
 }
 
 #greeting > h1 > a {

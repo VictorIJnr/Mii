@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./stylish.css";
+import NavigationBar from "../NavigationBar";
+import classNames from "classnames";
 
 /**
  * Standardises large amounts of content on the page.
@@ -10,15 +12,20 @@ import "./stylish.css";
 function Content(props) {
     let padless = (props.padless) ? " padless" : "";
 
-    return <div className={`content${(props.className) ? ` ${props.className}` : ""}`}>
-        <div className={"content-gutter" + padless} />
+    let contentClass = classNames("content", props.className);
+    let gutterClass = classNames("content-gutter", { "padless": props.padless });
+
+    return <div className={contentClass}>
+        <div className={gutterClass} />
 
         <div id="main-content" className={padless}>
             {props.children}
         </div>
         
-        {!props.noRightGutter && <div className={"content-gutter" + padless} />}
-    </div>;
+        {!props.noRightGutter && <div className={gutterClass} />}
+
+        <NavigationBar />
+    </div>
 }
 
 Content.propTypes = {
@@ -35,7 +42,7 @@ Content.propTypes = {
 Content.defaultProps = {
     className: "",
     padless: false,
-    noRightGutter: true
+    noRightGutter: false
 }
 
 export default Content;

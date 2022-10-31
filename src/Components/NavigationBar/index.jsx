@@ -12,14 +12,15 @@ import {
     faComments as faCommentsSolid, 
     faHouseChimneyBlank as faHouseSolid 
 } from "@fortawesome/pro-solid-svg-icons";
+import { faHeart } from "@fortawesome/sharp-solid-svg-icons";
 
 /**
  * Displays navigation options to different parts of the website.
  */
 function NavigationBar(props) {
-    const seeSpaceKitty = Math.random() < 0.5;
-    let interestsIcon = seeSpaceKitty ? faCatSpace : faHeadphones;
-    let selectedInterestsIcon = seeSpaceKitty ? faCatSpace : faHeadphones;
+    const seeSpaceKitty = Math.random() < 0.2;
+    let interestsIcon = seeSpaceKitty ? faCatSpace : faHeart;
+    let selectedInterestsIcon = seeSpaceKitty ? faCatSpace : faHeart;
 
     return <div id="nav-info-handles">
         {/* I would like to change this to be the hand-wave pro icon. */}
@@ -28,7 +29,7 @@ function NavigationBar(props) {
         </LinkedInfoHandle>
         <LinkedInfoHandle path="/cheeky" caption="Projects" icon={faCode} selectedIcon={faCodeSolid}>
             Fun stuff I've been working on.<br />
-            Maybe there's a non-public Git repo here <FontAwesomeIcon />
+            Maybe there's a non-public Git repo here too!<FontAwesomeIcon />
         </LinkedInfoHandle>
         <LinkedInfoHandle path="/contact" caption="Contact" icon={faComments} selectedIcon={faCommentsSolid}>
             The best ways to get in touch with me!

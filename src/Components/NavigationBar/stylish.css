@@ -3,11 +3,6 @@
     flex-direction: column;
 
     justify-content: center;
-    /* align-items: center; */
-}
-
-#nav-info-handles > * {
-    /* flex: 1; */
 }
 
 #nav-info-handles svg {

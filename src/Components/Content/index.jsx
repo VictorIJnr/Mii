@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./stylish.css";
-import NavigationBar from "../NavigationBar";
 import classNames from "classnames";
+
+import NavigationBar from "../NavigationBar";
+
+import "./stylish.css";
 
 /**
  * Standardises large amounts of content on the page.
@@ -42,7 +44,7 @@ Content.propTypes = {
 Content.defaultProps = {
     className: "",
     padless: false,
-    noRightGutter: false
+    noRightGutter: true
 }
 
 export default Content;

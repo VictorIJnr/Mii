@@ -4,15 +4,16 @@ import LinkedInfoHandle from "../LinkedInfoHandle";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCatSpace, faCode, faComments, faHeadphones, faHouseChimneyBlank } from "@fortawesome/pro-duotone-svg-icons";
+import { faHeart } from "@fortawesome/sharp-solid-svg-icons";
+
+import {
+    faCatSpace as faCatSolid,
+    faCode as faCodeSolid,
+    faComments as faCommentsSolid,
+    faHouseChimneyBlank as faHouseSolid
+} from "@fortawesome/pro-solid-svg-icons";
 
 import "./stylish.css";
-import { faHeadphones as faHeadphonesThin, faHouseChimneyBlank as faHouseThin } from "@fortawesome/pro-thin-svg-icons";
-import { 
-    faCode as faCodeSolid, 
-    faComments as faCommentsSolid, 
-    faHouseChimneyBlank as faHouseSolid 
-} from "@fortawesome/pro-solid-svg-icons";
-import { faHeart } from "@fortawesome/sharp-solid-svg-icons";
 
 /**
  * Displays navigation options to different parts of the website.
@@ -20,7 +21,7 @@ import { faHeart } from "@fortawesome/sharp-solid-svg-icons";
 function NavigationBar(props) {
     const seeSpaceKitty = Math.random() < 0.2;
     let interestsIcon = seeSpaceKitty ? faCatSpace : faHeart;
-    let selectedInterestsIcon = seeSpaceKitty ? faCatSpace : faHeart;
+    let selectedInterestsIcon = seeSpaceKitty ? faCatSolid : faHeart;
 
     return <div id="nav-info-handles">
         {/* I would like to change this to be the hand-wave pro icon. */}

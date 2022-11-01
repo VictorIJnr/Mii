@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 
 import axios from "axios";
 
-import Header from "../Components/Header";
 import Content from "../Components/Content";
 import Loader from "../Components/Loader";
 

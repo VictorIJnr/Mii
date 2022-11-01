@@ -1,7 +1,6 @@
 import React from "react";
 
 import Content from "../Components/Content";
-import NavigationBar from "../Components/NavigationBar";
 
 import "./stylish.css";
 import "../animations.css"
@@ -12,7 +11,7 @@ import "../animations.css"
  * tidbits of information for different sections on the website.
  */
 function Mii(props) {
-    let isBeingFriendly = Math.random() < 0.25
+    let isBeingFriendly = Math.random() < 0.25;
 
     let greeting = isBeingFriendly
         ? <h1 className="fade-in"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
@@ -37,7 +36,6 @@ function Mii(props) {
             know me. Right?
             </p>
         </div>
-        {/* <NavigationBar /> */}
     </Content>
 }
 

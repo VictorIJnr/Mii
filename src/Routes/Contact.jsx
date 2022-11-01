@@ -1,5 +1,8 @@
+import { faGithub, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelopeSquare } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelopes } from "@fortawesome/sharp-solid-svg-icons";
 import React from "react";
-import Header from "../Components/Header";
 
 import Content from "../Components/Content";
 
@@ -32,11 +35,15 @@ function Contact(props) {
 
         <div style={centered}>
             <a className="icon-link" href="https://github.com/VictorIJnr">
-                <i className="fab fa-github fa-4x"></i>
+                <FontAwesomeIcon icon={faGithub} size="3x" />
             </a>
 
             <a className="icon-link" href="mailto:victorijnr@gmail.com">
-                <i className="fas fa-at fa-4x"></i>
+                <FontAwesomeIcon icon={faEnvelopeSquare} size="3x" />
+            </a>
+
+            <a className="icon-link" href="mailto:victorijnr@gmail.com">
+                <FontAwesomeIcon icon={faEnvelopeSquare} size="3x" />
             </a>
         </div>
     </Content>

@@ -22,7 +22,7 @@ function LinkedInfoHandle(props) {
     delete spreadProps.children;
     
     let location = useLocation();
-    let isSelected = location.pathname == props.path;
+    let isSelected = location.pathname === props.path;
 
     let linkedHandleClass = classNames("linked-info-handle", {
         "selected-info-handle": isSelected

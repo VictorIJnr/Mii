@@ -1,8 +1,15 @@
 .linked-info-handle {
-    transform: translateY(50%);
     transition: all 0.75s ease-in-out;
 
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.linked-info-handle.horizontal-info-handle {
+    transform: translateX(67%);
+}
+
+.linked-info-handle.vertical-info-handle {
+    transform: translateY(50%);
 }
 
 .linked-info-handle .info-handle-summary {
@@ -10,7 +17,7 @@
 }
 
 .linked-info-handle:hover:not(.selected-info-handle) {
-    transform: translateY(0%);
+    transform: translate(0%);
 }
 
 .linked-info-handle:hover:not(.selected-info-handle) .info-handle-summary {

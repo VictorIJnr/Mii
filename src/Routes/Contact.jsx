@@ -1,10 +1,12 @@
-import { faGithub, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelopeSquare } from "@fortawesome/pro-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopes } from "@fortawesome/sharp-solid-svg-icons";
 import React from "react";
 
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelopeSquare } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Content from "../Components/Content";
+
+import "./stylish.css";
 
 /**
  * The "Contact" page.

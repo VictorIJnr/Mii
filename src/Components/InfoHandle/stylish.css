@@ -13,55 +13,76 @@
     LinkedInfoHandles need to manage translations themselves.
     Otherwise, we end up navigating when we click on whitespace.
 */
-.info-handle:not(.linked-info-handle .info-handle) {
+.info-handle.vertical-info-handle:not(.linked-info-handle .info-handle) {
     transform: translateY(50%);
+}
+
+.info-handle.horizontal-info-handle:not(.linked-info-handle .info-handle) {
+    transform: translateX(67%);
 }
 
 .info-handle {
     display: flex;
-    flex-direction: column;
 
     transition: all 0.75s ease-in-out;
 }
 
-.info-handle:not(.linked-info-handle .info-handle):hover {
+.vertical-info-handle {
+    flex-direction: column;
+}
+
+.horizontal-info-handle {
+    flex-direction: row;
+}
+
+.info-handle.vertical-info-handle:not(.linked-info-handle .info-handle):hover {
     transform: translateY(0%);
+}
+
+.info-handle.horizontal-info-handle:not(.linked-info-handle .info-handle):hover {
+    transform: translateX(0%);
 }
 
 .info-handle-caption {
     display: flex;
     flex: 1;
     flex-direction: row;
-
-    padding: 0vh 2vw;
     
     justify-content: center;
     align-items: center;
 
     color: var(--dark-theme-orange);
+}
 
+.info-handle.horizontal-info-handle .info-handle-caption {
+    padding: 2vh 0vw;
+    border-right: 1px solid var(--dark-theme-orange);
+}
+
+.info-handle.vertical-info-handle .info-handle-caption {
+    padding: 0vh 2vw;
     border-bottom: 1px solid var(--dark-theme-orange);
 }
 
-/* .info-handle-caption > * {
-    flex: 1;
-} */
-
 .info-handle .info-handle-caption > h2 {
     margin: 0vh 0vw;
-    margin-bottom: 1vh;
-
-    border-bottom: none;
 
     color: var(--dark-theme-font-colour);
     text-align: center;
 }
 
+.info-handle.horizontal-info-handle .info-handle-caption > h2 {
+    margin-right: 1vw;
+}
+
+.info-handle.vertical-info-handle .info-handle-caption > h2 {
+    margin-bottom: 1vh;
+
+    border-bottom: none;
+}
+
 .info-handle-summary {
     display: flex;
-    flex: 1;
-
-    margin: 1vh 0vw;
 
     align-items: center;
     justify-content: center;
@@ -69,4 +90,14 @@
 
     transition: all 1s ease-in-out;
     color: var(--dark-theme-font-colour);
+}
+
+.info-handle.horizontal-info-handle .info-handle-summary {
+    flex: 2;
+    margin: 0vh 1vw;
+}
+
+.info-handle.vertical-info-handle .info-handle-summary {
+    flex: 1;
+    margin: 1vh 0vw;
 }

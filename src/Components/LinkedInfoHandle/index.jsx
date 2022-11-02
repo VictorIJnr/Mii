@@ -25,6 +25,8 @@ function LinkedInfoHandle(props) {
     let isSelected = location.pathname === props.path;
 
     let linkedHandleClass = classNames("linked-info-handle", {
+        "horizontal-info-handle": props.isHorizontal,
+        "vertical-info-handle": !props.isHorizontal,
         "selected-info-handle": isSelected
     });
 

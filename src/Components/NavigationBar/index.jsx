@@ -1,9 +1,6 @@
 import React from "react";
 
-import LinkedInfoHandle from "../LinkedInfoHandle";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCatSpace, faCode, faComments, faHeadphones, faHouseChimneyBlank } from "@fortawesome/pro-duotone-svg-icons";
+import { faCatSpace, faCode, faComments, faHouseChimneyBlank } from "@fortawesome/pro-duotone-svg-icons";
 import { faHeart } from "@fortawesome/sharp-solid-svg-icons";
 
 import {
@@ -12,6 +9,8 @@ import {
     faComments as faCommentsSolid,
     faHouseChimneyBlank as faHouseSolid
 } from "@fortawesome/pro-solid-svg-icons";
+
+import LinkedInfoHandle from "../LinkedInfoHandle";
 
 import "./stylish.css";
 
@@ -36,7 +35,7 @@ function NavigationBar(props) {
         </LinkedInfoHandle>
         
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
-        <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon} selectedIcon={selectedInterestsIcon}>
+        <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon} selectedIcon={selectedInterestsIcon} isHorizontal={true}>
             I can't get Lorde - Ribs out of my head!
         </LinkedInfoHandle>
     </div>

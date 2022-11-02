@@ -26,11 +26,10 @@ function NavigationBar(props) {
     return <div id="nav-info-handles">
         {/* I would like to change this to be the hand-wave pro icon. */}
         <LinkedInfoHandle path="/" caption="Home" icon={faHouseChimneyBlank} selectedIcon={faHouseSolid}>
-            Go back to the home page. Maybe you'll discover a secret, who knows?
+            Maybe you'll discover a secret here, who knows?
         </LinkedInfoHandle>
         <LinkedInfoHandle path="/cheeky" caption="Projects" icon={faCode} selectedIcon={faCodeSolid}>
-            Fun stuff I've been working on.<br />
-            Maybe there's a non-public Git repo here too!<FontAwesomeIcon />
+            Maybe there's a private Git repo here too!
         </LinkedInfoHandle>
         <LinkedInfoHandle path="/contact" caption="Contact" icon={faComments} selectedIcon={faCommentsSolid}>
             The best ways to get in touch with me!
@@ -38,7 +37,7 @@ function NavigationBar(props) {
         
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
         <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon} selectedIcon={selectedInterestsIcon}>
-            I'm a fan of music, here's what I've been listening to recently:<br />Lorde - Ribs
+            I can't get Lorde - Ribs out of my head!
         </LinkedInfoHandle>
     </div>
 }

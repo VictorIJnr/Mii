@@ -1,6 +1,12 @@
 .info-handle-wrapper,
 .linked-info-handle-wrapper {
-    overflow-x: hidden;
+    display: flex;
+    flex: 1;
+    
+    justify-content: center;
+    align-items: stretch;
+    
+    overflow: hidden;
 }
 
 /*
@@ -8,18 +14,18 @@
     Otherwise, we end up navigating when we click on whitespace.
 */
 .info-handle:not(.linked-info-handle .info-handle) {
-    transform: translateX(67%);
+    transform: translateY(50%);
 }
 
 .info-handle {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    transition: all 1s ease-in-out;
+    transition: all 0.75s ease-in-out;
 }
 
 .info-handle:not(.linked-info-handle .info-handle):hover {
-    transform: translateX(0%);
+    transform: translateY(0%);
 }
 
 .info-handle-caption {
@@ -27,20 +33,25 @@
     flex: 1;
     flex-direction: row;
 
-    padding: 2vh 0vw;
-    padding-right: 1vw;
-
+    padding: 0vh 2vw;
+    
     justify-content: center;
     align-items: center;
 
     color: var(--dark-theme-orange);
 
-    border-right: 2px solid var(--dark-theme-orange);
+    border-bottom: 1px solid var(--dark-theme-orange);
 }
 
-.info-handle-caption > h2 {
+/* .info-handle-caption > * {
+    flex: 1;
+} */
+
+.info-handle .info-handle-caption > h2 {
     margin: 0vh 0vw;
-    margin-left: 1vw;
+    margin-bottom: 1vh;
+
+    border-bottom: none;
 
     color: var(--dark-theme-font-colour);
     text-align: center;
@@ -48,7 +59,9 @@
 
 .info-handle-summary {
     display: flex;
-    flex: 2;
+    flex: 1;
+
+    margin: 1vh 0vw;
 
     align-items: center;
     justify-content: center;

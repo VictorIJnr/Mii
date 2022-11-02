@@ -41,10 +41,6 @@ function Contact(props) {
             <a className="icon-link" href="mailto:victorijnr@gmail.com">
                 <FontAwesomeIcon icon={faEnvelopeSquare} size="3x" />
             </a>
-
-            <a className="icon-link" href="mailto:victorijnr@gmail.com">
-                <FontAwesomeIcon icon={faEnvelopeSquare} size="3x" />
-            </a>
         </div>
     </Content>
 }

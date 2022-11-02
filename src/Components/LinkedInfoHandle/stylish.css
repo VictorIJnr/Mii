@@ -1,6 +1,6 @@
 .linked-info-handle {
-    transform: translateX(67%);
-    transition: all 1s ease-in-out;
+    transform: translateY(50%);
+    transition: all 0.75s ease-in-out;
 
     overflow-x: hidden;
 }
@@ -10,7 +10,7 @@
 }
 
 .linked-info-handle:hover:not(.selected-info-handle) {
-    transform: translateX(0%);
+    transform: translateY(0%);
 }
 
 .linked-info-handle:hover:not(.selected-info-handle) .info-handle-summary {

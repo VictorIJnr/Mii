@@ -10,7 +10,7 @@ import {
     faHouseChimneyBlank as faHouseSolid
 } from "@fortawesome/pro-solid-svg-icons";
 
-import LinkedInfoHandle from "../LinkedInfoHandle";
+import LinkedInfoHandle from "../../InfoHandles/LinkedInfoHandle";
 
 import "./stylish.css";
 
@@ -35,7 +35,7 @@ function NavigationBar(props) {
         </LinkedInfoHandle>
         
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
-        <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon} selectedIcon={selectedInterestsIcon} isHorizontal={true}>
+        <LinkedInfoHandle path="/blog" caption="Interests" icon={interestsIcon} selectedIcon={selectedInterestsIcon}>
             I can't get Lorde - Ribs out of my head!
         </LinkedInfoHandle>
     </div>

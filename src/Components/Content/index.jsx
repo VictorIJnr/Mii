@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import classNames from "classnames";
 
-import NavigationBar from "../NavigationBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGem } from "@fortawesome/pro-light-svg-icons";
+
+import NavigationBar from "../Navigation/NavigationBar";
+import NavigationMenu from "../Navigation/NavigationMenu";
 
 import "./stylish.css";
 
@@ -12,21 +16,20 @@ import "./stylish.css";
  * Ensures that each page can be rendered with some level of consistency. 
  */
 function Content(props) {
-    let padless = (props.padless) ? " padless" : "";
+    const [isNavMenuVisible, setNavVisibility] = useState(true);
 
     let contentClass = classNames("content", props.className);
-    let gutterClass = classNames("content-gutter", { "padless": props.padless });
 
     return <div className={contentClass}>
-        <div className={gutterClass} />
+        <NavigationMenu />
 
-        <div id="main-content" className={padless}>
-            {props.children}
+        <div id="menu-icon" onClick={() => setNavVisibility(!isNavMenuVisible)}>
+            <FontAwesomeIcon icon={faGem} size="2x" />
         </div>
         
-        {!props.noRightGutter && <div className={gutterClass} />}
-
-        <NavigationBar />
+        <div id="main-content" className={classNames({ "padless": props.padless })}>
+            {props.children}
+        </div>
     </div>
 }
 
@@ -36,15 +39,11 @@ Content.propTypes = {
 
     // Whether padding should be removed from the content.
     padless: PropTypes.bool,
-
-    // Whether the right gutter should be removed 
-    noRightGutter: PropTypes.bool
 }
 
 Content.defaultProps = {
     className: "",
     padless: false,
-    noRightGutter: true
 }
 
 export default Content;

@@ -1,0 +1,23 @@
+#navigation-menu-overlay {
+    position: absolute;
+    display: flex;
+
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: var(--bg-colour);
+    opacity: 75%;
+}
+
+#navigation-menu {
+    background-color: var(--bg-colour-overlay);
+    border-radius: 2%;
+
+    opacity: 100%;
+}
+
+.hide-menu {
+    display: none;
+}

@@ -8,6 +8,24 @@
     flex: 5;
 }
 
+#menu-icon {
+    position: absolute;
+    margin-top: 1.5vh;
+    margin-left: 1vw;
+}
+
+#menu-icon:hover {
+    cursor: pointer;
+}
+
+#menu-icon svg {
+    transition: all 0.75s ease-in-out;
+}
+
+#menu-icon:hover svg {
+    color: var(--dark-theme-orange);
+}
+
 .content {
     position: relative;
     display: flex;

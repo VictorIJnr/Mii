@@ -1,7 +1,55 @@
 .linked-icon-wrapper {
+    position: relative;
+    
+    margin-left: 1vw;
+}
+
+.linked-icon-wrapper:first-of-type {
+    margin-top: 1.5vh;
+}
+
+.linked-icon-wrapper:not(:first-of-type) {
+    margin-top: 1vh;
+}
+
+.linked-icon,
+.linked-icon {
     display: flex;
     flex-direction: row;
+    
+    padding-bottom: 0.25vh;
 
-    justify-content: center;
     align-items: center;
+}
+
+.linked-icon > svg {
+    margin-right: 0.5rem;
+}
+
+.linked-icon > p {
+    margin-bottom: 0;
+}
+
+.linked-icon:hover {
+    text-decoration: none;
+}
+
+.linked-icon::after {
+    content: "";
+    position: absolute; 
+    bottom: -1.5px;
+    left: 0px;
+    box-sizing: inherit;
+
+    border: 0.75px solid transparent;
+    width: 0%;
+
+    transition: width 0.5s, border-color 0.5s; 
+}
+
+.linked-icon:hover::after {
+    /* height: 100%; */
+    width: 100%;
+
+    border-color: burlywood;
 }

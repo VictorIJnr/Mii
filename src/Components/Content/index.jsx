@@ -22,10 +22,6 @@ function Content(props) {
 
     return <div className={contentClass}>
         <NavigationMenu />
-
-        <div id="menu-icon" onClick={() => setNavVisibility(!isNavMenuVisible)}>
-            <FontAwesomeIcon icon={faGem} size="2x" />
-        </div>
         
         <div id="main-content" className={classNames({ "padless": props.padless })}>
             {props.children}

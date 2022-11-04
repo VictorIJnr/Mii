@@ -6,10 +6,12 @@ body,
 #site {
     display: flex;
 
-    /* background-color: #f7f7f7; */
     background-color: var(--bg-colour);
     margin: 0;
     padding: 0;
+
+    --fa-primary-color: var(--dark-theme-orange);
+    --fa-secondary-color: var(--dark-theme-font-colour);
 }
 
 #root {

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { faGem } from "@fortawesome/pro-thin-svg-icons";
 import { faGem as faGemSolid } from "@fortawesome/pro-solid-svg-icons";
@@ -21,14 +21,14 @@ function LinkedIcon(props) {
 
     return <div className="linked-icon-wrapper">
         { isSelected
-            ? <span className="linked-icon" href={props.path}>
+            ? <span className="linked-icon selected-linked-icon">
                 <FontAwesomeIcon icon={displayIcon} size="1x"/>
                 <p>{props.caption}</p>
             </span>
-            : <a className="linked-icon" href={props.path}>
+            : <Link className="linked-icon" to={props.path}>
                 <FontAwesomeIcon icon={displayIcon} size="1x"/>
                 <p>{props.caption}</p>
-            </a>
+            </Link>
         }
     </div>
 }

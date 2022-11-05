@@ -28,7 +28,7 @@ function NavigationMenu(props) {
         <LinkedIcon path="/contact" caption="Contact" icon={faComments} selectedIcon={faCommentsSolid} />
         
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
-        <LinkedIcon path="/blog" caption="Interests" icon={interestsIcon} selectedIcon={selectedInterestsIcon} />
+        <LinkedIcon path="/blog" caption="Playground" icon={interestsIcon} selectedIcon={selectedInterestsIcon} />
     </div>
 }
 

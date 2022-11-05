@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Content from "../Components/Content";
 
 import "./stylish.css";
+import LinkedIcon from "../Components/Navigation/LinkedIcon";
 
 /**
  * The "Contact" page.

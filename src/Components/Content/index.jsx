@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 
 import classNames from "classnames";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGem } from "@fortawesome/pro-light-svg-icons";
-
-import NavigationBar from "../Navigation/NavigationBar";
 import NavigationMenu from "../Navigation/NavigationMenu";
 
 import "./stylish.css";
@@ -16,8 +12,6 @@ import "./stylish.css";
  * Ensures that each page can be rendered with some level of consistency. 
  */
 function Content(props) {
-    const [isNavMenuVisible, setNavVisibility] = useState(true);
-
     let contentClass = classNames("content", props.className);
 
     return <div className={contentClass}>

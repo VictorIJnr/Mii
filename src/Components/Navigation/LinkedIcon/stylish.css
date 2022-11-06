@@ -16,12 +16,17 @@
 .linked-icon {
     display: flex;
     flex-direction: row;
-    
-    padding-left: 0.75vw;
 
     align-items: center;
 
     transition: all 0.5s ease-in-out;
+}
+
+.linked-icon:hover {
+    text-decoration: none;
+
+    color: var(--dark-theme-font-colour);
+    --fa-primary-color: var(--dark-theme-font-colour);
 }
 
 .linked-icon > svg {
@@ -34,45 +39,4 @@
     font-size: 1.5rem;
     font-family: "desire-pro", serif;
     letter-spacing: 1px;
-}
-
-.linked-icon:hover {
-    text-decoration: none;
-
-    color: var(--dark-theme-font-colour);
-    --fa-primary-color: var(--dark-theme-font-colour);
-}
-
-.linked-icon::before {
-    content: "";
-    position: absolute;
-    
-    height: 100%;
-    left: 0px;
-
-    box-sizing: inherit;
-    border-left: 1.5px solid var(--dark-theme-font-colour);
-}
-
-.linked-icon:not(.selected-linked-icon)::after {
-    content: "";
-    position: absolute; 
-    
-    height: 0%;
-    left: 0px;
-    
-    box-sizing: inherit;
-    border-left: 1.5px solid transparent;
-
-    transition: height 0.5s, border-color 0.5s; 
-}
-
-.linked-icon:not(.selected-linked-icon):hover::after {
-    height: 100%;
-
-    border-color: var(--dark-theme-orange);
-}
-
-.linked-icon.selected-linked-icon::before {
-    border-left: 1.5px solid var(--dark-theme-orange);
 }

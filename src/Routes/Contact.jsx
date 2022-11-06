@@ -36,14 +36,9 @@ function Contact(props) {
             I know. I know. How kind of me, right? :D
         </p>
 
-        <div style={centered}>
-            <a className="icon-link" href="https://github.com/VictorIJnr">
-                <FontAwesomeIcon icon={faGithub} size="3x" />
-            </a>
-
-            <a className="icon-link" href="mailto:victorijnr@gmail.com">
-                <FontAwesomeIcon icon={faEnvelopeSquare} size="3x" />
-            </a>
+        <div id="contact-external-links" style={centered}>
+            <LinkedIcon icon={faGithub} size="3x" path="https://github.com/VictorIJnr" externalLink={true} />
+            <LinkedIcon icon={faEnvelopeSquare} size="3x" path="mailto:victorijnr@gmail.com" externalLink={true} />
         </div>
     </Content>
 }

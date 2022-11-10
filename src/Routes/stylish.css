@@ -4,15 +4,14 @@
     flex-direction: column;
 
     border: none;
+
+    align-items: center;
+    /* justify-content: flex-end; */
 }
 
 #friendly > * {
     display: flex;
     flex: 1;
-}
-
-#friendly > .hidden {
-    display: none;
 }
 
 #greeting {
@@ -52,9 +51,15 @@
     font-size: 1.5rem;
 }
 
-#contact-external-links {
+#mii-contact-links {
     display: flex;
     flex-direction: row;
 
     align-items: baseline;
+    justify-content: center;
+}
+
+.mii-hidden {
+    display: none;
+    height: 0%;
 }

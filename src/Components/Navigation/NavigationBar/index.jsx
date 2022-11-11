@@ -26,7 +26,7 @@ function NavigationBar(props) {
         <LinkedInfoHandle path="/" caption="Home" icon={faHouseChimneyBlank} selectedIcon={faHouseSolid}>
             Maybe you'll discover a secret here, who knows?
         </LinkedInfoHandle>
-        <LinkedInfoHandle path="/cheeky" caption="Projects" icon={faCode} selectedIcon={faCodeSolid}>
+        <LinkedInfoHandle path="/projects" caption="Projects" icon={faCode} selectedIcon={faCodeSolid}>
             Maybe there's a private Git repo here too!
         </LinkedInfoHandle>
         

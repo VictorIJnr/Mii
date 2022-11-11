@@ -23,7 +23,7 @@ function NavigationMenu(props) {
 
     return <div id="navigation-menu">
         <LinkedIcon path="/" caption="Home" icon={faHouseChimneyBlank} selectedIcon={faHouseSolid} />
-        <LinkedIcon path="/cheeky" caption="Projects" icon={faCode} selectedIcon={faCodeSolid} />
+        <LinkedIcon path="/projects" caption="Projects" icon={faCode} selectedIcon={faCodeSolid} />
         
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
         <LinkedIcon path="/blog" caption="Playground" icon={interestsIcon} selectedIcon={selectedInterestsIcon} />

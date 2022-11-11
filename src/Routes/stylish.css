@@ -59,6 +59,14 @@
     justify-content: center;
 }
 
+#projects-overview {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
 .mii-hidden {
     display: none;
     height: 0%;

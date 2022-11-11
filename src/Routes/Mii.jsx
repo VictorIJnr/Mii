@@ -21,7 +21,7 @@ function Mii(props) {
         ? <h1 className="fade-in"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
         : <h1 className="fade-in">Hi!</h1>
 
-    return <Content noRightGutter={true}>
+    return <Content>
         <p className="mii-hidden">
             I've hidden a couple "easter eggs" here and there; small stuff, like
             some of my favourite TV shows, video games, youtube channels, and the like.

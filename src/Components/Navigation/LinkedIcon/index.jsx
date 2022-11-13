@@ -25,12 +25,14 @@ function LinkedIcon(props) {
         <p>{props.caption}</p>
     </>
 
+    let linkElement = props.externalLink 
+        ? <a className="linked-icon" href={props.path}>{linkContent}</a>
+        : <Link className="linked-icon" to={props.path}>{linkContent}</Link>
+
     return <div className="linked-icon-wrapper">
         { isSelected
             ? <span className="linked-icon selected-linked-icon">{linkContent}</span>
-            : props.externalLink 
-                ? <a className="linked-icon" href={props.path}>{linkContent}</a>
-                : <Link className="linked-icon" to={props.path}>{linkContent}</Link>
+            : linkElement
         }
     </div>
 }

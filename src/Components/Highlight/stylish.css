@@ -1,0 +1,79 @@
+.project-highlight {
+    display: flex;
+    flex-direction: row;
+
+    width: 75%;
+}
+
+.highlight-card {
+    display: flex;
+    position: relative;
+
+    flex: 1;
+    flex-direction: column;
+}
+
+.highlight-card-info {
+    z-index: 2;
+}
+
+.highlight-description {
+    margin-left: 10%;
+    
+    flex: 1;
+    align-self: center;
+
+    text-align: center;
+}
+
+.highlight-image {
+    width: 100%;
+
+    transform: scale(1.25);
+    transition: all 0.75s ease-in-out;
+}
+
+.hovered-image {
+    z-index: -1;
+    transform: scale(1);
+}
+
+.highlight-image-container {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 10px;
+}
+
+.highlight-image-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    background-color: var(--bg-colour);
+    opacity: 0.7;
+}
+
+h3.highlight-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    top: 10%;
+    left: 5%;
+
+    border-bottom: none;
+}
+
+.highlight-card-arrow {
+    position: absolute;
+
+    bottom: 5%;
+    right: 5%;
+}

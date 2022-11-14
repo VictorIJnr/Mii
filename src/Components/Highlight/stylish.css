@@ -1,8 +1,11 @@
 .project-highlight {
     display: flex;
-    flex-direction: row;
-
+    
     width: 75%;
+}
+
+.project-highlight.reversed-highlight {
+    flex-direction: row-reverse;
 }
 
 .highlight-card {
@@ -11,15 +14,24 @@
 
     flex: 1;
     flex-direction: column;
+    
+    /* width: fit-content; */
+}
+
+/* Don't know why, but, having the asterisk like this looks weird :3 */
+.highlight-card * {
+    transition: all 0.75s ease-in-out;
 }
 
 .highlight-card-info {
     z-index: 2;
 }
 
+.hovered-card-info {
+    color: var(--dark-theme-orange);
+}
+
 .highlight-description {
-    margin-left: 10%;
-    
     flex: 1;
     align-self: center;
 
@@ -27,10 +39,7 @@
 }
 
 .highlight-image {
-    width: 100%;
-
     transform: scale(1.25);
-    transition: all 0.75s ease-in-out;
 }
 
 .hovered-image {

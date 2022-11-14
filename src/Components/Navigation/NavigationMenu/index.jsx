@@ -1,13 +1,9 @@
 import React from "react";
 
-import { faCatSpace, faCode, faHouseChimneyBlank } from "@fortawesome/pro-duotone-svg-icons";
-import { faHeart } from "@fortawesome/sharp-solid-svg-icons";
+import { faCatSpace } from "@fortawesome/pro-duotone-svg-icons";
+import { faCode, faHeart, faHouseChimneyBlank } from "@fortawesome/sharp-solid-svg-icons";
 
-import {
-    faCatSpace as faCatSolid,
-    faCode as faCodeSolid,
-    faHouseChimneyBlank as faHouseSolid
-} from "@fortawesome/pro-solid-svg-icons";
+import { faCatSpace as faCatSolid } from "@fortawesome/pro-solid-svg-icons";
 
 import LinkedIcon from "../LinkedIcon";
 
@@ -22,9 +18,9 @@ function NavigationMenu(props) {
     let selectedInterestsIcon = seeSpaceKitty ? faCatSolid : faHeart;
 
     return <div id="navigation-menu">
-        <LinkedIcon path="/" caption="Home" icon={faHouseChimneyBlank} selectedIcon={faHouseSolid} />
-        <LinkedIcon path="/projects" caption="Projects" icon={faCode} selectedIcon={faCodeSolid} />
-        
+        <LinkedIcon path="/" caption="Home" icon={faHouseChimneyBlank} selectedIcon={faHouseChimneyBlank} />
+        <LinkedIcon path="/projects" caption="Projects" icon={faCode} selectedIcon={faCode} />
+
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}
         <LinkedIcon path="/blog" caption="Playground" icon={interestsIcon} selectedIcon={selectedInterestsIcon} />
     </div>

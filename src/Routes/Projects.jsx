@@ -33,6 +33,16 @@ function Projects(props) {
                 Created when I was 17, I made this as a part of my EPQ - a course where I was given free rein to create my own project, in a domain that I hadn't worked in before.
             </p>
         </Highlight>
+        <Highlight title="bu" image="https://images.pexels.com/photos/11446855/pexels-photo-11446855.jpeg" projectPath="bu" reversed={true}>
+            <p>
+               My undergraduate dissertation.
+            </p>
+        </Highlight>
+        <Highlight title="bu" image="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg" projectPath="bu">
+            <p>
+               My undergraduate dissertation.
+            </p>
+        </Highlight>
     </Content>
 }
 

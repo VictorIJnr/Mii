@@ -4,9 +4,11 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/sharp-solid-svg-icons";
 
-import "./stylish.css";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+
+import "./stylish.css";
+import "./responsive.css";
 
 /**
  * Displays a brief overview of a project.
@@ -15,11 +17,19 @@ import { Link } from "react-router-dom";
 function Highlight(props) {
     const [isHovered, setIsHovered] = useState(false);
 
+    const highlightClasses = classNames("project-highlight", {
+        "reversed-highlight": props.reversed
+    });
+
     const imageClasses = classNames("highlight-image", {
         "hovered-image": isHovered
     });
 
-    return <section className="project-highlight">
+    const cardInfoClasses = classNames("highlight-card-info", {
+        "hovered-card-info": isHovered
+    });
+
+    return <section className={highlightClasses}>
         <div className="highlight-card">
             <Link to={props.projectPath}>
                 <div className="highlight-image-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -28,7 +38,7 @@ function Highlight(props) {
                 </div>
             </Link>
             
-            <div className="highlight-card-info">
+            <div className={cardInfoClasses}>
                 <h3 className="highlight-title">{props.title}</h3>
                 <FontAwesomeIcon className="highlight-card-arrow" icon={faArrowRight} size="2x"/>
             </div>
@@ -47,13 +57,17 @@ Highlight.propTypes = {
     title: PropTypes.string,
 
     //? The path to the page containing a full write-up of the project.
-    projectPath: PropTypes.string
+    projectPath: PropTypes.string,
+
+    //? Whether the order of the highlight card, and the description should be reversed.
+    reversed: PropTypes.bool
 }
 
 Highlight.defaultProps = {
     image: "",
     title: "Highlight",
-    projectPath: "/"
+    projectPath: "/",
+    reversed: false
 }
 
 export default Highlight;

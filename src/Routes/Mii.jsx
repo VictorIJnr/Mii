@@ -2,12 +2,12 @@ import React from "react";
 
 import Content from "../Components/Content";
 
-import { faGithub, faLinkedin, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelopeSquare } from "@fortawesome/pro-solid-svg-icons";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import LinkedIcon from "../Components/Navigation/LinkedIcon";
 
 import "./stylish.css";
 import "../animations.css"
+import { faEnvelopeSquare } from "@fortawesome/sharp-solid-svg-icons";
 
 /**
  * Component describing the "Mii" page.

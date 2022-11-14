@@ -25,23 +25,27 @@ function Highlight(props) {
         "hovered-image": isHovered
     });
 
+    const overlayClasses = classNames("highlight-image-overlay", {
+        "hovered-image": isHovered
+    })
+
     const cardInfoClasses = classNames("highlight-card-info", {
-        "hovered-card-info": isHovered
+        "hovered-image": isHovered
     });
 
     return <section className={highlightClasses}>
         <div className="highlight-card">
             <Link to={props.projectPath}>
                 <div className="highlight-image-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <div className="highlight-image-overlay" />
+                    <div className={overlayClasses} />
+                    <div className={cardInfoClasses}>
+                        <h3 className="highlight-title">{props.title}</h3>
+                        <FontAwesomeIcon className="highlight-card-arrow" icon={faArrowRight} size="2x"/>
+                    </div>
+
                     <img className={imageClasses} src={props.image} alt={props.title} />
                 </div>
             </Link>
-            
-            <div className={cardInfoClasses}>
-                <h3 className="highlight-title">{props.title}</h3>
-                <FontAwesomeIcon className="highlight-card-arrow" icon={faArrowRight} size="2x"/>
-            </div>
         </div>
         <div className="highlight-description">
             {props.children}

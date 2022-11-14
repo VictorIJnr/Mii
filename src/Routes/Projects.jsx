@@ -29,18 +29,16 @@ function Projects(props) {
         </section>
         <Highlight title="Bloopy" image={bloopy} projectPath="bloopy">
             <p>
-                This is the first Android app I've ever made.<br /><br />
-                Created when I was 17, I made this as a part of my EPQ - a course where I was given free rein to create my own project, in a domain that I hadn't worked in before.
+                The first Android app I've ever made.<br /><br />
+                {/* Created when I was 17, I made this for my EPQ - a course where I was given free rein to create my own project, in a domain that I hadn't worked in before.<br /><br /> */}
+                Flappy Bird was "problematic" a year prior to me making this, so I thought making another endless runner would be fun.
             </p>
         </Highlight>
         <Highlight title="bu" image="https://images.pexels.com/photos/11446855/pexels-photo-11446855.jpeg" projectPath="bu" reversed={true}>
             <p>
-               My undergraduate dissertation.
-            </p>
-        </Highlight>
-        <Highlight title="bu" image="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg" projectPath="bu">
-            <p>
-               My undergraduate dissertation.
+               My undergraduate dissertation. A rather straightforward clustering experiment, based on a writer's stylometry.<br /><br />
+               {/* I was ambitious to begin with; I wanted to do some stylometry-influenced natural language generation, but I didn't have enough time.<br /><br /> */}
+               In short, I have a SVM, Random Forest, and Neural Network that can all differentiate between Drizzy and Billy Shakespeare.
             </p>
         </Highlight>
     </Content>

@@ -1,6 +1,7 @@
 import React from "react";
 
 import bloopy from "../assets/images/Bloopy.png";
+import donny from "../assets/images/Donny.png";
 
 import Content from "../Components/Content";
 import Highlight from "../Components/Highlight";
@@ -11,6 +12,9 @@ import "./stylish.css";
  * Renders a page showing highlights from a bunch of different projects we've worked on.
  */
 function Projects(props) {
+    const seeDonny = true;
+    // const seeDonny = Math.random() < 0.25;
+
     return <Content>
         <section id="projects-overview">
             <h1>Some Stuff I've Worked On</h1>
@@ -41,6 +45,20 @@ function Projects(props) {
                In short, I have a SVM, Random Forest, and Neural Network that can all differentiate between Drizzy and Billy Shakespeare.
             </p>
         </Highlight>
+        
+        {/* Add a highlight for WaffleCo */}
+
+        {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH">
+            <p>
+                <a href="https://www.nbcnews.com/politics/white-house/trump-referred-haiti-african-countries-shithole-nations-n836946">
+                    A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />
+                </a>
+                This doesn't render all the time. So, if you're seeing this, congrats! I guess. I did warn you to be fair.
+                <sup><sup><sup><sup><sup><sup>Since you're here, I heard that he's a fan of Russia, and The United States of America.</sup></sup></sup></sup></sup></sup>
+
+                {/* Okay, since you actually followed the link, it looks like you've given me a chance to redeem myself. Thank you! I'll try not to waste it :D */}
+            </p>
+        </Highlight>}
     </Content>
 }
 

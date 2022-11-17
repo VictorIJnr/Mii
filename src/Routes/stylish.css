@@ -70,7 +70,8 @@
     border-bottom: 1px solid var(--dark-theme-orange);
 }
 
-#projects-overview > p {
+#projects-overview > p,
+#playground-overview > p {
     display: inline-block;
     text-align: center;
 }

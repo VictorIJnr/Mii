@@ -3,16 +3,19 @@ import { Route, Routes } from "react-router-dom";
 
 import Mii from "./Routes/Mii";
 import Playground from "./Routes/Playground";
-import Projects from "./Routes/Projects";
+
+import Projects from "./Routes/Projects/";
+import Bloopy from "./Routes/Projects/Bloopy/";
 
 /**
  * Handles routing between the different pages of the website.
  */
 function Router() {
     return <Routes>
-        <Route exact path="/" element={<Mii />}/>
-        <Route exact path="/blog" element={<Playground />}/>
-        <Route exact path="/projects" element={<Projects />}/>
+        <Route path="/" element={<Mii />}/>
+        <Route path="/blog" element={<Playground />}/>
+        <Route path="/projects" element={<Projects />}/>
+        <Route path="/projects/bloopy" element={<Bloopy />} />
     </Routes>
 }
 

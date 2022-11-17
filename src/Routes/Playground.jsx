@@ -1,25 +1,26 @@
-import React, { Component } from "react";
-import ReactMarkdown from "react-markdown";
+import React from "react";
 
-import axios from "axios";
-
-import Content from "../Components/Content";
-import Loader from "../Components/Loader";
-
-import { myToken } from "../config/tokens.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceLaughBeam } from "@fortawesome/pro-thin-svg-icons";
 
-function Playground() {
+import Content from "../Components/Content";
 
+import "./stylish.css";
+
+/**
+ * The Playground route.
+ * This page will contain anything I think is fun that I want to work on.
+ * That's it. Just fun shit :D
+ */
+function Playground() {
     return <Content>
         <h1>We have fun here <FontAwesomeIcon icon={faFaceLaughBeam}/></h1>
-        <div>
+        <section id="playground-overview">
             <p>
                 That's what you did at playgrounds as a kid, right? Have fun? Play in the sand? Go down a slide? <s>Take candy from a stranger?</s><br />
                 Same premise here. This page is for me to have a little bit of fun.<br />
             </p>
-        </div>
+        </section>
     </Content>
 }
 

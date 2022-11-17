@@ -1,7 +1,19 @@
 .project-highlight {
+    position: relative;
     display: flex;
     
     width: 75%;
+}
+
+.project-highlight::after {
+    position: absolute;
+    content: "";
+
+    bottom: 0;
+    left: 31.25%;
+    width: 37.5%;
+
+    border-bottom: 1px solid var(--dark-theme-orange);
 }
 
 .highlight-card {
@@ -36,7 +48,7 @@
     color: var(--dark-theme-font-colour);
 }
 
-.highlight-card-info.hovered-image {
+.highlight-card-info.hovered-image .highlight-card-arrow {
     color: var(--dark-theme-orange);
 }
 
@@ -64,7 +76,7 @@
     position: relative;
     overflow: hidden;
 
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .highlight-image-overlay {

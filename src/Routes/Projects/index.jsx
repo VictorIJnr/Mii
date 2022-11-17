@@ -1,12 +1,12 @@
 import React from "react";
 
-import bloopy from "../assets/images/Bloopy.png";
-import donny from "../assets/images/Donny.png";
+import bloopy from "../../assets/images/Bloopy.png";
+import donny from "../../assets/images/Donny.png";
 
-import Content from "../Components/Content";
-import Highlight from "../Components/Highlight";
+import Content from "../../Components/Content";
+import Highlight from "../../Components/Highlight";
 
-import "./stylish.css";
+import "../stylish.css";
 
 /**
  * Renders a page showing highlights from a bunch of different projects we've worked on.
@@ -42,7 +42,7 @@ function Projects(props) {
             <p>
                My undergraduate dissertation. A rather straightforward clustering experiment, based on a writer's stylometry.<br /><br />
                {/* I was ambitious to begin with; I wanted to do some stylometry-influenced natural language generation, but I didn't have enough time.<br /><br /> */}
-               In short, I have a SVM, Random Forest, and Neural Network that can all differentiate between Drizzy and Billy Shakespeare.
+               In short, I have a SVM, Random Forest, and Neural Network that are all able to differentiate between Drizzy and Billy Shakespeare.
             </p>
         </Highlight>
         

@@ -13,7 +13,7 @@ import Bloopy from "./Routes/Projects/Bloopy/";
 function Router() {
     return <Routes>
         <Route path="/" element={<Mii />}/>
-        <Route path="/blog" element={<Playground />}/>
+        <Route path="/playground" element={<Playground />}/>
         <Route path="/projects" element={<Projects />}/>
         <Route path="/projects/bloopy" element={<Bloopy />} />
     </Routes>

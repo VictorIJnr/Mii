@@ -15,6 +15,8 @@ import { faEnvelopeSquare } from "@fortawesome/sharp-solid-svg-icons";
  * tidbits of information for different sections on the website.
  */
 function Mii(props) {
+    console.log(process.env);
+
     let isBeingFriendly = Math.random() < 0.25;
 
     let greeting = isBeingFriendly

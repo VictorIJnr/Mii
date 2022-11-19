@@ -6,6 +6,7 @@ import { faFaceLaughBeam } from "@fortawesome/pro-thin-svg-icons";
 import Content from "../Components/Content";
 
 import "./stylish.css";
+import Taste from "../Containers/Taste";
 
 /**
  * The Playground route.
@@ -21,6 +22,7 @@ function Playground() {
                 Same premise here. This page is for me to have a little bit of fun.<br />
             </p>
         </section>
+        <Taste />
     </Content>
 }
 

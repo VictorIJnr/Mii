@@ -18,7 +18,7 @@ function Playground() {
         <h1>We have fun here <FontAwesomeIcon icon={faFaceLaughBeam}/></h1>
         <section id="playground-overview">
             <p>
-                That's what you did at playgrounds as a kid, right? Have fun? Play in the sand? Go down a slide? <s>Take candy from a stranger?</s><br />
+                That's what you did at playgrounds as a kid, right? Have fun? Play in the sand? <s>Take candy from a stranger?</s> Go down a slide?<br />
                 Same premise here. This page is for me to have a little bit of fun.<br />
             </p>
         </section>

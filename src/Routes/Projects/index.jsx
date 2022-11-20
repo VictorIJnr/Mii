@@ -34,7 +34,6 @@ function Projects(props) {
         <Highlight title="Bloopy" image={bloopy} projectPath="bloopy">
             <p>
                 The first Android app I've ever made.<br /><br />
-                {/* Created when I was 17, I made this for my EPQ - a course where I was given free rein to create my own project, in a domain that I hadn't worked in before.<br /><br /> */}
                 Flappy Bird was "problematic" a year prior to me making this, so I thought making another endless runner would be fun.
             </p>
         </Highlight>
@@ -42,7 +41,7 @@ function Projects(props) {
             <p>
                My undergraduate dissertation. A rather straightforward clustering experiment, based on a writer's stylometry.<br /><br />
                {/* I was ambitious to begin with; I wanted to do some stylometry-influenced natural language generation, but I didn't have enough time.<br /><br /> */}
-               In short, I have a SVM, Random Forest, and Neural Network that are all able to differentiate between Drizzy and Billy Shakespeare.
+               In short, I have a SVM, Random Forest, and Neural Network that are all able to differentiate between Drake and William Shakespeare.
             </p>
         </Highlight>
         
@@ -54,7 +53,7 @@ function Projects(props) {
                     A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />
                 </a>
                 This doesn't render all the time. So, if you're seeing this, congrats! I guess. I did warn you to be fair.
-                <sup><sup><sup><sup><sup><sup>Since you're here, I heard that he's a fan of Russia, and The United States of America.</sup></sup></sup></sup></sup></sup>
+                <span style={{ "fontSize": "0.1em", verticalAlign: "top" }}><sup>Since you're here, I heard that he's a fan of Russia, and The United States of America.</sup></span>
 
                 {/* Okay, since you actually followed the link, it looks like you've given me a chance to redeem myself. Thank you! I'll try not to waste it :D */}
             </p>

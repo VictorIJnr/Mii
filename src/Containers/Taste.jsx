@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompactDisc } from "@fortawesome/sharp-solid-svg-icons";
+
 import Loader from "../Components/Loader";
+import SpotifyAuth from "../Context/SpotifyAuth";
+import SpotifyPlayer from "./SpotifyPlayer";
 
 /**
  * Retrieves and renders what is considered my current taste in music.
@@ -11,7 +16,7 @@ import Loader from "../Components/Loader";
  * Shoutout to Aitch btw. My man made it shake.
  */
 function Taste(props) {
-    const [hasSpotifyAuthToken, setHasSpotifyAuthToken] = useState(false);
+    const [spotifyAuthToken, setSpotifyAuthToken] = useState(null);
     const [recentTracks, setRecentTracks] = useState([]);
     const [lastTrackInfo, setLastTrackInfo] = useState(null);
 
@@ -38,11 +43,11 @@ function Taste(props) {
                     "Content-Type": "application/x-www-form-urlencoded"
                 };
 
-                setHasSpotifyAuthToken(true);
+                setSpotifyAuthToken(data.access_token);
                 getLastFmInfo();
 
                 // Refresh the token every 54 minutes, if they expire in an hour.
-                setTimeout(getSpotifyToken, data.expires_in * 900);
+                setInterval(getSpotifyToken, data.expires_in * 900);
             })
             .catch(err => console.error(err));
     };
@@ -60,12 +65,12 @@ function Taste(props) {
 
             getSpotifyTrackInfo(data.recenttracks.track[0]);
         })
-        .catch(err => console.error(err));
+            .catch(err => console.error(err));
     };
 
     function getSpotifyTrackInfo(track) {
         console.log("Retrieving track info.");
-        
+
         spotifyConfig.get("/search", {
             params: {
                 type: "track",
@@ -81,42 +86,28 @@ function Taste(props) {
                 limit: 5
             }
         })
-        .then(({ data }) => setLastTrackInfo(data.best_match.items[0]))
-        .catch(err => console.error(err));
+            .then(({ data }) => setLastTrackInfo(data.best_match.items[0]))
+            .catch(err => console.error(err));
     }
 
     const lastTrack = recentTracks.length > 0 ? recentTracks[0] : {};
-    if (!hasSpotifyAuthToken) getSpotifyToken();
-    
-    let trackPlayer = <></>
-    if (lastTrackInfo !== null) {
-        console.log(lastTrackInfo);
-
-        let albumImage = lastTrackInfo.album.images.find(image => image.height === 300);
-        console.log(albumImage);
-
-        //? We can rework this with a ref.
-        // https://stackoverflow.com/a/26869192
-
-        // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Video_and_audio_APIs
-        trackPlayer = <div>
-            <img src={albumImage.url} />
-            <video src={lastTrackInfo.preview_url} controls />
-        </div>
-    }
+    if (spotifyAuthToken === null) getSpotifyToken();
 
     return <section>
-        {hasSpotifyAuthToken
+        {spotifyAuthToken !== null
             ? <h1>Spotti Botti Fy</h1>
             : <Loader />}
         {recentTracks.length > 0 && <div>
             <div>
-                {Object.hasOwn(lastTrack, "@attr") && lastTrack["@attr"].now_playing
+                {Object.hasOwn(lastTrack, "@attr") && lastTrack["@attr"].nowplaying
                     ? <p>I'm currently listening to {lastTrack.name} by {lastTrack.artist["#text"]}</p>
                     : <p>The last song I listened to was {lastTrack.name} by {lastTrack.artist["#text"]}</p>
                 }
+                <FontAwesomeIcon style={{ "color": "var(--dark-theme-orange)" }} icon={faCompactDisc} size="2x" spin />
             </div>
-            {lastTrackInfo !== null && trackPlayer}
+            <SpotifyAuth.Provider value={spotifyAuthToken}>
+                {lastTrackInfo !== null && <SpotifyPlayer album={lastTrack.album["#text"]} artist={lastTrack.artist["#text"]} song={lastTrack.name} />}
+            </SpotifyAuth.Provider>
         </div>}
     </section>
 }

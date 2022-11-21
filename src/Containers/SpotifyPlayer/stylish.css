@@ -1,0 +1,11 @@
+.spotify-player {
+    position: relative;
+    display: flex;
+}
+
+.spotify-player > video {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+}

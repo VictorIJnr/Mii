@@ -1,19 +1,21 @@
 import * as dotenv from "dotenv";
 
 import React from "react";
+
 import ReactDOM from "react-dom";
-import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import "./index.css";
 
 dotenv.config();
 
 ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
-    </BrowserRouter>, 
+    </BrowserRouter>,
     document.getElementById("root"));
 
 registerServiceWorker();

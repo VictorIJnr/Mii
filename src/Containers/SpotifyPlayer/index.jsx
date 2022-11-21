@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 
 import axios from "axios";
@@ -16,34 +16,7 @@ function SpotifyPlayer(props) {
     const authToken = useContext(SpotifyAuth);
     const [trackInfo, setTrackInfo] = useState(null);
 
-    const audioPlayer = useRef(null);
-
-    const intervalTime = 200;
-    const fadePlayerAudio = setInterval(() => {
-        const currentPlayer = audioPlayer.current;
-
-        if (currentPlayer !== null) {
-            console.log(currentPlayer.volume);
-
-            // Fade the audio from 28 seconds onwards
-            const startTime = 20;
-
-            if ((currentPlayer.currentTime >= startTime) && (currentPlayer.volume !== 0.0)) {
-                currentPlayer.volume -= (30 - startTime) / (1000 / intervalTime);
-            }
-    
-            if (currentPlayer.volume < 0.05) {
-                currentPlayer.volume = 0;
-                clearInterval(fadePlayerAudio);
-            }
-        }
-    }, intervalTime);
-
-    //? We can rework this with a ref.
-    // https://stackoverflow.com/a/26869192
-    // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Video_and_audio_APIs
-
-    if (trackInfo == null) {
+    if (trackInfo == null || props.song != trackInfo.name) {
         axios.get("https://api.spotify.com/v1/search", {
             headers: {
                 "Authorization": `Bearer ${authToken}`,
@@ -64,23 +37,20 @@ function SpotifyPlayer(props) {
             }
         })
         .then(({ data }) => {
-            setTrackInfo(data.best_match.items[0])
-            console.log("Track info called")
+            console.log(data);
+            setTrackInfo(data.best_match.items[0]);
         })
         .catch(err => console.error(err));
     }
 
-    const albumImage = trackInfo !== null 
-        ? trackInfo.album.images.find(image => image.height === 300)
-        : "";
-
-    // console.log(authToken);
+    console.log(trackInfo);
 
     return trackInfo === null
         ? <Loader />
         : <div className="spotify-player">
-            <img src={albumImage.url} alt={`${props.album} Album Art`} />
-            <video src={trackInfo.preview_url} controls ref={audioPlayer} />
+            <iframe src={`https://open.spotify.com/embed/track/${trackInfo.id}?utm_source=generator&theme=0`} width="100%" height="352"
+                frameBorder="0" allowFullScreen 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
         </div>
 }
 
@@ -96,7 +66,7 @@ SpotifyPlayer.propTypes = {
 }
 
 SpotifyPlayer.defaultProps = {
-    album: "Pure Heroin (Extended)",
+    album: "Pure Heroine (Extended)",
     artist: "Lorde",
     song: "Ribs"
 }

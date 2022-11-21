@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCompactDisc } from "@fortawesome/sharp-solid-svg-icons";
 
 import Loader from "../Components/Loader";
 import SpotifyAuth from "../Context/SpotifyAuth";
-import SpotifyPlayer from "./SpotifyPlayer";
+import MostRecentTrack from "./LastFm/RecentTracks";
 
 /**
  * Retrieves and renders what is considered my current taste in music.
@@ -17,98 +15,69 @@ import SpotifyPlayer from "./SpotifyPlayer";
  */
 function Taste(props) {
     const [spotifyAuthToken, setSpotifyAuthToken] = useState(null);
-    const [recentTracks, setRecentTracks] = useState([]);
-    const [lastTrackInfo, setLastTrackInfo] = useState(null);
-
-    const spotifyConfig = axios.create({
-        baseURL: "https://api.spotify.com/v1"
-    });
-
+    
     /**
      * Retrieves an access token from Spotify's API using OAuth2.
      */
     function getSpotifyToken() {
-        console.log("Retrieving access token.");
         axios.post("https://accounts.spotify.com/api/token", {
             "grant_type": "client_credentials"
         },
-            {
-                headers: {
-                    "Authorization": `Basic ${Buffer.from(`${process.env.REACT_APP_SPOTIFY_CLIENT_ID}:${process.env.REACT_APP_SPOTIFY_API_SECRET}`).toString("base64")}`,
-                    "Content-Type": "application/x-www-form-urlencoded"
-                }
-            }).then(({ data }) => {
-                spotifyConfig.defaults.headers = {
-                    "Authorization": `Bearer ${data.access_token}`,
-                    "Content-Type": "application/x-www-form-urlencoded"
-                };
-
-                setSpotifyAuthToken(data.access_token);
-                getLastFmInfo();
-
-                // Refresh the token every 54 minutes, if they expire in an hour.
-                setInterval(getSpotifyToken, data.expires_in * 900);
-            })
-            .catch(err => console.error(err));
-    };
-
-    function getLastFmInfo() {
-        console.log("Retrieving LastFM info.");
-        axios.get("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&format=json", {
-            params: {
-                "api_key": process.env.REACT_APP_LAST_FM_API_KEY,
-                "user": "Sk8terTiger"
+        {
+            headers: {
+                "Authorization": `Basic ${Buffer.from(`${process.env.REACT_APP_SPOTIFY_CLIENT_ID}:${process.env.REACT_APP_SPOTIFY_API_SECRET}`).toString("base64")}`,
+                "Content-Type": "application/x-www-form-urlencoded"
             }
         }).then(({ data }) => {
-            console.log(data.recenttracks.track);
-            setRecentTracks(data.recenttracks.track);
+            setSpotifyAuthToken(data.access_token);
 
-            getSpotifyTrackInfo(data.recenttracks.track[0]);
+            // Refresh the token every 54 minutes, if they expire in an hour.
+            setInterval(getSpotifyToken, data.expires_in * 900);
         })
-            .catch(err => console.error(err));
-    };
+        .catch(err => console.error(err));
+    };    
 
-    function getSpotifyTrackInfo(track) {
-        console.log("Retrieving track info.");
+    if (spotifyAuthToken === null) {
+        getSpotifyToken();
 
-        spotifyConfig.get("/search", {
-            params: {
-                type: "track",
-                q: `${track.artist["#text"]} ${track.name} ${track.album["#text"]}`,
-                // q: `Vigilante Shit Taylor Swift 3AM`,
-                // q: `Lorde Ribs Pure Heroin`,
-                // q: `The Chainsmokers The Reaper World War Joy`,
-                // q: `sober rob Moving On Salt`,
-                // q: `kotori hummingbird`,
-                // q: `Matsirt My Friend Monstercat 20 Altitude`,
-                // q: `Sober II`,
-                best_match: true,
-                limit: 5
-            }
-        })
-            .then(({ data }) => setLastTrackInfo(data.best_match.items[0]))
-            .catch(err => console.error(err));
+        //? These are only here since I only need them to be logged once.
+        //? Repeating them's just messy. 🤮
+        console.log("I can't imagine anyone being bored enough to look through the console on my website. But you're here now aren't you?");
+        console.log("In which case, I'll help you kill some more time, and give you a better insight into my questionable taste in music.");
+        console.log("Knock yourself out: https://www.last.fm/user/Sk8terTiger");
     }
+    
+    const questionable = [
+        // Baby Shark - Jauz Remix
+        "https://open.spotify.com/track/3E4a16orMZ7IVg5KzlMAMM?si=d716b050c3124737",
+        
+        // Flume - Only Fans
+        "https://open.spotify.com/track/5syhuDL0LeXs0T1KSW7lkV?si=760057d45638495f",
 
-    const lastTrack = recentTracks.length > 0 ? recentTracks[0] : {};
-    if (spotifyAuthToken === null) getSpotifyToken();
+        // The Chainsmokers - Don't Let Me Down (Won a Grammy)
+        "https://open.spotify.com/track/1i1fxkWeaMmKEB4T7zqbzK?si=c6f5f2b580554226",
 
-    return <section>
-        {spotifyAuthToken !== null
-            ? <h1>Spotti Botti Fy</h1>
-            : <Loader />}
-        {recentTracks.length > 0 && <div>
-            <div>
-                {Object.hasOwn(lastTrack, "@attr") && lastTrack["@attr"].nowplaying
-                    ? <p>I'm currently listening to {lastTrack.name} by {lastTrack.artist["#text"]}</p>
-                    : <p>The last song I listened to was {lastTrack.name} by {lastTrack.artist["#text"]}</p>
-                }
-                <FontAwesomeIcon style={{ "color": "var(--dark-theme-orange)" }} icon={faCompactDisc} size="2x" spin />
+        // Billie Eilish - everything i wanted (Won a Grammy)
+        "https://open.spotify.com/track/3ZCTVFBt2Brf31RLEnCkWJ?si=ef9b531f417d45ad"
+    ];
+
+    const tasteIntro = <>
+        <h2>Don't judge me too much</h2>
+        <p>Or do. I like my music, some good, and some that won't win a Grammy anytime soon&nbsp;
+            <a href={questionable[Math.floor(Math.random() * questionable.length)]}>(or maybe they will?)</a> but I still love them regardless.</p>
+    </>;
+
+    return <section id="music-taste">
+        {spotifyAuthToken === null
+            ? 
+            <Loader />
+            : <div>
+                {tasteIntro}
+                <SpotifyAuth.Provider value={spotifyAuthToken}>
+                    <MostRecentTrack />
+                </SpotifyAuth.Provider>
             </div>
-            <SpotifyAuth.Provider value={spotifyAuthToken}>
-                {lastTrackInfo !== null && <SpotifyPlayer album={lastTrack.album["#text"]} artist={lastTrack.artist["#text"]} song={lastTrack.name} />}
-            </SpotifyAuth.Provider>
-        </div>}
+        }
     </section>
 }
 

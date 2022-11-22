@@ -68,15 +68,13 @@ function Taste(props) {
     </>;
 
     return <section id="music-taste">
+        {tasteIntro}
         {spotifyAuthToken === null
             ? 
             <Loader />
-            : <div>
-                {tasteIntro}
-                <SpotifyAuth.Provider value={spotifyAuthToken}>
-                    <MostRecentTrack />
-                </SpotifyAuth.Provider>
-            </div>
+            : <SpotifyAuth.Provider value={spotifyAuthToken}>
+                <MostRecentTrack />
+            </SpotifyAuth.Provider>
         }
     </section>
 }

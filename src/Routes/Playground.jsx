@@ -1,12 +1,9 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceLaughBeam } from "@fortawesome/pro-thin-svg-icons";
-
 import Content from "../Components/Content";
+import Taste from "../Containers/Taste";
 
 import "./stylish.css";
-import Taste from "../Containers/Taste";
 
 /**
  * The Playground route.

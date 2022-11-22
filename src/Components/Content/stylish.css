@@ -52,10 +52,12 @@
 .content h2, 
 .content h3 {
     margin-bottom: 1vh;
+    border-bottom: 1px solid var(--dark-theme-orange);
 
     font-family: 'desire-pro', serif;
     text-align: left;
-    border-bottom: 1px solid var(--dark-theme-orange);
+    
+    width: fit-content;
 }
 
 .content a {

@@ -19,6 +19,10 @@ import "./stylish.css";
 function Taste(props) {
     const [spotifyAuthToken, setSpotifyAuthToken] = useState(null);
 
+    function getRandomElementInArray(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
     /**
      * Retrieves an access token from Spotify's API using OAuth2.
      */
@@ -64,11 +68,18 @@ function Taste(props) {
         "https://open.spotify.com/track/3ZCTVFBt2Brf31RLEnCkWJ?si=ef9b531f417d45ad"
     ];
 
-    const tasteIntro = <>
+    const timeFrames = ["7day", "1month", "3month", "6month", "12month", "overall"];
+    const firstTimeFrame = getRandomElementInArray(timeFrames);
+    
+    timeFrames.splice(timeFrames.indexOf(firstTimeFrame), 1);
+    
+    const secondTimeFrame = getRandomElementInArray(timeFrames);
+
+    const tasteIntro = <div id="taste-intro">
         <h2>Who doesn't like music?</h2>
-        <p>I'm no different, but don't judge my taste too much. Or do. I like my music, some good, and some that won't win a Grammy anytime soon&nbsp;
-            <a href={questionable[Math.floor(Math.random() * questionable.length)]}>(or maybe they will?)</a> but I still love them regardless.</p>
-    </>;
+        <p>Don't judge my taste too much. Or do.<br />You'll see a few songs here, some good, and some that won't win a Grammy anytime soon&nbsp;
+            <a href={getRandomElementInArray(questionable)}>(or maybe they will?)</a> but I still love them regardless.</p>
+    </div>;
 
     return <section id="music-taste">
         {tasteIntro}
@@ -80,8 +91,8 @@ function Taste(props) {
                     <MostRecentTrack />
                     
                     {/* Have this pick two date ranges at random, instead of hard-coding it.  */}
-                    <MostPlayedTrack />
-                    <MostPlayedTrack timeFrame="7day"/>
+                    <MostPlayedTrack timeFrame={firstTimeFrame} />
+                    <MostPlayedTrack timeFrame={secondTimeFrame} />
                 </SpotifyAuth.Provider>
             </div>
         }

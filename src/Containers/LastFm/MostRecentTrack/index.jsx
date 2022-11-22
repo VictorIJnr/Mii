@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 import axios from "axios";
+import classNames from "classnames";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompactDisc } from "@fortawesome/sharp-solid-svg-icons";
 
 import SpotifyPlayer from "../../SpotifyPlayer";
 import Loader from "../../../Components/Loader";
@@ -36,16 +40,18 @@ function MostRecentTrack(props) {
     }
 
     const lastTrack = recentTracks.length > 0 ? recentTracks[0] : {};
+    const isPlaying = Object.hasOwn(lastTrack, "@attr") && lastTrack["@attr"].nowplaying;
 
     return <div className="most-recent-track">
         {recentTracks.length === 0
             ? <Loader />
             : <>
-                {Object.hasOwn(lastTrack, "@attr") && lastTrack["@attr"].nowplaying
-                    ? <h3>What I'm currently listening to!</h3>
-                    : <h3>The last song I listened to!</h3>
+                {isPlaying
+                    ? <h3>What I'm currently listening to</h3>
+                    : <h3>The last song I listened to</h3>
                 }
                 <SpotifyPlayer album={lastTrack.album["#text"]} artist={lastTrack.artist["#text"]} song={lastTrack.name} />
+                <p className={classNames({ "currently-playing": isPlaying })}><FontAwesomeIcon icon={faCompactDisc} size="2x" spin={isPlaying} /></p>
             </>
         }
     </div>

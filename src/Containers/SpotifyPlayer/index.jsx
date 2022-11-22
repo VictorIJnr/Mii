@@ -72,8 +72,6 @@ function SpotifyPlayer(props) {
         .catch(err => console.error(err));
     }
 
-    console.log(trackInfo);
-
     return trackInfo === null
         ? <Loader />
         : <div className="spotify-player">

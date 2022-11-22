@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import SpotifyPlayer from "../../SpotifyPlayer";
+import Loader from "../../../Components/Loader";
+
+import "../stylish.css";
 
 /**
  * Retrieves my most recently played song from Last.FM.
@@ -14,10 +17,13 @@ function MostRecentTrack(props) {
     function getRecentTracks() {
         console.log("Retrieving my most recent track from LastFM.");
 
-        axios.get("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&format=json", {
+        axios.get("http://ws.audioscrobbler.com/2.0/", {
             params: {
                 "api_key": process.env.REACT_APP_LAST_FM_API_KEY,
-                "user": "Sk8terTiger"
+                "method": "user.getrecenttracks",
+                "format": "json",
+                "user": "Sk8terTiger",
+                "limit": 1
             }
         })
             .then(({ data }) => setRecentTracks(data.recenttracks.track))
@@ -31,17 +37,18 @@ function MostRecentTrack(props) {
 
     const lastTrack = recentTracks.length > 0 ? recentTracks[0] : {};
 
-    return <section id="recent-tracks">
-        {recentTracks.length > 0 && <div>
-            <div>
+    return <div className="most-recent-track">
+        {recentTracks.length === 0
+            ? <Loader />
+            : <>
                 {Object.hasOwn(lastTrack, "@attr") && lastTrack["@attr"].nowplaying
-                    ? <h3>Here's what I'm currently listening to!</h3>
-                    : <h3>Here's the last song I listened to!</h3>
+                    ? <h3>What I'm currently listening to!</h3>
+                    : <h3>The last song I listened to!</h3>
                 }
-            </div>
-            <SpotifyPlayer album={lastTrack.album["#text"]} artist={lastTrack.artist["#text"]} song={lastTrack.name} />
-        </div>}
-    </section>
+                <SpotifyPlayer album={lastTrack.album["#text"]} artist={lastTrack.artist["#text"]} song={lastTrack.name} />
+            </>
+        }
+    </div>
 }
 
 export default MostRecentTrack;

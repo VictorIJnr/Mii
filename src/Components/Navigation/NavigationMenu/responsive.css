@@ -1,0 +1,47 @@
+@media screen and (max-width: 1279px) {
+    #navigation-menu {
+        position: fixed;
+
+        width: 100%;
+        
+        bottom: 0;
+        background-color: var(--bg-colour);
+
+        /* Need this to be large enough such that it's above everything else. */
+        z-index: 32;
+
+        flex-direction: row;
+    }
+
+    /*
+        I don't see a reason to make these responsive changes to the LinkedIcon component.
+        Those components SHOULDN'T need to intrinsically worry about being responsive.
+        Only the components that use them should be worried about it.
+        If we end up having the same code copy-pasted in different components, we can look to making it a CSS class.
+    */
+    #navigation-menu .linked-icon {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    #navigation-menu .linked-icon > svg {
+        margin-right: 0;
+    }
+
+    #navigation-menu > .linked-icon-wrapper {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #navigation-menu {
+        position: absolute;
+        
+        flex-direction: column;
+    }
+
+    #navigation-menu .linked-icon.selected-linked-icon::before {
+        border-left: 1.5px solid var(--dark-theme-orange);
+    }
+}

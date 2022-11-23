@@ -20,8 +20,7 @@ function Projects(props) {
             <h1>Some Stuff I've Worked On</h1>
             <p>
                 <span>
-                    These are a few personal projects that I've done over the years.<br />
-                    Primarily, you'll see projects I completed during my education. I'm not ready to share all of my secret, super-fun, unicorn-to-be, projects yet.<br />
+                    These are a few personal projects that I've done over the years. Primarily, you'll see projects I completed during my education.<br />
                     But you <i>may</i> see a hackathon project which is in no way an expression of my views.<br /><br />
                     
                     <span>

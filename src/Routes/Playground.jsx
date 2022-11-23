@@ -12,7 +12,7 @@ import "./stylish.css";
  */
 function Playground() {
     return <Content>
-        <h1>I'm going to have some fun here</h1>
+        <h1>Let's have some fun here</h1>
         <section id="playground-overview">
             <p>
                 That's what you did at playgrounds as a kid, right? Have fun? Play in the sand? <s>Take candy from a stranger?</s> Go down a slide?<br />

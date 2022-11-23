@@ -6,6 +6,7 @@ import classNames from "classnames";
 import NavigationMenu from "../Navigation/NavigationMenu";
 
 import "./stylish.css";
+import "./responsive.css";
 
 /**
  * Standardises large amounts of content on the page.

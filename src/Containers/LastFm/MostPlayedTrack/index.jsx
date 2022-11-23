@@ -7,6 +7,7 @@ import SpotifyPlayer from "../../SpotifyPlayer";
 import Loader from "../../../Components/Loader";
 
 import "../stylish.css";
+import "../responsive.css"
 
 /**
  * Retrieves the most played songs from Last.FM over a given period.

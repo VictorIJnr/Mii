@@ -10,6 +10,7 @@ import SpotifyPlayer from "../../SpotifyPlayer";
 import Loader from "../../../Components/Loader";
 
 import "../stylish.css";
+import "../responsive.css"
 
 /**
  * Retrieves my most recently played song from Last.FM.

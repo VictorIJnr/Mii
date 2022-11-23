@@ -8,6 +8,7 @@ import { faCatSpace as faCatSolid } from "@fortawesome/pro-solid-svg-icons";
 import LinkedIcon from "../LinkedIcon";
 
 import "./stylish.css";
+import "./responsive.css";
 
 /**
  * Renders the navigation menu.

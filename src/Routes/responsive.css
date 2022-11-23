@@ -1,0 +1,16 @@
+@media screen and (max-width: 1279px) {
+    #greeting h1,
+    #greeting h2,
+    #greeting h3 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #greeting h1,
+    #greeting h2,
+    #greeting h3 {
+        text-align: left;
+    }
+}

@@ -1,10 +1,11 @@
 #navigation-menu {
-    position: absolute;
-
     display: flex;
-    flex-direction: column;
 
     justify-content: center;
+}
+
+#navigation-menu > .linked-icon-wrapper {
+    flex: 1;
 }
 
 #navigation-menu .linked-icon {
@@ -39,8 +40,4 @@
     height: 100%;
 
     border-color: var(--dark-theme-orange);
-}
-
-#navigation-menu .linked-icon.selected-linked-icon::before {
-    border-left: 1.5px solid var(--dark-theme-orange);
 }

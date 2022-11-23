@@ -5,16 +5,6 @@
     justify-content: center;
 }
 
-#music-taste-cards > div {
-    display: flex;
-    flex: 1;
-    
-    margin: 0vh 2.5vw;
-
-    justify-content: center;
-    align-items: center;
-}
-
 #taste-intro {
     display: flex;
     flex-direction: column;

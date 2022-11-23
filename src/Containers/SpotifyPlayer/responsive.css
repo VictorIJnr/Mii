@@ -1,0 +1,11 @@
+@media screen and (max-width: 959px) {
+    .spotify-player > iframe {
+        height: 80px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .spotify-player > iframe {
+        height: 352px;
+    }
+}

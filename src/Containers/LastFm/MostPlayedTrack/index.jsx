@@ -7,18 +7,17 @@ import SpotifyPlayer from "../../SpotifyPlayer";
 import Loader from "../../../Components/Loader";
 
 import "../stylish.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * Retrieves the most played songs from Last.FM over a given period.
  */
 function MostPlayedTrack(props) {
-    const [mostPlayedTracks, setMostPlayedTracks] = useState([]);
+    const [mostPlayedTrack, setMostPlayedTrack] = useState(null);
 
     /**
      * Retrieves my most played tracks from Last.fm over a given time frame.
      */
-    function getMostPlayedTracks() {
+    function getMostPlayedTrack() {
         console.log(`Retrieving my most played track from Last.fm for the time frame "${props.timeFrame}".`);
 
         axios.get("http://ws.audioscrobbler.com/2.0/", {
@@ -33,63 +32,60 @@ function MostPlayedTrack(props) {
         })
             .then(({ data }) => {
                 console.log(data);
-                setMostPlayedTracks(data.toptracks.track);
+                setMostPlayedTrack(data.toptracks.track[0]);
             })
             .catch(err => console.error(err));
     };
 
-    if (mostPlayedTracks.length === 0) {
-        getMostPlayedTracks();
+    if (mostPlayedTrack === null) {
+        getMostPlayedTrack();
 
         //? Honestly, we could get away without an interval here.
         //? It's unlikely to change whilst it's being looked at.
         //? Nah, I'll keep it, it'll be cool to see it change if I'm listening to a song that then ends up here :D
-        setInterval(getMostPlayedTracks, 5 * 60 * 1000);
+        setInterval(getMostPlayedTrack, 5 * 60 * 1000);
     }
 
-    const mostPlayed = mostPlayedTracks[0];
-    const secondMostPlayed = mostPlayedTracks[1];
-
     let timeFrameText = "";
-    let trackDescription = <FontAwesomeIcon />;
+    let trackDescription = "";
 
-    if (mostPlayedTracks.length > 0) {
+    if (mostPlayedTrack !== null) {
         switch (props.timeFrame) {
             case "7day":
                 timeFrameText = "This week, I've had this on repeat:";
-                trackDescription = `${mostPlayed.playcount} listens this week. Probably just a flash in the pan.`;
+                trackDescription = `${mostPlayedTrack.playcount} listens this week. Probably just a flash in the pan.`;
                 break;
             case "1month":
                 timeFrameText = "My favourite song this month:"
-                trackDescription = `Okay, ${mostPlayed.playcount} plays isn't \"flash in the pan\" territory.`;
+                trackDescription = `Okay, ${mostPlayedTrack.playcount} plays isn't \"flash in the pan\" territory.`;
                 break;
             case "3month":
                 timeFrameText = "What I'm liking this quarter:"
-                trackDescription = `${mostPlayed.playcount} times this quarter. I'll aim for 10% growth QoQ.`;
+                trackDescription = `${mostPlayedTrack.playcount} times this quarter. I'll aim for 10% growth QoQ.`;
                 break;
             case "6month":
                 timeFrameText = "I've put up with this for 6 months:";
-                trackDescription = `I've suffered by listening to this ${mostPlayed.playcount} times. Help.`;
+                trackDescription = `I've suffered by listening to this ${mostPlayedTrack.playcount} times. Help.`;
                 break;
             case "overall":
                 //? Who are we kidding? It's going to be Ribs. And second will be everything i wanted.
-                timeFrameText = `Here's ${mostPlayed.name} by ${mostPlayed.artist.name}.`;
-                trackDescription = `My most played song. Just ${mostPlayed.playcount} listens. Nothing special.`;
+                timeFrameText = `Here's ${mostPlayedTrack.name} by ${mostPlayedTrack.artist.name}.`;
+                trackDescription = `My most played song. Just ${mostPlayedTrack.playcount} listens. Nothing special.`;
                 break;
             default:
                 timeFrameText = "I've listened to this too much this year"
-                trackDescription = `${mostPlayed.playcount} times in fact. Good thing I can multitask.`
+                trackDescription = `${mostPlayedTrack.playcount} times in fact. Good thing I can multitask.`
                 break;
         }
     }
 
     return <div className="most-played-track">
-        {mostPlayedTracks.length === 0
+        {mostPlayedTrack === null
             ? <Loader />
             : <>
                 <h3>{timeFrameText}</h3>
                 {/* The album cannot be retrieved in the same API request. So we'll just YOLO it and hope we get the right album. */}
-                <SpotifyPlayer artist={mostPlayed.artist.name} song={mostPlayed.name} />
+                <SpotifyPlayer artist={mostPlayedTrack.artist.name} song={mostPlayedTrack.name} />
                 <p>{trackDescription}</p>
             </>
         }

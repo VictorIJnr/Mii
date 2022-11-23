@@ -8,6 +8,7 @@ import MostRecentTrack from "../LastFm/MostRecentTrack";
 import MostPlayedTrack from "../LastFm/MostPlayedTrack";
 
 import "./stylish.css";
+import "./responsive.css";
 
 /**
  * Retrieves and renders what is considered my current taste in music.

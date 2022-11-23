@@ -1,0 +1,19 @@
+@media screen and (max-width: 959px) {
+    #music-taste-cards {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #music-taste-cards {
+        flex-direction: row;
+    }
+
+    #music-taste-cards > div:first-of-type {
+        margin-left: 0vw;
+    }
+    
+    #music-taste-cards > div:last-of-type {
+        margin-right: 0vw;
+    }    
+}

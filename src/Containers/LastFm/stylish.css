@@ -2,8 +2,6 @@
 .most-recent-track {
     display: flex;
     flex-direction: column;
-
-    width: 22.5vw;
 }
 
 .most-played-track > *,
@@ -11,9 +9,12 @@
     flex: 1;
 }
 
+/* If the description is too large, we don't want the other components increasing in size. */
+.most-played-track > h3,
 .most-played-track > .spotify-player,
-.most-recent-track > .spotify-player {
-    width: 20vw;
+.most-recent-track > h3,
+.most-played-track > .spotify-player {
+    flex-grow: 0;
 }
 
 .most-played-track > p,

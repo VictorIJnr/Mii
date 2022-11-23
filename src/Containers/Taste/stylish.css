@@ -15,14 +15,6 @@
     align-items: center;
 }
 
-#music-taste-cards > div:first-of-type {
-    margin-left: 0vw;
-}
-
-#music-taste-cards > div:last-of-type {
-    margin-right: 0vw;
-}
-
 #taste-intro {
     display: flex;
     flex-direction: column;

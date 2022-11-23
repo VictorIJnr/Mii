@@ -7,6 +7,7 @@ import SpotifyAuth from "../../Context/SpotifyAuth";
 import Loader from "../../Components/Loader";
 
 import "./stylish.css";
+import "./responsive.css";
 
 /**
  * Retrieves the necessary information needed to render a player for a preview of a song.
@@ -75,8 +76,8 @@ function SpotifyPlayer(props) {
     return trackInfo === null
         ? <Loader />
         : <div className="spotify-player">
-            <iframe src={`https://open.spotify.com/embed/track/${trackInfo.id}?utm_source=generator&theme=0`} width="100%" height="352"
-                frameBorder="0" allowFullScreen allow="fullscreen" />
+            <iframe src={`https://open.spotify.com/embed/track/${trackInfo.id}?utm_source=generator&theme=0`}
+                frameBorder="0" />
         </div>
 }
 

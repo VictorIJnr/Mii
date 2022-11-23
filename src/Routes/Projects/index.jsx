@@ -20,8 +20,8 @@ function Projects(props) {
             <h1>Some Stuff I've Worked On</h1>
             <p>
                 <span>
-                    This is primarily a few personal projects that I've either done as a part of my education, or for fun.<br />
-                    Let me emphasise <b><i>for fun</i></b>. Okay? Well learning was also a part of it too in most cases.<br />
+                    These are a few personal projects that I've done over the years.<br />
+                    Primarily, you'll see projects I completed during my education. I'm not ready to share all of my secret, super-fun, unicorn-to-be, projects yet.<br />
                     But you <i>may</i> see a hackathon project which is in no way an expression of my views.<br /><br />
                     
                     <span>
@@ -46,10 +46,13 @@ function Projects(props) {
         </Highlight>
         
         {/* Add a highlight for WaffleCo */}
+        {/* https://github.com/VictorIJnr/WaffleCo */}
+        {/* In my defence, they didn't use it. I didn't even contact them about it for that matter... Anyway, I had fun, and learnt a lot making it. That matters more than getting paid for it. Right? */}
+        {/* gource -f -a 0.25 -s 0.5 --frameless --high-dpi --hide date,progress --user-image-dir ~/.gource-avatars/ */}
 
         {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH">
             <p>
-                <a href="https://www.nbcnews.com/politics/white-house/trump-referred-haiti-african-countries-shithole-nations-n836946">
+                <a href="https://www.nbcnews.com/politics/white-house/trump-referred-hahttps://raphaelschaad.github.ioiti-african-countries-shithole-nations-n836946">
                     A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />
                 </a>
                 This doesn't render all the time. So, if you're seeing this, congrats! I guess. I did warn you to be fair.

@@ -2,6 +2,8 @@
 .most-recent-track {
     display: flex;
     flex-direction: column;
+
+    width: 22.5vw;
 }
 
 .most-played-track > *,
@@ -11,7 +13,7 @@
 
 .most-played-track > .spotify-player,
 .most-recent-track > .spotify-player {
-    width: 17.5vw;
+    width: 20vw;
 }
 
 .most-played-track > p,

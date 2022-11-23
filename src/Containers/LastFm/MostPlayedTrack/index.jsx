@@ -69,13 +69,12 @@ function MostPlayedTrack(props) {
                 break;
             case "6month":
                 timeFrameText = "I've put up with this for 6 months:";
-                trackDescription = `I've suffered by listening to this ${mostPlayed.playcount} times.`;
+                trackDescription = `I've suffered by listening to this ${mostPlayed.playcount} times. Help.`;
                 break;
             case "overall":
                 //? Who are we kidding? It's going to be Ribs. And second will be everything i wanted.
                 timeFrameText = `Here's ${mostPlayed.name} by ${mostPlayed.artist.name}.`;
-                trackDescription = `My most played song with ${mostPlayed.playcount} times so far.🙃\n`
-                    + `${secondMostPlayed.name} by ${secondMostPlayed.artist.name} is second with ${secondMostPlayed.playcount} listens.`;
+                trackDescription = `My most played song. Just ${mostPlayed.playcount} listens. Nothing special.`;
                 break;
             default:
                 timeFrameText = "I've listened to this too much this year"

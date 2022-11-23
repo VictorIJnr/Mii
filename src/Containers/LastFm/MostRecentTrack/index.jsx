@@ -47,8 +47,8 @@ function MostRecentTrack(props) {
             ? <Loader />
             : <>
                 {isPlaying
-                    ? <h3>What I'm currently listening to</h3>
-                    : <h3>The last song I listened to</h3>
+                    ? <h3>What I'm currently listening to:</h3>
+                    : <h3>The last song I listened to:</h3>
                 }
                 <SpotifyPlayer album={lastTrack.album["#text"]} artist={lastTrack.artist["#text"]} song={lastTrack.name} />
                 <p className={classNames({ "currently-playing": isPlaying })}><FontAwesomeIcon icon={faCompactDisc} size="2x" spin={isPlaying} /></p>

@@ -77,7 +77,7 @@ function Taste(props) {
 
     const tasteIntro = <div id="taste-intro">
         <h2>Who doesn't like music?</h2>
-        <p>Don't judge my taste too much. Or do.<br />You'll see a few songs here, some good, and some that won't win a Grammy anytime soon&nbsp;
+        <p>Don't judge my taste too much. Or do. You do you.<br />You'll see a few songs here, some good, and some that won't win a Grammy anytime soon&nbsp;
             <a href={getRandomElementInArray(questionable)}>(or maybe they will?)</a> but I still love them regardless.</p>
     </div>;
 

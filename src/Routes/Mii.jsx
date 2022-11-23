@@ -1,9 +1,9 @@
 import React from "react";
 
-import Content from "../Components/Content";
-
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeSquare } from "@fortawesome/sharp-solid-svg-icons";
+
+import Content from "../Components/Content";
 import LinkedIcon from "../Components/Navigation/LinkedIcon";
 
 import "./stylish.css";
@@ -43,7 +43,7 @@ function Mii(props) {
                 <div id="mii-contact-links" className="fade-in long-delay">
                     <LinkedIcon icon={faGithub} size="3x" path="https://github.com/VictorIJnr" externalLink={true} />
                     <LinkedIcon icon={faEnvelopeSquare} size="3x" path="mailto:victorijnr@gmail.com" externalLink={true} />
-                    <LinkedIcon icon={faLinkedinIn} size="3x" path="https://www.linkedin.com/in/victorijnr/" externalLink={true} />
+                    <LinkedIcon icon={faLinkedin} size="3x" path="https://www.linkedin.com/in/victorijnr/" externalLink={true} />
                 </div>
             </div>
         </div>

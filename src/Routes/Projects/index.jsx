@@ -2,6 +2,7 @@ import React from "react";
 
 import bloopy from "../../assets/images/Bloopy.png";
 import donny from "../../assets/images/Donny.png";
+import waffles from "../../assets/images/waffles.png";
 
 import Content from "../../Components/Content";
 import Highlight from "../../Components/Highlight";
@@ -44,12 +45,23 @@ function Projects(props) {
             </p>
         </Highlight>
         
-        {/* Add a highlight for WaffleCo */}
-        {/* https://github.com/VictorIJnr/WaffleCo */}
-        {/* In my defence, they didn't use it. I didn't even contact them about it for that matter... Anyway, I had fun, and learnt a lot making it. That matters more than getting paid for it. Right? */}
+        <Highlight title="Waffle Co" image={waffles} projectPath="waffles">
+            {/* https://github.com/VictorIJnr/WaffleCo */}
+            <p>
+                A website I made for the St Andrews Waffle Company.<br /><br />
+                I took this as a chance to test out my skills, and play around with Bootstrap. Oh, and get paid an eye-watering £0.
+                {/* In my defence, they didn't use it. I didn't even contact them about it for that matter... Anyway, I had fun, and learnt a lot making it. That matters more than getting paid for it. Right? */}
+                {/* Other than my first iteration of my personal website (I'm doing you a favour by burying that deep in the repo history), this was the first website I made. */}
+                {/* I loved this at the time, especially the diagonal menus; who thinks of that?. */}
+                {/* However, I've learned to get over my stubborness towards aspects like responsive design, which I ignored in this project, in order to improve myself. */}
+                {/* It was also a great chance to use Bootstrap, especially it's grids and carousels, even though I'm not using Bootstrap in this iteration of my personal webiste. */}
+                {/* For your sake, I hope you're not looking at the Waffle Co website on mobile. */}
+            </p>
+        </Highlight>
+
         {/* gource -f -a 0.25 -s 0.5 --frameless --high-dpi --hide date,progress --user-image-dir ~/.gource-avatars/ */}
 
-        {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH">
+        {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH" reversed={true}>
             <p>
                 <a href="https://www.nbcnews.com/politics/white-house/trump-referred-hahttps://raphaelschaad.github.ioiti-african-countries-shithole-nations-n836946">
                     A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />

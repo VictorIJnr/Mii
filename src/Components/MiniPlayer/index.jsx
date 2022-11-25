@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import bu from "../../assets/videos/bu-1080.mp4";
+import bu from "../../assets/images/gifs/bu.gif";
 
 import "./stylish.css";
 
@@ -10,9 +10,7 @@ import "./stylish.css";
  * Should be used for GIFs generated from gource visualisations.
  */
 function MiniPlayer(props) {
-    return <video src={props.src} autoPlay={true} loop={true}>
-
-    </video>
+    return <img src={props.src} alt="A GIF" />
 }
 
 MiniPlayer.propTypes = {

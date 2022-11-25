@@ -1,0 +1,13 @@
+.technology-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.technology-wrapper > svg {
+    flex: 1;
+
+    background-color: rebeccapurple;
+}

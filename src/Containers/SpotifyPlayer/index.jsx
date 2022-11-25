@@ -76,7 +76,7 @@ function SpotifyPlayer(props) {
     return trackInfo === null
         ? <Loader />
         : <div className="spotify-player">
-            <iframe src={`https://open.spotify.com/embed/track/${trackInfo.id}?utm_source=generator&theme=0`}
+            <iframe title={`${props.artist} - ${props.song}`} src={`https://open.spotify.com/embed/track/${trackInfo.id}?utm_source=generator&theme=0`}
                 frameBorder="0" />
         </div>
 }

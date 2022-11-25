@@ -55,20 +55,6 @@ function Taste(props) {
         console.log("Knock yourself out: https://www.last.fm/user/Sk8terTiger");
     }
 
-    const questionable = [
-        // Baby Shark - Jauz Remix
-        "https://open.spotify.com/track/3E4a16orMZ7IVg5KzlMAMM?si=d716b050c3124737",
-
-        // Flume - Only Fans
-        "https://open.spotify.com/track/5syhuDL0LeXs0T1KSW7lkV?si=760057d45638495f",
-
-        // The Chainsmokers - Don't Let Me Down (Won a Grammy)
-        "https://open.spotify.com/track/1i1fxkWeaMmKEB4T7zqbzK?si=c6f5f2b580554226",
-
-        // Billie Eilish - everything i wanted (Won a Grammy)
-        "https://open.spotify.com/track/3ZCTVFBt2Brf31RLEnCkWJ?si=ef9b531f417d45ad"
-    ];
-
     const timeFrames = ["7day", "1month", "3month", "6month", "12month", "overall"];
     const firstTimeFrame = getRandomElementInArray(timeFrames);
     

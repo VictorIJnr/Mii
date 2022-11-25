@@ -58,7 +58,7 @@ function MostPlayedTrack(props) {
                 break;
             case "1month":
                 timeFrameText = "My favourite song this month:"
-                trackDescription = `Okay, ${mostPlayedTrack.playcount} plays isn't \"flash in the pan\" territory.`;
+                trackDescription = `Okay, ${mostPlayedTrack.playcount} plays isn't "flash in the pan" territory.`;
                 break;
             case "3month":
                 timeFrameText = "What I'm liking this quarter:"

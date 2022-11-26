@@ -10,7 +10,7 @@ import "./stylish.css";
  * Should be used for GIFs generated from gource visualisations.
  */
 function MiniPlayer(props) {
-    return <img src={props.src} alt="A GIF" />
+    return <img src="https://d1cuiew8u1gk5n.cloudfront.net/bu/history.gif" alt="A GIF" />
 }
 
 MiniPlayer.propTypes = {

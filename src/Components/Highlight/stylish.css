@@ -24,10 +24,15 @@
     flex-direction: column;
 
     align-items: center;
+    justify-content: center;
 }
 
-.highlight-card > a {
+.highlight-card > a.highlight-link {
     width: fit-content;
+}
+
+.highlight-card > a.highlight-svg-link {
+    width: 100%;
 }
 
 /* Don't know why, but, having the asterisk like this looks weird :3 */
@@ -48,12 +53,8 @@
     color: var(--dark-theme-font-colour);
 }
 
-.highlight-card-info.hovered-image .highlight-card-arrow {
+.highlight-card-info.hovered-image {
     color: var(--dark-theme-orange);
-}
-
-.highlight-card-info.hovered-image h3.highlight-title {
-    opacity: 0;
 }
 
 .highlight-description {
@@ -69,37 +70,41 @@
 
 .highlight-image {
     transform: scale(1.25);
+    border-radius: 5px;
+}
+
+.highlight-svg-image {
+    width: 100%;
 }
 
 .highlight-image.hovered-image {
     z-index: -1;
-    transform: scale(1);
+    transform: scale(1.05);
 }
 
 .highlight-image-container {
     position: relative;
     overflow: hidden;
 
-    border-radius: 5px;
+    /* z-index: 1; */
+    /* transform: translateZ(0); */
+
+    /* border-radius: 5px; */
 }
 
 .highlight-image-overlay {
     position: absolute;
 
-    top: 0;
-    left: 0;
+    bottom: 0;
+    /* border-radius: 0; */
 
     height: 100%;
     width: 100%;
 
     z-index: 1;
 
-    background-color: var(--bg-colour);
+    background-image: linear-gradient(to top, var(--bg-colour) calc(1.75rem), rgba(255, 0, 0, 0));
     opacity: 0.8;
-}
-
-.highlight-image-overlay.hovered-image {
-    opacity: 0;
 }
 
 h3.highlight-title {
@@ -107,7 +112,8 @@ h3.highlight-title {
     margin: 0;
     padding: 0;
 
-    top: 10%;
+    bottom: 5%;
+    /* top: 10%; */
     left: 5%;
 
     border-bottom: none;

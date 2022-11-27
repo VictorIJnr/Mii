@@ -25,16 +25,16 @@ function Projects(props) {
                     But you <i>may</i> see a hackathon project which is in no way an expression of my views.<br /><br />
                     
                     <span>
-                        That should be enough of a warning, but don't worry, it's mostly vanilla work.<br />
-                        :D
+                        That should be enough of a warning, but don't worry, it's mostly vanilla work.
                     </span>
                 </span>
             </p>
         </section>
-        <Highlight title="Bloopy" image={bloopy} projectPath="bloopy">
+        <Highlight title="Everbridge" image="https://www.everbridge.com/wp-content/uploads/2022/07/Everbridge-Logo-2019-FullColor-RGB.svg" projectPath="everbridge">
             <p>
-                The first Android app I've ever made.<br /><br />
-                Flappy Bird was "problematic" a year prior to me making this, so I thought making another endless runner would be fun.
+                My current job as a software development engineer in test.<br /><br />
+                My focus has been automating our manual test cases in C# using SpecFlow - .NET's implementation of Cucumber.<br />
+                {/* However, that doesn't stop me from dabbling as a scrum master, with manual QA, and aiding our developers whenever necessary. */}
             </p>
         </Highlight>
         <Highlight title="bu" image="https://images.pexels.com/photos/11446855/pexels-photo-11446855.jpeg" projectPath="bu" reversed={true}>
@@ -44,8 +44,13 @@ function Projects(props) {
                In short, I have a SVM, Random Forest, and Neural Network that are all able to differentiate between Drake and William Shakespeare.
             </p>
         </Highlight>
-        
-        <Highlight title="Waffle Co" image={waffles} projectPath="waffles">
+        <Highlight title="Bloopy" image={bloopy} projectPath="bloopy">
+            <p>
+                The first Android app I've ever made.<br /><br />
+                Flappy Bird was "problematic" a year prior to me making this, so I thought making another endless runner would be fun.
+            </p>
+        </Highlight>
+        <Highlight title="Waffle Co" image={waffles} projectPath="waffles" reversed={true}>
             {/* https://github.com/VictorIJnr/WaffleCo */}
             <p>
                 A website I made for the St Andrews Waffle Company.<br /><br />
@@ -61,7 +66,7 @@ function Projects(props) {
 
         {/* gource -f -a 0.25 -s 0.5 --frameless --high-dpi --hide date,progress --user-image-dir ~/.gource-avatars/ */}
 
-        {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH" reversed={true}>
+        {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH">
             <p>
                 <a href="https://www.nbcnews.com/politics/white-house/trump-referred-hahttps://raphaelschaad.github.ioiti-african-countries-shithole-nations-n836946">
                     A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />

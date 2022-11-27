@@ -1,7 +1,6 @@
 import React from "react";
 
 import Content from "../../../Components/Content";
-import TechnologyWrapper from "../../../Components/TechnologyWrapper";
 import MiniPlayer from "../../../Components/MiniPlayer";
 
 import "./stylish.css";
@@ -17,9 +16,13 @@ function Bloopy() {
                 My first Android app.<br />
                 I created this when was 17 for my EPQ - a course where I was given free rein to create my own project, in a domain that I hadn't worked in before.<br /><br />
             </p>
-            {/* <TechnologyWrapper technologies={["Android", "Java"]} /> */}
-            <TechnologyWrapper technologies={["Android"]} />
         </section>
+        <section id="bloopy-graphics">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LLco2mpWQ-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+            <p>
+                
+            </p>
+        </section>        
         <MiniPlayer />
     </Content>
 }

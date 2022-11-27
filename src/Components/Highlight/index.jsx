@@ -17,17 +17,25 @@ import "./responsive.css";
 function Highlight(props) {
     const [isHovered, setIsHovered] = useState(false);
 
+    const isImageSVG = props.image.endsWith(".svg");
+
     const highlightClasses = classNames("project-highlight", {
         "reversed-highlight": props.reversed
     });
 
+    const linkClasses = classNames({
+        "highlight-link": !isImageSVG,
+        "highlight-svg-link": isImageSVG
+    });
+
     const imageClasses = classNames("highlight-image", {
-        "hovered-image": isHovered
+        "hovered-image": isHovered,
+        "highlight-svg-image": isImageSVG
     });
 
     const overlayClasses = classNames("highlight-image-overlay", {
         "hovered-image": isHovered
-    })
+    });
 
     const cardInfoClasses = classNames("highlight-card-info", {
         "hovered-image": isHovered
@@ -35,14 +43,13 @@ function Highlight(props) {
 
     return <section className={highlightClasses}>
         <div className="highlight-card">
-            <Link to={props.projectPath}>
+            <Link to={props.projectPath} className={linkClasses}>
                 <div className="highlight-image-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <div className={overlayClasses} />
                     <div className={cardInfoClasses}>
                         <h3 className="highlight-title">{props.title}</h3>
                         <FontAwesomeIcon className="highlight-card-arrow" icon={faArrowRight} size="2x"/>
                     </div>
-
                     <img className={imageClasses} src={props.image} alt={props.title} />
                 </div>
             </Link>
@@ -69,7 +76,7 @@ Highlight.propTypes = {
 
 Highlight.defaultProps = {
     image: "",
-    title: "Highlight",
+    title: "",
     projectPath: "/",
     reversed: false
 }

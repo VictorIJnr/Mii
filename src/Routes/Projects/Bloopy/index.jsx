@@ -1,7 +1,10 @@
 import React from "react";
 
 import Content from "../../../Components/Content";
+import HighlightImage from "../../../Components/Highlight/HighlightImage";
 import MiniPlayer from "../../../Components/MiniPlayer";
+
+import bloopy from "../../../assets/images/Bloopy.png";
 
 import "./stylish.css";
 
@@ -20,10 +23,11 @@ function Bloopy() {
         <section id="bloopy-graphics">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/LLco2mpWQ-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
             <p>
-                
+
             </p>
         </section>        
-        <MiniPlayer />
+        <HighlightImage image={bloopy} title="Bloopy" />
+        {/* <MiniPlayer /> */}
     </Content>
 }
 

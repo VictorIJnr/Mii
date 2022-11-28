@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/sharp-solid-svg-icons";
-
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+
+import HighlightImage from "./HighlightImage";
 
 import "./stylish.css";
 import "./responsive.css";
@@ -15,45 +13,12 @@ import "./responsive.css";
  * We're just highlighting the important parts here. We'll have a page dedicated to each project.
  */
 function Highlight(props) {
-    const [isHovered, setIsHovered] = useState(false);
-
-    const isImageSVG = props.image.endsWith(".svg");
-
     const highlightClasses = classNames("project-highlight", {
         "reversed-highlight": props.reversed
     });
 
-    const linkClasses = classNames({
-        "highlight-link": !isImageSVG,
-        "highlight-svg-link": isImageSVG
-    });
-
-    const imageClasses = classNames("highlight-image", {
-        "hovered-image": isHovered,
-        "highlight-svg-image": isImageSVG
-    });
-
-    const overlayClasses = classNames("highlight-image-overlay", {
-        "hovered-image": isHovered
-    });
-
-    const cardInfoClasses = classNames("highlight-card-info", {
-        "hovered-image": isHovered
-    });
-
     return <section className={highlightClasses}>
-        <div className="highlight-card">
-            <Link to={props.projectPath} className={linkClasses}>
-                <div className="highlight-image-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <div className={overlayClasses} />
-                    <div className={cardInfoClasses}>
-                        <h3 className="highlight-title">{props.title}</h3>
-                        <FontAwesomeIcon className="highlight-card-arrow" icon={faArrowRight} size="2x"/>
-                    </div>
-                    <img className={imageClasses} src={props.image} alt={props.title} />
-                </div>
-            </Link>
-        </div>
+        <HighlightImage image={props.image} title={props.title} path={props.projectPath} />
         <div className="highlight-description">
             {props.children}
         </div>

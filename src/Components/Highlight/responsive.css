@@ -46,7 +46,11 @@
         flex-direction: row-reverse;
     }
 
-    .highlight-description {
+    :not(.reversed-highlight) .highlight-description {
         margin-left: 10%;
+    }
+
+    .reversed-highlight .highlight-description {
+        margin-right: 10%;
     }
 }

@@ -1,0 +1,28 @@
+@media screen and (max-width: 1279px) {
+    #bloopy-animations {
+        flex-direction: column;
+    }
+
+    #bloopy-animations > p {
+        flex: 1;
+    }
+
+    #bloopy-animations > div {
+        flex: 2;
+        flex-basis: auto;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #bloopy-animations {
+        flex-direction: row;
+    }
+
+    #bloopy-animations > p {
+        flex: 1;
+    }
+
+    #bloopy-animations > div {
+        flex: 1;
+    }
+}

@@ -36,7 +36,7 @@
 
 @media screen and (min-width: 1280px) {
     #navigation-menu {
-        position: absolute;
+        position: fixed;
         
         flex-direction: column;
     }

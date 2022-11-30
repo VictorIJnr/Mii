@@ -1,0 +1,11 @@
+@media screen and (max-width: 1279px) {
+    #waffle-intro {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #waffle-intro {
+        flex-direction: row;
+    }
+}

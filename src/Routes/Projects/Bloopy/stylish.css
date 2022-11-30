@@ -7,13 +7,15 @@
 }
 
 .content.bloopy-content section::after {
+    --width: 25%;
+
     position: absolute;
     content: "";
 
     bottom: 0;
 
-    width: 25%;
-    left: 37.5%;
+    width: var(--width);
+    left: calc((100% - var(--width)) / 2);
 
     border-bottom: 1px solid var(--dark-theme-orange);
 }
@@ -82,7 +84,4 @@
 
 #bloopy-animations > div {
     margin-bottom: 2.5vh;
-
-    /* width: 560px; */
-    /* height: 315px; */
 }

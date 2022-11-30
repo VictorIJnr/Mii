@@ -1,4 +1,8 @@
 @media screen and (max-width: 1279px) {
+    #main-content {
+        margin: 0vh 2.5vw;
+    }
+
     /* This is just an easy way to put the navigation at the bottom. */
     .content {
         margin-bottom: 10vh;
@@ -7,6 +11,10 @@
 }
 
 @media screen and (min-width: 1280px) {
+    #main-content {
+        margin: 0 10vw;
+    }
+
     .content {
         flex-direction: column;
     }

@@ -1,0 +1,26 @@
+section.separator-section {
+    display: flex;
+    position: relative;
+    
+    flex-direction: column;
+    flex: 1;
+
+    width: 100%;
+
+    padding-bottom: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+section.separator-section::after {
+    --width: 25%;
+
+    position: absolute;
+    content: "";
+
+    bottom: 0;
+
+    width: var(--width);
+    left: calc((100% - var(--width)) / 2);
+
+    border-bottom: 1px solid var(--dark-theme-orange);
+}

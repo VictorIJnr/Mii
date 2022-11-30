@@ -8,6 +8,8 @@
     --dark-theme-font-colour: #CCC;
     --dark-theme-orange: #E6AB5E;
     --dark-theme-light-orange: #EEC591;
+
+    --dark-theme-font-colour-translucent: rgba(204, 204, 204, 0.25);
     
     /* --dark-theme-purple: #474787; */
 }

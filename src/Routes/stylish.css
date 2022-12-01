@@ -65,15 +65,14 @@
 
     justify-content: center;
     align-items: center;
-
-    margin-top: 2.5vh;
-    border-bottom: 1px solid var(--dark-theme-orange);
 }
 
 #projects-overview > p,
 #playground-overview > p {
     display: inline-block;
     text-align: center;
+
+    margin-bottom: 0;
 }
 
 .mii-hidden {

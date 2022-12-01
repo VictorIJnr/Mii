@@ -1,3 +1,14 @@
+#waffle-overview {
+    text-align: center;
+    align-items: center;
+}
+
 #waffle-intro {
     display: flex;
+}
+
+#waffle-motivation {
+    display: flex;
+    
+    flex-direction: row;
 }

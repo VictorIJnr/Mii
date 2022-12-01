@@ -3,7 +3,7 @@ import React from "react";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeSquare } from "@fortawesome/sharp-solid-svg-icons";
 
-import Content from "../Components/Content";
+import Content from "../Components/Layout/Content";
 import LinkedIcon from "../Components/Navigation/LinkedIcon";
 
 import "./stylish.css";

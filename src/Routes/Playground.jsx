@@ -1,6 +1,6 @@
 import React from "react";
 
-import Content from "../Components/Content";
+import Content from "../Components/Layout/Content";
 import Taste from "../Containers/Taste";
 
 import "./stylish.css";

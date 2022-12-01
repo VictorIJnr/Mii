@@ -1,6 +1,6 @@
 import React from "react";
 
-import Content from "../../../Components/Content";
+import Content from "../../../Components/Layout/Content";
 import SeparatorDiv from "../../../Components/Layout/SeparatorDiv";
 import SeparatorSection from "../../../Components/Layout/SeparatorSection";
 import HighlightImage from "../../../Components/Highlight/HighlightImage";

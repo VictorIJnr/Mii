@@ -24,10 +24,6 @@
     margin-bottom: 1vh;
 }
 
-.content.bloopy-content #main-content {
-    margin: 0 10vw;
-}
-
 #bloopy-overview {
     display: flex;
 

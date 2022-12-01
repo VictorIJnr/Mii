@@ -1,6 +1,6 @@
 import React from "react";
 
-import Content from "../../../Components/Content";
+import Content from "../../../Components/Layout/Content";
 import HighlightImage from "../../../Components/Highlight/HighlightImage";
 
 import bloopy from "../../../assets/images/Bloopy.png";

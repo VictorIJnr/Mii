@@ -4,7 +4,7 @@ import bloopy from "../../assets/images/Bloopy.png";
 import donny from "../../assets/images/Donny.png";
 import waffles from "../../assets/images/waffles.png";
 
-import Content from "../../Components/Content";
+import Content from "../../Components/Layout/Content";
 import Highlight from "../../Components/Highlight";
 
 import "../stylish.css";

@@ -1,11 +1,11 @@
-.project-highlight {
+.highlight-container {
     position: relative;
     display: flex;
     
     width: 75%;
 }
 
-.project-highlight::after {
+.highlight-container::after {
     position: absolute;
     content: "";
 

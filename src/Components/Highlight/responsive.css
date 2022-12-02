@@ -1,5 +1,5 @@
 @media screen and (max-height: 500px) {
-    .project-highlight {
+    .highlight-container {
         margin-top: 5vh;
         padding-bottom: 5vh;
     }
@@ -22,7 +22,7 @@
 }
 
 @media screen and (max-width: 960px) {
-    .project-highlight {
+    .highlight-container {
         flex-direction: column;
     }
 
@@ -32,12 +32,12 @@
 }
 
 @media screen and (min-width: 960px) {
-    .project-highlight {
+    .highlight-container {
         flex-direction: row;
     }
 
     /* This looks weird if reversed on a phone, or other small screen device. */
-    .project-highlight.reversed-highlight {
+    .highlight-container.reversed-highlight {
         flex-direction: row-reverse;
     }
 

@@ -14,7 +14,7 @@ import "./responsive.css";
  * We're just highlighting the important parts here. We'll have a page dedicated to each project.
  */
 function Highlight(props) {
-    const highlightClasses = classNames("project-highlight", {
+    const highlightClasses = classNames("highlight-container", {
         "reversed-highlight": props.reversed
     });
 

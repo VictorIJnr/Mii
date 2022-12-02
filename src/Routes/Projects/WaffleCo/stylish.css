@@ -3,6 +3,14 @@
     align-items: center;
 }
 
+#waffle-overview > h1 {
+    margin-bottom: 2.5vh;
+}
+
+#waffle-overview > p {
+    margin-bottom: 0;
+}
+
 #waffle-intro {
     display: flex;
 }
@@ -10,5 +18,33 @@
 #waffle-motivation {
     display: flex;
     
+    flex-direction: row;
+}
+
+#waffle-intro .highlight-container {
+    margin: 0;
+    padding: 0;
+}
+
+#waffle-intro .highlight-container::after {
+    width: 0;
+    height: 0;
+
+    border: none;
+}
+
+#waffle-intro > .highlight-container > .highlight-description {
+    margin: 0;
+}
+
+#waffle-outro {
+    display: flex;
+}
+
+#waffle-outro > #waffle-outro-images {
+    display: flex;
+    
+    width: 100%;
+
     flex-direction: row;
 }

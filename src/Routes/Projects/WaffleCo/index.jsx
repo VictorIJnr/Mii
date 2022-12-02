@@ -1,15 +1,16 @@
 import React from "react";
 
 import Content from "../../../Components/Layout/Content";
-import SeparatorDiv from "../../../Components/Layout/SeparatorDiv";
 import SeparatorSection from "../../../Components/Layout/SeparatorSection";
+import Highlight from "../../../Components/Highlight";
 import HighlightImage from "../../../Components/Highlight/HighlightImage";
 
 import waffleCo from "../../../assets/images/waffles.png";
+import waffleCarousel from "../../../assets/images/WaffleCo/carousel.png";
+import waffleGallery from "../../../assets/images/WaffleCo/gallery.png";
 
 import "./stylish.css";
 import "./responsive.css";
-import Highlight from "../../../Components/Highlight";
 
 /**
  * The project page for the WaffleCo website.
@@ -32,6 +33,17 @@ function WaffleCo(props) {
                     Plus, I had fun, and learnt a lot about Bootstrap whilst making it. That matters more than getting paid for it. Right?
                 </p>
             </Highlight>
+        </SeparatorSection>
+        <SeparatorSection id="waffle-outro">
+            <div id="waffle-outro-images">
+                <HighlightImage image={waffleCarousel} />
+                <HighlightImage image={waffleGallery} />
+            </div>
+            <p>
+                I loved this at the time, especially the diagonal menu. Seriously, who thinks of that?<br />
+                {/* I've since learned to get over my stubborness towards responsive design, which I ignored in this project, in order to improve my .<br /> */}
+                It was also a great chance to use Bootstrap, especially it's grids and carousels, even though I'm not using Bootstrap in this iteration of my personal webiste.
+            </p>
         </SeparatorSection>
     </Content>
 }

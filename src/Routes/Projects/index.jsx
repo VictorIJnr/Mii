@@ -57,7 +57,6 @@ function Projects(props) {
                 <p>
                     A website I made for the St Andrews Waffle Company.<br /><br />
                     I took this as a chance to test out my skills, and play around with Bootstrap. Oh, and get paid an eye-watering £0.
-                    {/* In my defence, they didn't use it. I didn't even contact them about it for that matter... Anyway, I had fun, and learnt a lot making it. That matters more than getting paid for it. Right? */}
                     {/* Other than my first iteration of my personal website (I'm doing you a favour by burying that deep in the repo history), this was the first website I made. */}
                     {/* I loved this at the time, especially the diagonal menus; who thinks of that?. */}
                     {/* However, I've learned to get over my stubborness towards aspects like responsive design, which I ignored in this project, in order to improve myself. */}
@@ -70,7 +69,7 @@ function Projects(props) {
 
             {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH">
                 <p>
-                    <a href="https://www.nbcnews.com/politics/white-house/trump-referred-hahttps://raphaelschaad.github.ioiti-african-countries-shithole-nations-n836946">
+                    <a href="https://www.nbcnews.com/politics/white-house/trump-referred-haiti-african-countries-shithole-nations-n836946">
                         A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />
                     </a>
                     This doesn't render all the time. So, if you're seeing this, congrats! I guess. I did warn you to be fair.

@@ -57,11 +57,6 @@ function Projects(props) {
                 <p>
                     A website I made for the St Andrews Waffle Company.<br /><br />
                     I took this as a chance to test out my skills, and play around with Bootstrap. Oh, and get paid an eye-watering £0.
-                    {/* Other than my first iteration of my personal website (I'm doing you a favour by burying that deep in the repo history), this was the first website I made. */}
-                    {/* I loved this at the time, especially the diagonal menus; who thinks of that?. */}
-                    {/* However, I've learned to get over my stubborness towards aspects like responsive design, which I ignored in this project, in order to improve myself. */}
-                    {/* It was also a great chance to use Bootstrap, especially it's grids and carousels, even though I'm not using Bootstrap in this iteration of my personal webiste. */}
-                    {/* For your sake, I hope you're not looking at the Waffle Co website on mobile. */}
                 </p>
             </Highlight>
 

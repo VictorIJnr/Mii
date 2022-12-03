@@ -2,6 +2,8 @@
     position: relative;
     
     margin-left: 1vw;
+
+    width: fit-content;
 }
 
 .linked-icon-wrapper:first-of-type {

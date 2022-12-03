@@ -1,5 +1,9 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPancakes } from "@fortawesome/pro-thin-svg-icons";
+import LinkedIcon from "../../../Components/Navigation/LinkedIcon";
+
 import Content from "../../../Components/Layout/Content";
 import SeparatorSection from "../../../Components/Layout/SeparatorSection";
 import Highlight from "../../../Components/Highlight";
@@ -8,6 +12,7 @@ import HighlightImage from "../../../Components/Highlight/HighlightImage";
 import waffleCo from "../../../assets/images/waffles.png";
 import waffleCarousel from "../../../assets/images/WaffleCo/carousel.png";
 import waffleGallery from "../../../assets/images/WaffleCo/gallery.png";
+import waffleStory from "../../../assets/images/WaffleCo/story.png";
 
 import "./stylish.css";
 import "./responsive.css";
@@ -36,14 +41,19 @@ function WaffleCo(props) {
         </SeparatorSection>
         <SeparatorSection id="waffle-outro">
             <div id="waffle-outro-images">
+                <HighlightImage image={waffleStory} />
                 <HighlightImage image={waffleCarousel} />
                 <HighlightImage image={waffleGallery} />
             </div>
             <p>
-                I loved this at the time, especially the diagonal menu. Seriously, who thinks of that?<br />
-                {/* I've since learned to get over my stubborness towards responsive design, which I ignored in this project, in order to improve my .<br /> */}
-                It was also a great chance to use Bootstrap, especially it's grids and carousels, even though I'm not using Bootstrap in this iteration of my personal webiste.
+                I loved this at the time, especially the diagonal menu (who thinks of that?).<br />
+                Although, it <i>may</i> not be up to my standards of today.<br /><br />
+                
+                This was a chance to use Bootstrap's grids and carousels, even though I acted as though responsive design didn't exist.<br />
+                If you'd like to take a look, it's on my GitHub Pages. For your sake, I hope you're not on mobile.
             </p>
+            <LinkedIcon icon={faPancakes} size="3x" path="https://victorijnr.github.io/WaffleCo/" externalLink={true} />
+            <p><s>I know this looks like a stack of pancakes, just pretend they're waffles.</s></p>
         </SeparatorSection>
     </Content>
 }

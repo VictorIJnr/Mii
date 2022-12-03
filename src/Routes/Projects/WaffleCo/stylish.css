@@ -39,12 +39,26 @@
 
 #waffle-outro {
     display: flex;
+    
+    align-items: center;
 }
 
 #waffle-outro > #waffle-outro-images {
     display: flex;
     
+    margin-top: 2.5vh;
+
     width: 100%;
 
     flex-direction: row;
+}
+
+#waffle-outro > p {
+    margin-top: 2.5vh;
+    text-align: center;
+}
+
+#waffle-outro > p:last-of-type {
+    font-size: 0.75rem;
+    margin-bottom: 0;
 }

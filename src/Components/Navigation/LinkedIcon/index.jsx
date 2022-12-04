@@ -22,7 +22,7 @@ function LinkedIcon(props) {
 
     let linkContent = <>
         {renderedIcon}
-        <p>{props.caption}</p>
+        <p className="link-description">{props.caption}</p>
     </>
 
     let linkElement = props.externalLink 

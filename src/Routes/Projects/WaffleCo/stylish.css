@@ -13,6 +13,7 @@
 
 #waffle-intro {
     display: flex;
+    margin-bottom: 0;
 }
 
 #waffle-motivation {
@@ -33,14 +34,14 @@
     border: none;
 }
 
-#waffle-intro > .highlight-container > .highlight-description {
-    margin: 0;
-}
-
 #waffle-outro {
     display: flex;
     
     align-items: center;
+}
+
+#waffle-outro > * {
+    flex: 1;
 }
 
 #waffle-outro > #waffle-outro-images {
@@ -49,8 +50,6 @@
     margin-top: 2.5vh;
 
     width: 100%;
-
-    flex-direction: row;
 }
 
 #waffle-outro > p {

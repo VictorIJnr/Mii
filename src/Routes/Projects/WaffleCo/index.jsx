@@ -1,6 +1,5 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPancakes } from "@fortawesome/pro-thin-svg-icons";
 import LinkedIcon from "../../../Components/Navigation/LinkedIcon";
 

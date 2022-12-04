@@ -35,7 +35,8 @@
     margin-right: 0.5rem;
 }
 
-.linked-icon > p {
+/* I don't want to drop an !important here, so I'm being overly specific. */
+.linked-icon-wrapper > .linked-icon > p.link-description {
     margin-bottom: 0;
     
     font-size: 1.5rem;

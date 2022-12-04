@@ -1,35 +1,29 @@
+import { faUnicorn } from "@fortawesome/pro-thin-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import bloopy from "../../assets/images/Bloopy.png";
-import donny from "../../assets/images/Donny.png";
 import waffles from "../../assets/images/waffles.png";
 
-import Content from "../../Components/Layout/Content";
 import Highlight from "../../Components/Highlight";
+import Content from "../../Components/Layout/Content";
+import SeparatorSection from "../../Components/Layout/SeparatorSection";
 
 import "../stylish.css";
-import SeparatorSection from "../../Components/Layout/SeparatorSection";
 
 /**
  * Renders a page showing highlights from a bunch of different projects we've worked on.
  */
 function Projects(props) {
-    const seeDonny = true;
-    // const seeDonny = Math.random() < 0.25;
-
     return <Content>
         <SeparatorSection id="projects-overview">
             <h1>Some Stuff I've Worked On</h1>
             <p>
-                <span>
-                    These are a few personal projects that I've done over the years. Primarily, you'll see projects I completed during my education.<br />
-                    But you <i>may</i> see a hackathon project which is in no way an expression of my views.<br /><br />
-                    
-                    <span>
-                        That should be enough of a warning, but don't worry, it's mostly vanilla work.
-                    </span>
-                </span>
+                These are a few personal projects that I've done over the years. Primarily, you'll see projects I completed during my education.<br />
+                This is just a snapshot of the work I'm comfortable sharing for now.<br /><br />
+                I can't exactly have you Zuckerberging my unicorns, can I?<br />
             </p>
+            <FontAwesomeIcon icon={faUnicorn} size="2x" />
         </SeparatorSection>
         <SeparatorSection>
             <Highlight title="Everbridge" image="https://www.everbridge.com/wp-content/uploads/2022/07/Everbridge-Logo-2019-FullColor-RGB.svg" projectPath="everbridge">
@@ -61,18 +55,6 @@ function Projects(props) {
             </Highlight>
 
             {/* gource -f -a 0.25 -s 0.5 --frameless --high-dpi --hide date,progress --user-image-dir ~/.gource-avatars/ */}
-
-            {seeDonny && <Highlight title="IYCASH" image={donny} projectPath="IYCASH">
-                <p>
-                    <a href="https://www.nbcnews.com/politics/white-house/trump-referred-haiti-african-countries-shithole-nations-n836946">
-                        A hackathon project to accurately determine what Donald Trump thinks of a given country.<br /><br />
-                    </a>
-                    This doesn't render all the time. So, if you're seeing this, congrats! I guess. I did warn you to be fair.
-                    <span style={{ "fontSize": "0.1em", verticalAlign: "top" }}><sup>Since you're here, I heard that he's a fan of Russia, and The United States of America.</sup></span>
-
-                    {/* Okay, since you actually followed the link, it looks like you've given me a chance to redeem myself. Thank you! I'll try not to waste it :D */}
-                </p>
-            </Highlight>}
         </SeparatorSection>
     </Content>
 }

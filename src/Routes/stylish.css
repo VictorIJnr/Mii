@@ -75,6 +75,10 @@
     margin-bottom: 0;
 }
 
+#projects-overview > svg {
+    margin-top: 1vh;
+}
+
 .mii-hidden {
     display: none;
     height: 0%;

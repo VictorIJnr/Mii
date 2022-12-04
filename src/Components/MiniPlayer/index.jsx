@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-import bu from "../../assets/images/gifs/bu.gif";
+import classNames from "classnames";
+
+import Loader from "../Loader";
 
 import "./stylish.css";
 
@@ -10,7 +12,24 @@ import "./stylish.css";
  * Should be used for GIFs generated from gource visualisations.
  */
 function MiniPlayer(props) {
-    return <img src="https://d1cuiew8u1gk5n.cloudfront.net/bu/history.gif" alt="A GIF" />
+    const videoRef = useRef();
+    const [isBuffering, setIsBuffering] = useState(false);
+    
+    useEffect(() => {
+        if (videoRef.current !== null && videoRef.current !== undefined) videoRef.current.play();
+    });
+
+    const playerBufferClasses = classNames("player-buffer-container", {
+        "player-buffer-hidden": isBuffering
+    });
+
+    return <div className="player-wrapper">
+        <div className={playerBufferClasses}>
+            <div className="player-buffer-overlay"/>
+            <Loader />
+        </div>
+        <video src={props.src} ref={videoRef} loop={true} muted={true} />
+    </div>
 }
 
 MiniPlayer.propTypes = {
@@ -19,7 +38,7 @@ MiniPlayer.propTypes = {
 };
 
 MiniPlayer.defaultProps = {
-    src: bu
+    src: "https://d1cuiew8u1gk5n.cloudfront.net/bu/history.mp4"
 }
 
 export default MiniPlayer;

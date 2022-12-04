@@ -1,0 +1,7 @@
+#bu-overview {
+    display: flex;
+}
+
+#bu-overview video {
+    width: 100%;
+}

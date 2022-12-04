@@ -47,7 +47,6 @@ function Projects(props) {
                 </p>
             </Highlight>
             <Highlight title="Waffle Co" image={waffles} projectPath="waffles" reversed={true}>
-                {/* https://github.com/VictorIJnr/WaffleCo */}
                 <p>
                     A website I made for the St Andrews Waffle Company.<br /><br />
                     I took this as a chance to test out my skills, and play around with Bootstrap. Oh, and get paid an eye-watering £0.

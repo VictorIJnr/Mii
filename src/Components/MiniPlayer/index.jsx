@@ -14,20 +14,55 @@ import "./stylish.css";
 function MiniPlayer(props) {
     const videoRef = useRef();
     const [isBuffering, setIsBuffering] = useState(false);
-    
+
     useEffect(() => {
         if (videoRef.current !== null && videoRef.current !== undefined) videoRef.current.play();
     });
 
+    /**
+     * Enables a check on the MiniPlayer to determine whether the video is buffering waiting for new data.
+     * If we're showing the controls, there's an built-in buffering mechanism.
+     * But, we're not showing them.
+     */
+    function checkPlayerBuffer() {
+        //? Checking every 250 ms whether the video is buffering.
+        const checkInterval = 250; 
+
+        let lastPlayedTime = 0;;
+        let currentVideoTime = 0;
+        
+        function checkBuffering() {
+            const currentVideo = videoRef.current;
+            currentVideoTime = currentVideo.currentTime;
+
+            //? The maximum duration playback can be paused, for which, we don't count the video as buffering.
+            const maxBufferSeconds = (checkInterval / 2) / 1000;
+            const lastPlayedThreshold = lastPlayedTime + maxBufferSeconds;
+
+            //? If the video was not previously buffering, but it has now exceeded the threshold, we consider it as currently buffering.
+            //? We consider the inverse as the video not buffering.
+            if (!isBuffering && currentVideoTime < lastPlayedThreshold && !currentVideo.paused) setIsBuffering(true);
+            else if (isBuffering && currentVideoTime > lastPlayedThreshold && !currentVideo.paused) setIsBuffering(false);
+
+            lastPlayedTime = currentVideoTime;
+        }
+
+        setInterval(checkBuffering, checkInterval);
+    }
+
+    checkPlayerBuffer();
+
     const playerBufferClasses = classNames("player-buffer-container", {
-        "player-buffer-hidden": isBuffering
+        "player-buffer-hidden": !isBuffering
     });
 
     return <div className="player-wrapper">
         <div className={playerBufferClasses}>
-            <div className="player-buffer-overlay"/>
+            <div className="player-buffer-overlay" />
             <Loader />
         </div>
+
+        {/* We have to mute the video, otherwise we can't call .play(), because web browsers think that's annoying. */}
         <video src={props.src} ref={videoRef} loop={true} muted={true} />
     </div>
 }

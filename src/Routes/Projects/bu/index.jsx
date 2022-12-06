@@ -13,7 +13,8 @@ import "./stylish.css";
 function UStylA(props) {
     return <Content>
         <div id="bu-overview">
-            <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bu/history.mp4" />
+            {/* <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bu/history.mp4" /> */}
+            <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bloopy/gameplay.mp4" />
         </div>
     </Content>
 }

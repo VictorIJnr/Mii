@@ -14,9 +14,21 @@ import "./stylish.css";
 function MiniPlayer(props) {
     const videoRef = useRef();
     const [isBuffering, setIsBuffering] = useState(false);
+    const [bufferCheckHandle, setBufferCheckHandle] = useState(null);
 
     useEffect(() => {
         if (videoRef.current !== null && videoRef.current !== undefined) videoRef.current.play();
+        
+        if (bufferCheckHandle === null) checkPlayerBuffer();
+
+        return () => {
+            if (bufferCheckHandle !== null) {
+                clearInterval(bufferCheckHandle);
+                setBufferCheckHandle(null);
+                
+                console.log(`Cleared interval #${bufferCheckHandle}.`);
+            }
+        }
     });
 
     /**
@@ -25,10 +37,10 @@ function MiniPlayer(props) {
      * But, we're not showing them.
      */
     function checkPlayerBuffer() {
-        //? Checking every 250 ms whether the video is buffering.
-        const checkInterval = 250; 
+        //? Checking every second whether the video is buffering.
+        const checkInterval = 1000; 
 
-        let lastPlayedTime = 0;;
+        let lastPlayedTime = 0;
         let currentVideoTime = 0;
         
         function checkBuffering() {
@@ -47,10 +59,8 @@ function MiniPlayer(props) {
             lastPlayedTime = currentVideoTime;
         }
 
-        setInterval(checkBuffering, checkInterval);
+        setBufferCheckHandle(setInterval(checkBuffering, checkInterval));
     }
-
-    checkPlayerBuffer();
 
     const playerBufferClasses = classNames("player-buffer-container", {
         "player-buffer-hidden": !isBuffering

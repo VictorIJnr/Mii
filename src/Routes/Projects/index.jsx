@@ -20,8 +20,8 @@ function Projects(props) {
             <h1>Some Stuff I've Worked On</h1>
             <p>
                 These are a few personal projects that I've done over the years. Primarily, you'll see projects I completed during my education.<br />
-                This is just a snapshot of the work I'm comfortable sharing for now.<br /><br />
-                I can't exactly have you Zuckerberging my unicorns, can I?<br />
+                I'm constantly playing around with anything I find interesting, and this is just a snapshot of the work I'm comfortable sharing for now.<br /><br />
+                After all, I can't exactly have you Zuckerberging my unicorns, can I?<br />
             </p>
             <FontAwesomeIcon icon={faUnicorn} size="2x" />
         </SeparatorSection>
@@ -33,7 +33,7 @@ function Projects(props) {
                     {/* However, that doesn't stop me from dabbling as a scrum master, with manual QA, and aiding our developers whenever necessary. */}
                 </p>
             </Highlight>
-            <Highlight title="bu" image="https://images.pexels.com/photos/11446855/pexels-photo-11446855.jpeg" projectPath="bu" reversed={true}>
+            <Highlight title="bu" image="https://d1cuiew8u1gk5n.cloudfront.net/bu/highlight-images/blocks.jpeg" projectPath="bu" reversed={true}>
                 <p>
                 My undergraduate dissertation. A rather straightforward clustering experiment, based on a writer's stylometry.<br /><br />
                 {/* I was ambitious to begin with; I wanted to do some stylometry-influenced natural language generation, but I didn't have enough time.<br /><br /> */}

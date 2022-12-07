@@ -7,6 +7,7 @@ import bloopy from "../../../assets/images/Bloopy.png";
 
 import "./stylish.css";
 import "./responsive.css";
+import MiniPlayer from "../../../Components/MiniPlayer";
 
 /**
  * Project page for Bloopy.
@@ -38,6 +39,9 @@ function Bloopy() {
                     This lead to learning about interpolation to solve bugs in animations, which were initially dependent on a device's FPS.
                 </p>
             </div>
+        </section>
+        <section id="bloopy-gameplay">
+            <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bloopy/gameplay.mp4" />
         </section>
     </Content>
 }

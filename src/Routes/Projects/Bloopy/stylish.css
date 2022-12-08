@@ -81,3 +81,7 @@
 #bloopy-animations > div {
     margin-bottom: 2.5vh;
 }
+
+#bloopy-gameplay > .player-wrapper {
+    height: 75vh;
+}

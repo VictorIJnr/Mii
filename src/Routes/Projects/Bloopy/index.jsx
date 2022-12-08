@@ -41,7 +41,7 @@ function Bloopy() {
             </div>
         </section>
         <section id="bloopy-gameplay">
-            <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bloopy/gameplay.mp4" />
+            <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bloopy/gameplay-shifted.mp4" />
         </section>
     </Content>
 }

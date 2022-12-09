@@ -83,5 +83,18 @@
 }
 
 #bloopy-gameplay > .player-wrapper {
-    height: 75vh;
+    --player-height: 75vh;
+    
+    height: var(--player-height);
+
+    /*
+        The "padding" at the bottom that comes with the video is 10% of the video's height.
+        The "padding" at the top is only 5% of the video's height.
+        This is just making the difference consistent.
+    */
+    padding-top: calc(var(--player-height) * 0.05);
+}
+
+#bloopy-gameplay > p {
+    text-align: center;
 }

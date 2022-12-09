@@ -2,12 +2,12 @@ import React from "react";
 
 import Content from "../../../Components/Layout/Content";
 import HighlightImage from "../../../Components/Highlight/HighlightImage";
+import MiniPlayer from "../../../Components/MiniPlayer";
 
 import bloopy from "../../../assets/images/Bloopy.png";
 
 import "./stylish.css";
 import "./responsive.css";
-import MiniPlayer from "../../../Components/MiniPlayer";
 
 /**
  * Project page for Bloopy.
@@ -42,6 +42,10 @@ function Bloopy() {
         </section>
         <section id="bloopy-gameplay">
             <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bloopy/gameplay-shifted.mp4" />
+            <p>
+                Towards the end, this is what I had. Cute right?<br />
+                Sure, I didn't have "bosses" with the various different characters I designed, but I had something that was simple and performed well.
+            </p>
         </section>
     </Content>
 }

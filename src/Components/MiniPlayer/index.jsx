@@ -50,10 +50,11 @@ function MiniPlayer(props) {
             //? The maximum duration playback can be paused, for which, we don't count the video as buffering.
             const maxBufferSeconds = (checkInterval / 2) / 1000;
             const lastPlayedThreshold = lastPlayedTime + maxBufferSeconds;
+            const hasRestarted = lastPlayedTime > currentVideoTime;
 
             //? If the video was not previously buffering, but it has now exceeded the threshold, we consider it as currently buffering.
             //? We consider the inverse as the video not buffering.
-            if (!isBuffering && currentVideoTime < lastPlayedThreshold && !currentVideo.paused) setIsBuffering(true);
+            if (!isBuffering && currentVideoTime < lastPlayedThreshold && !hasRestarted && !currentVideo.paused) setIsBuffering(true);
             else if (isBuffering && currentVideoTime > lastPlayedThreshold && !currentVideo.paused) setIsBuffering(false);
 
             lastPlayedTime = currentVideoTime;

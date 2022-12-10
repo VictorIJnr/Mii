@@ -79,6 +79,11 @@
     margin-top: 1vh;
 }
 
+#projects-highlights .highlight-container b {
+    color: var(--dark-theme-light-orange);
+    font-style: italic;
+}
+
 .mii-hidden {
     display: none;
     height: 0%;

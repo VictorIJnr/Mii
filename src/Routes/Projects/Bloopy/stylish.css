@@ -1,27 +1,7 @@
-.content.bloopy-content section {
-    display: flex;
-    position: relative;
-    
-    flex-direction: column;
-    flex: 1;
-}
-
-.content.bloopy-content section::after {
-    --width: 25%;
-
-    position: absolute;
-    content: "";
-
-    bottom: 0;
-
-    width: var(--width);
-    left: calc((100% - var(--width)) / 2);
-
-    border-bottom: 1px solid var(--dark-theme-orange);
-}
-
 .content.bloopy-content p {
     margin-bottom: 1vh;
+
+    text-align: center;
 }
 
 #bloopy-overview {
@@ -82,7 +62,7 @@
     margin-bottom: 2.5vh;
 }
 
-#bloopy-gameplay > .player-wrapper {
+#bloopy-gameplay > div > .player-wrapper {
     --player-height: 75vh;
     
     height: var(--player-height);
@@ -95,6 +75,12 @@
     padding-top: calc(var(--player-height) * 0.05);
 }
 
-#bloopy-gameplay > p {
-    text-align: center;
+#bloopy-outro #link-container {
+    display: flex;
+
+    margin: 2.5vh 0;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
 }

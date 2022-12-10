@@ -25,30 +25,30 @@ function Projects(props) {
             </p>
             <FontAwesomeIcon icon={faUnicorn} size="2x" />
         </SeparatorSection>
-        <SeparatorSection>
+        <SeparatorSection id="projects-highlights">
             <Highlight title="Everbridge" image="https://www.everbridge.com/wp-content/uploads/2022/07/Everbridge-Logo-2019-FullColor-RGB.svg" projectPath="everbridge">
                 <p>
-                    My current job as a software development engineer in test.<br /><br />
+                    <b>My current job as a software development engineer in test.</b><br /><br />
                     My focus has been automating our manual test cases in C# using SpecFlow - .NET's implementation of Cucumber.<br />
                     {/* However, that doesn't stop me from dabbling as a scrum master, with manual QA, and aiding our developers whenever necessary. */}
                 </p>
             </Highlight>
             <Highlight title="bu" image="https://d1cuiew8u1gk5n.cloudfront.net/bu/highlight-images/blocks.jpeg" projectPath="bu" reversed={true}>
                 <p>
-                My undergraduate dissertation. A rather straightforward clustering experiment, based on a writer's stylometry.<br /><br />
+                <b>My undergraduate dissertation: a clustering experiment, based on a writer's stylometry.</b><br /><br />
                 {/* I was ambitious to begin with; I wanted to do some stylometry-influenced natural language generation, but I didn't have enough time.<br /><br /> */}
                 In short, I have a SVM, Random Forest, and Neural Network that are all able to differentiate between Drake and William Shakespeare.
                 </p>
             </Highlight>
             <Highlight title="Bloopy" image={bloopy} projectPath="bloopy">
                 <p>
-                    The first Android app I've ever made.<br /><br />
+                    <b>The first Android app I ever made.</b><br /><br />
                     Flappy Bird was "problematic" a year prior to me making this, so I thought making another endless runner would be fun.
                 </p>
             </Highlight>
             <Highlight title="Waffle Co" image={waffles} projectPath="waffles" reversed={true}>
                 <p>
-                    A website I made for the St Andrews Waffle Company.<br /><br />
+                    <b>A website I made for the St Andrews Waffle Company.</b><br /><br />
                     I took this as a chance to test out my skills, and play around with Bootstrap. Oh, and get paid an eye-watering £0.
                 </p>
             </Highlight>

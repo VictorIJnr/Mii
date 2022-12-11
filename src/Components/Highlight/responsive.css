@@ -40,12 +40,16 @@
     .highlight-container.reversed-highlight {
         flex-direction: row-reverse;
     }
-
+    
     :not(.reversed-highlight) .highlight-description {
         margin-left: 10%;
     }
-
+    
     .reversed-highlight .highlight-description {
         margin-right: 10%;
+    }
+    
+    .highlight-image {
+        transform: scale(1.25);
     }
 }

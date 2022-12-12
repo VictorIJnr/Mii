@@ -28,23 +28,24 @@ function Bloopy() {
             </p>
         </SeparatorSection>
         <SeparatorSection id="bloopy-graphics">
-            <div id="bloopy-mascot">
+            <SeparatorDiv id="bloopy-mascot">
                 <HighlightImage image={bloopy} title="Bloopy" />
                 <p>
                     I focused on making something cute, simple, yet distinctive. I was up against the likes of Crossy Road and Temple Run after all.<br />
                     Objectively speaking, my titular character, Bloopy (the little guy above), is easily the cutest mascot of the three games.
                 </p>
-            </div>
-            <div id="bloopy-animations">
+            </SeparatorDiv>
+            <SeparatorDiv id="bloopy-animations">
                 <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LLco2mpWQ-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LLco2mpWQ-o" title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
                 </div>
                 <p>
                     The characters, animations, and music were all created from scratch. All the while, I was learning how to make a performant Android app,
                     one which ran consistently regardless of which device it was installed onto.<br /><br />
                     This lead to learning about time-based animation and interpolation to solve bugs in animations, which were initially dependent on a device's FPS.
                 </p>
-            </div>
+            </SeparatorDiv>
         </SeparatorSection>
         <SeparatorSection id="bloopy-gameplay">
             <SeparatorDiv>

@@ -11,33 +11,3 @@
 #navigation-menu .linked-icon {
     padding-left: 0.75vw;
 }
-
-#navigation-menu .linked-icon::before {
-    content: "";
-    position: absolute;
-    
-    height: 100%;
-    left: 0px;
-
-    box-sizing: inherit;
-    border-left: 1.5px solid var(--dark-theme-font-colour);
-}
-
-#navigation-menu .linked-icon:not(.selected-linked-icon)::after {
-    content: "";
-    position: absolute; 
-    
-    height: 0%;
-    left: 0px;
-    
-    box-sizing: inherit;
-    border-left: 1.5px solid transparent;
-
-    transition: height 0.5s, border-color 0.5s; 
-}
-
-#navigation-menu .linked-icon:not(.selected-linked-icon):hover::after {
-    height: 100%;
-
-    border-color: var(--dark-theme-orange);
-}

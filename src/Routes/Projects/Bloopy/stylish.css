@@ -1,5 +1,5 @@
-.content.bloopy-content p {
-    margin-bottom: 1vh;
+.content.bloopy-content #main-content p {
+    margin-top: 1vh;
 
     text-align: center;
 }
@@ -15,6 +15,11 @@
 
 #bloopy-overview > h1 {
     width: fit-content;
+}
+
+#bloopy-overview > p {
+    margin-top: 2.5vh;
+    margin-bottom: 0;
 }
 
 #bloopy-graphics > div {
@@ -41,6 +46,10 @@
 }
 
 #bloopy-mascot {
+    display: flex;
+
+    flex-direction: column;
+
     text-align: center;
 }
 
@@ -50,7 +59,7 @@
 
 #bloopy-animations {
     display: flex;
-    margin: 5vh 0;
+    margin: 2.5vh 0;
 
     align-items: center;
     justify-content: center;
@@ -75,6 +84,10 @@
     padding-top: calc(var(--player-height) * 0.05);
 }
 
+#bloopy-gameplay p {
+    margin-top: 0;
+}
+
 #bloopy-outro #link-container {
     display: flex;
 
@@ -83,4 +96,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
+}
+
+#bloopy-graphics .separator-div:last-of-type,
+#bloopy-gameplay .separator-div:last-of-type,
+#bloopy-outro .separator-div:last-of-type{
+    margin-bottom: 0vh;
 }

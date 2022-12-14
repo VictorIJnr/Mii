@@ -12,11 +12,20 @@
     width: 100%;
 }
 
-#bu-overview > * {
-    /* flex: 1; */
+#bu-overview > p {
+    margin-top: 1.5vh;
+    margin-bottom: 0vh;
+}
+
+#bu-overview > p > span {
+    color: var(--dark-theme-orange);
+    
+    font-style: italic;
+    font-weight: bold;
 }
 
 #bu-intro {
+    position: relative;
     display: flex;
 
     flex: 1;
@@ -30,4 +39,27 @@
 
 #bu-intro > #bu-history-video video {
     max-width: 100%;
+}
+
+#bu-mini-player-overlay {
+    position: absolute;
+
+    top: 0;
+    
+    height: calc(100% - 2.5vh);
+    width: 100%;
+
+    z-index: 32;
+}
+
+#bu-mini-player-overlay > #bu-overlay-colour {
+    position: absolute;
+
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--bg-colour);
+    opacity: 0.5;
 }

@@ -25,10 +25,31 @@ function UStylA(props) {
         <SeparatorSection id="bu-intro">
             <SeparatorDiv id="bu-history-video">
                 <div id="bu-mini-player-overlay">
-                    <div id="bu-overlay-colour"/>
                     <div id="bu-overlay-content">
-                        <h2>So, why spend 6 months working on this?</h2>
+                        <div>
+                            <h2>So, why spend 6 months working on this?</h2>
+                        </div>
+                        <div>
+                            <div>
+                                <p>
+                                    I think J.A.R.V.I.S, and F.R.I.D.A.Y are pretty cool.<br />
+                                    That's it. That was the entire motivation for bu.<br /><br />
+                                    I envisioned a more natural way to communicate with virtual assistants, like Iron Man.<br />
+                                    Ideally, this would be akin to how we speak to one another, or our friends.<br />
+                                </p>    
+                            </div>
+                            <div />
+                            <div>
+                                <p>
+                                    I considered making a virtual assistant more aware of conversational context, but, instead,
+                                    I figured that I could make progress by making the virtual assistant feel more colloquial/familiar to the user.<br /><br />
+                                    
+                                    To do that, first, I need to understand the user.
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    <div id="bu-overlay-colour"/>
                 </div>
                 <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bu/history.mp4" />
             </SeparatorDiv>

@@ -37,7 +37,7 @@
     text-align: center;
 }
 
-#bu-intro > #bu-history-video video {
+#bu-intro > #bu-intro-video video {
     max-width: 100%;
 }
 
@@ -61,7 +61,7 @@
     width: 100%;
 
     background-color: var(--bg-colour);
-    opacity: 0.75;
+    opacity: 0.7;
 
     z-index: -1;
 }
@@ -76,38 +76,75 @@
     display: flex;
     flex: 1;
 
-    /* height: 100%; */
-}
-
-#bu-mini-player-overlay > #bu-overlay-content > div:first-child {
     flex-direction: column;
-    text-align: center;
-
-    align-items: center;
     justify-content: center;
+
+    text-align: left;
+
+    opacity: 0.8;
 }
 
-#bu-mini-player-overlay > #bu-overlay-content > div:last-child {
-    flex-direction: column;
-    text-align: center;
-
-    align-items: center;
+#bu-mini-player-overlay > #bu-overlay-content > div > * {
+    margin: 0;
+    margin-left: 2.5vw;
 }
 
-#bu-mini-player-overlay > #bu-overlay-content > div:last-child > * {
+#bu-mini-player-overlay > #bu-overlay-content > div > h2,
+#bu-intro-classification > #bu-classification-overview > h2 {
+    margin-bottom: 2.5vh;
+}
+
+#bu-intro-classification {
+    display: flex;
+
+    flex-direction: row;
+}
+
+#bu-intro-classification > * {
     flex: 1;
 }
 
-#bu-mini-player-overlay > #bu-overlay-content > div:last-child > div {
+#bu-intro-classification > #bu-classification-overview {
     display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+#bu-intro-classification > #bu-classification-circles {
+    position: relative;
+    display: flex;
+
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
 }
 
-#bu-mini-player-overlay > #bu-overlay-content > div:last-child p {
-    margin: 0;
+#bu-intro-classification > #bu-classification-overview > p {
+    text-align: left;
 }
 
-#bu-mini-player-overlay > #bu-overlay-content h2 {
-    margin: 0;
+#bu-classification-circles .bu-classification-circle {
+    --diameter: 5vw;
+    
+    position: relative;
+
+    background-color: var(--dark-theme-orange);
+    
+    height: var(--diameter);
+    width: var(--diameter);
+
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+#bu-classification-circles > .bu-circle-row {
+    display: flex;
+    
+    flex-direction: row;
+}
+
+@keyframes circle-glow {
+    
 }

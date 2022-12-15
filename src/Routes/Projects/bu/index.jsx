@@ -23,35 +23,48 @@ function UStylA(props) {
             </p>
         </SeparatorSection>
         <SeparatorSection id="bu-intro">
-            <SeparatorDiv id="bu-history-video">
+            <SeparatorDiv id="bu-intro-video">
                 <div id="bu-mini-player-overlay">
                     <div id="bu-overlay-content">
                         <div>
-                            <h2>So, why spend 6 months working on this?</h2>
-                        </div>
-                        <div>
-                            <div>
-                                <p>
-                                    I think J.A.R.V.I.S, and F.R.I.D.A.Y are pretty cool.<br />
-                                    That's it. That was the entire motivation for bu.<br /><br />
-                                    I envisioned a more natural way to communicate with virtual assistants, like Iron Man.<br />
-                                    Ideally, this would be akin to how we speak to one another, or our friends.<br />
-                                </p>    
-                            </div>
-                            <div />
-                            <div>
-                                <p>
-                                    I considered making a virtual assistant more aware of conversational context, but, instead,
-                                    I figured that I could make progress by making the virtual assistant feel more colloquial/familiar to the user.<br /><br />
-                                    
-                                    To do that, first, I need to understand the user.
-                                </p>
-                            </div>
+                            <h2>J.A.R.V.I.S, and F.R.I.D.A.Y are pretty cool IMO</h2>
+                            <p>
+                                That was the entire motivation for bu.<br />
+                                I wanted a more natural way to communicate with virtual assistants. Like Iron Man.<br /><br />
+                                I've "Okayed!" my last Google.<br /><br />
+                                
+                                Ideally, I'd have something "natural"; akin to how we speak to one another, or our friends.<br />
+                                The first step: make the virtual assistant feel more colloquial/familiar to the user.<br /><br />
+                                So, it'd help if I got to know the user a little better.
+                            </p>    
                         </div>
                     </div>
                     <div id="bu-overlay-colour"/>
                 </div>
                 <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bu/history.mp4" />
+            </SeparatorDiv>
+            <SeparatorDiv id="bu-intro-classification">
+                <div id="bu-classification-overview">
+                    <h2>This had now become a classification task</h2>
+                    <p>
+                        Which gave me an opportunity to play with Keras.<br />
+                    </p>
+                </div>
+                <div id="bu-classification-circles">
+                    <div id="bu-circles-top-row" className="bu-circle-row">
+                        <div className="bu-classification-circle" />
+                        <div className="bu-classification-circle" />
+                    </div>
+                    <div id="bu-circles-middle-row" className="bu-circle-row">
+                        <div className="bu-classification-circle" />
+                        <div className="bu-classification-circle" />
+                        <div className="bu-classification-circle" />
+                    </div>
+                    <div id="bu-circles-bottom-row" className="bu-circle-row">
+                        <div className="bu-classification-circle" />
+                        <div className="bu-classification-circle" />
+                    </div>
+                </div>
             </SeparatorDiv>
         </SeparatorSection>
         <div id="bu-overview">

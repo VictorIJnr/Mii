@@ -38,7 +38,7 @@ function MiniPlayer(props) {
      */
     function checkPlayerBuffer() {
         //? Checking every second whether the video is buffering.
-        const checkInterval = 1000; 
+        const checkInterval = 500; 
 
         let lastPlayedTime = 0;
         let currentVideoTime = 0;

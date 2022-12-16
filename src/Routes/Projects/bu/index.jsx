@@ -47,7 +47,14 @@ function UStylA(props) {
                 <div id="bu-classification-overview">
                     <h2>This had now become a classification task</h2>
                     <p>
-                        Which gave me an opportunity to play with Keras.<br />
+                        Take accents for example. An American, Brit, and an Aussie, are all disticnt.<br />
+                        The prosody of the Brit is different to the American, whilst the American's pitch will differ to the Aussie's.
+                        However, add another Brit, and it's easy to say "hey, those two are both British" <s>unless one of them's from Glasgow</s>.
+                        <br /><br />
+                        bu works the same way.<br />
+                        It takes different attributes from a dataset of people (in my case, from text posts), analyses the information,
+                        and then spits out groupings - called equivalence classes - of people who share similar attributes.<br /><br />
+                        These attributes form the person's written style, and is how I had hoped to do some fancy user-centric natural language generation.
                     </p>
                 </div>
                 <div id="bu-classification-circles">

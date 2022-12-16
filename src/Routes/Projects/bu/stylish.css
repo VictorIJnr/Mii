@@ -100,21 +100,22 @@
     flex-direction: row;
 }
 
-#bu-intro-classification > * {
-    flex: 1;
-}
-
 #bu-intro-classification > #bu-classification-overview {
     display: flex;
 
+    flex: 3;
     flex-direction: column;
     justify-content: center;
 }
 
 #bu-intro-classification > #bu-classification-circles {
+    --animation-duration: 10s;
+    --circle-diameter: 5vw;
+    
     position: relative;
     display: flex;
-
+    
+    flex: 1;
     flex-direction: column;
 
     justify-content: center;
@@ -126,25 +127,79 @@
 }
 
 #bu-classification-circles .bu-classification-circle {
-    --diameter: 5vw;
-    
     position: relative;
 
-    background-color: var(--dark-theme-orange);
-    
-    height: var(--diameter);
-    width: var(--diameter);
+    height: var(--circle-diameter);
+    width: var(--circle-diameter);
 
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.75;
+
+    animation: circle-glow ease-in-out infinite alternate;
+    animation-duration: var(--animation-duration);
+}
+
+#bu-classification-circles > #bu-circles-top-row {
+    top: 0;
+}
+
+#bu-classification-circles > #bu-circles-middle-row {
+    /* top: calc(2 * var(--circle-diameter) / 3); */
+    top: calc(var(--circle-diameter) / 2);
+}
+
+#bu-classification-circles > #bu-circles-bottom-row {
+    /* top: calc(4 * var(--circle-diameter) / 3); */
+    top: var(--circle-diameter);
+}
+
+#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:first-of-type {
+    left: calc(var(--circle-diameter) / 3);
+}
+
+#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:last-of-type {
+    left: calc(0px - var(--circle-diameter) / 3);
+}
+
+#bu-classification-circles > #bu-circles-top-row > .bu-classification-circle:nth-child(even),
+#bu-classification-circles > #bu-circles-bottom-row > .bu-classification-circle:nth-child(even),
+#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:first-of-type {
+    animation-delay: calc(0s - var(--animation-duration) / 3);
+}
+
+#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:nth-of-type(2) {
+    animation-delay: calc(0s - 2 * var(--animation-duration) / 3);
 }
 
 #bu-classification-circles > .bu-circle-row {
     display: flex;
+    position: absolute;
     
     flex-direction: row;
 }
 
 @keyframes circle-glow {
-    
+    0% {
+        background-color: var(--dark-theme-orange);
+    }
+
+    20% {
+        background-color: #EE5253;
+    }
+
+    40% {
+        background-color: #8C7AE6;
+    }
+
+    60% {
+        background-color: #0984E3;
+    }
+
+    80% {
+        background-color: #55EFC4;
+    }
+
+    100% {
+        background-color: #FFFA65;
+    }
 }

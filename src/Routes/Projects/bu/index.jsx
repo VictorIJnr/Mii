@@ -58,7 +58,9 @@ function UStylA(props) {
                     </p>
                 </div>
                 <div id="bu-classification-circles">
-                    <div id="bu-circles-top-row" className="bu-circle-row">
+                    <div className="bu-classification-circle" />
+                    {/* <div className="bu-classification-circle" /> */}
+                    {/* <div id="bu-circles-top-row" className="bu-circle-row">
                         <div className="bu-classification-circle" />
                         <div className="bu-classification-circle" />
                     </div>
@@ -70,7 +72,7 @@ function UStylA(props) {
                     <div id="bu-circles-bottom-row" className="bu-circle-row">
                         <div className="bu-classification-circle" />
                         <div className="bu-classification-circle" />
-                    </div>
+                    </div> */}
                 </div>
             </SeparatorDiv>
         </SeparatorSection>

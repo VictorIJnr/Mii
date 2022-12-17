@@ -81,7 +81,7 @@
 
     text-align: left;
 
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 #bu-mini-player-overlay > #bu-overlay-content > div > * {
@@ -110,7 +110,8 @@
 
 #bu-intro-classification > #bu-classification-circles {
     --animation-duration: 10s;
-    --circle-diameter: 5vw;
+    /* --circle-diameter: 5vw; */
+    --circle-diameter: 25px;
     
     position: relative;
     display: flex;
@@ -118,7 +119,6 @@
     flex: 1;
     flex-direction: column;
 
-    justify-content: center;
     align-items: center;
 }
 
@@ -127,7 +127,7 @@
 }
 
 #bu-classification-circles .bu-classification-circle {
-    position: relative;
+    position: absolute;
 
     height: var(--circle-diameter);
     width: var(--circle-diameter);
@@ -135,22 +135,38 @@
     border-radius: 50%;
     opacity: 0.75;
 
-    animation: circle-glow ease-in-out infinite alternate;
+    animation: circle-glow ease-in-out infinite alternate, circle-rotate 15s linear infinite;
     animation-duration: var(--animation-duration);
+    /* animation-duration: 2s; */
+
+    transform-origin: 150% 150%;
+}
+
+#bu-classification-circles .bu-classification-circle:first-of-type {
+    animation-duration: calc(var(--animation-duration) / 5);
+}
+
+#bu-classification-circles .bu-classification-circle:last-of-type {
+    /* animation-delay: calc(var(--animation-duration) / 2); */
 }
 
 #bu-classification-circles > #bu-circles-top-row {
-    top: 0;
+    /*
+        Just so you don't have to figure this out yourself:
+        We're putting this in the middle of the div, then shifting it up by 2/3rds of the circle's diameter.
+        We're shifting downwards by 2/3rds the diameter for the bottom row.
+    */
+    top: calc(50% - (var(--circle-diameter)));
 }
 
 #bu-classification-circles > #bu-circles-middle-row {
-    /* top: calc(2 * var(--circle-diameter) / 3); */
-    top: calc(var(--circle-diameter) / 2);
+    top: calc(50% - (var(--circle-diameter) / 2));
 }
 
 #bu-classification-circles > #bu-circles-bottom-row {
     /* top: calc(4 * var(--circle-diameter) / 3); */
-    top: var(--circle-diameter);
+    /* top: var(--circle-diameter); */
+    top: 50%;
 }
 
 #bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:first-of-type {
@@ -201,5 +217,20 @@
 
     100% {
         background-color: #FFFA65;
+    }
+}
+
+@keyframes circle-rotate {
+    0% {
+        transform: rotateZ(0deg);
+        top: 0vh;
+    }
+    
+    50% {
+        transform: rotateZ(360deg);
+    }
+
+    100% {
+        transform: rotateZ(720deg);
     }
 }

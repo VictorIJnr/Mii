@@ -37,7 +37,12 @@
     text-align: center;
 }
 
-#bu-intro > #bu-intro-video video {
+#bu-intro > #bu-intro-video-wrapper,
+#bu-intro-video-wrapper > #bu-intro-video {
+    position: relative;
+}
+
+#bu-intro-video-wrapper > #bu-intro-video video {
     max-width: 100%;
 }
 
@@ -46,7 +51,7 @@
 
     top: 0;
     
-    height: calc(100% - 2.5vh);
+    height: 100%;
     width: 100%;
 
     z-index: 32;
@@ -86,18 +91,10 @@
 
 #bu-mini-player-overlay > #bu-overlay-content > div > * {
     margin: 0;
-    margin-left: 2.5vw;
-}
-
-#bu-mini-player-overlay > #bu-overlay-content > div > h2,
-#bu-intro-classification > #bu-classification-overview > h2 {
-    margin-bottom: 2.5vh;
 }
 
 #bu-intro-classification {
     display: flex;
-
-    flex-direction: row;
 }
 
 #bu-intro-classification > #bu-classification-overview {
@@ -105,13 +102,20 @@
 
     flex: 3;
     flex-direction: column;
+    
     justify-content: center;
+    align-items: center;
+}
+
+#bu-intro-classification > #bu-classification-overview > h2 {
+    margin-top: 0;
+    margin-bottom: 2.5vh;
 }
 
 #bu-intro-classification > #bu-classification-circles {
     --animation-duration: 10s;
-    /* --circle-diameter: 5vw; */
     --circle-diameter: 25px;
+    --circle-margin: calc(var(--circle-diameter) / 4);
     
     position: relative;
     display: flex;
@@ -122,24 +126,14 @@
     align-items: center;
 }
 
-#bu-intro-classification > #bu-classification-overview > p {
-    text-align: left;
-}
-
 #bu-classification-circles .bu-classification-circle {
-    position: absolute;
+    position: relative;
 
     height: var(--circle-diameter);
     width: var(--circle-diameter);
 
     border-radius: 50%;
     opacity: 0.75;
-
-    animation: circle-glow ease-in-out infinite alternate, circle-rotate 15s linear infinite;
-    animation-duration: var(--animation-duration);
-    /* animation-duration: 2s; */
-
-    transform-origin: 150% 150%;
 }
 
 #bu-classification-circles .bu-classification-circle:first-of-type {
@@ -150,48 +144,69 @@
     /* animation-delay: calc(var(--animation-duration) / 2); */
 }
 
-#bu-classification-circles > #bu-circles-top-row {
-    /*
-        Just so you don't have to figure this out yourself:
-        We're putting this in the middle of the div, then shifting it up by 2/3rds of the circle's diameter.
-        We're shifting downwards by 2/3rds the diameter for the bottom row.
-    */
-    top: calc(50% - (var(--circle-diameter)));
+#bu-classification-circles .bu-classification-circle.rotating-circle {
+    animation-name: circle-glow, circle-rotate;
+    animation-duration: var(--animation-duration), calc(var(--animation-duration) / 3);
+    animation-timing-function: ease-in-out, linear;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: alternate, normal;
+
+    transform-origin: 150% 150%;
 }
 
-#bu-classification-circles > #bu-circles-middle-row {
-    top: calc(50% - (var(--circle-diameter) / 2));
+#bu-classification-circles .bu-classification-circle.classifying-circle {
+    --classified-top-pos: 0;
+    --classified-right-pos: 0;
+    --classified-initial-top-pos: 0;
+    --classified-initial-right-pos: var(--circle-diameter);
+
+    animation-name: circle-glow, circle-classify;
+    animation-duration: var(--animation-duration), calc(var(--animation-duration) / 3);
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-#bu-classification-circles > #bu-circles-bottom-row {
-    /* top: calc(4 * var(--circle-diameter) / 3); */
-    /* top: var(--circle-diameter); */
-    top: 50%;
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-row {
+    --classified-top-pos: 0;
 }
 
-#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:first-of-type {
-    left: calc(var(--circle-diameter) / 3);
-}
-
-#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:last-of-type {
-    left: calc(0px - var(--circle-diameter) / 3);
-}
-
-#bu-classification-circles > #bu-circles-top-row > .bu-classification-circle:nth-child(even),
-#bu-classification-circles > #bu-circles-bottom-row > .bu-classification-circle:nth-child(even),
-#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:first-of-type {
-    animation-delay: calc(0s - var(--animation-duration) / 3);
-}
-
-#bu-classification-circles > #bu-circles-middle-row > .bu-classification-circle:nth-of-type(2) {
-    animation-delay: calc(0s - 2 * var(--animation-duration) / 3);
-}
-
-#bu-classification-circles > .bu-circle-row {
-    display: flex;
-    position: absolute;
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-row {
+    --classified-top-pos: var(--circle-diameter);
     
-    flex-direction: row;
+    /*
+        need the circle groups to have a height and a width equal to the full size of the parent.
+        each group will need to be absolutely positioned
+        each will need to have a selector, so each circle can be initially positioned relative to the index of the circle group.
+    */
+
+    /* display: none; */
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-left-col {
+    --classified-right-pos: calc(-100% + (var(--circle-diameter) * 2) + var(--circle-margin));
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-right-col {
+    --classified-right-pos: calc(-100% + (var(--circle-diameter)));
+}
+
+#bu-classification-circles > .bu-circles-group {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+#bu-classification-circles > .bu-circles-group > .bu-classification-circle.classifying-circle:first-of-type {
+    top: 0;
+}
+
+#bu-classification-circles > .bu-circles-group > .bu-classification-circle.classifying-circle:nth-of-type(2) {
+    /* --classified-initial-top-pos: var(--circle-diameter); */
 }
 
 @keyframes circle-glow {
@@ -232,5 +247,39 @@
 
     100% {
         transform: rotateZ(720deg);
+    }
+}
+
+@keyframes circle-classify {
+    0% {
+        /*
+            This is needed, otherwise the animation will do a little jump to the initial position of the circle selector.
+            We can't specify the initial position within the selector because 100% refers to the circle's width, not the
+            width of the parent element like what we have here.
+        */
+        top: var(--classified-initial-top-pos);
+        /* right: calc(100% - (var(--circle-diameter))); */
+        right: 0;
+    }
+    
+    5% {
+        top: var(--classified-initial-top-pos);
+        /* right: calc(100% - (var(--circle-diameter))); */
+        right: 0;
+    }
+
+    90% {
+        /* 
+            NGL, I don't know why right has to be negative here.
+            Perhaps it has to do with a row-reverse, but I had it working with positive numbers earlier.
+        */
+
+        top: calc(100% - var(--classified-top-pos));
+        right: var(--classified-right-pos);
+    }
+
+    100% {
+        top: calc(100% - var(--classified-top-pos));
+        right: var(--classified-right-pos);
     }
 }

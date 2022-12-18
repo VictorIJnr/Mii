@@ -1,0 +1,53 @@
+@media screen and (max-width: 640px) {
+    #bu-mini-player-overlay > #bu-overlay-content > div {
+        align-items: center;
+    }
+
+    #bu-intro-video-wrapper > p {
+        margin: 0;
+    }
+
+    #bu-overlay-content p {
+        display: none;
+        height: 0;
+    }
+    
+    #bu-intro-classification {
+        flex-direction: column;
+    }
+
+    #bu-intro-classification > #bu-classification-circles {
+        min-height: calc(var(--circle-diameter) * 10);
+    }
+}
+
+@media screen and (min-width: 641px) {
+    #bu-intro-video-wrapper > p {
+        display: none;
+    }
+
+    #bu-mini-player-overlay > #bu-overlay-content > div > * {
+        margin: 0;
+        margin-left: 2.5vw;
+    }
+
+    #bu-mini-player-overlay > #bu-overlay-content > div > h2 {
+        margin-bottom: 2.5vh;
+    }
+
+    #bu-overlay-content p {
+        display: initial;
+    }
+
+    #bu-intro-classification {
+        /* I'm doing this here because the flow of the JSX code is nicer. kekw */
+        flex-direction: row-reverse;
+
+        text-align: center;
+        align-items: center;
+    }
+
+    #bu-intro-classification > #bu-classification-circles {
+        min-height: 100%;
+    }
+}

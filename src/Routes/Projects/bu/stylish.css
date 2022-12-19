@@ -127,7 +127,7 @@
 }
 
 #bu-classification-circles .bu-classification-circle {
-    position: relative;
+    position: absolute;
 
     height: var(--circle-diameter);
     width: var(--circle-diameter);
@@ -144,22 +144,10 @@
     /* animation-delay: calc(var(--animation-duration) / 2); */
 }
 
-#bu-classification-circles .bu-classification-circle.rotating-circle {
-    animation-name: circle-glow, circle-rotate;
-    animation-duration: var(--animation-duration), calc(var(--animation-duration) / 3);
-    animation-timing-function: ease-in-out, linear;
-    animation-iteration-count: infinite, infinite;
-    animation-direction: alternate, normal;
-
-    transform-origin: 150% 150%;
-}
-
 #bu-classification-circles .bu-classification-circle.classifying-circle {
     --classified-top-pos: 0;
-    --classified-right-pos: 0;
-    --classified-initial-top-pos: 0;
-    --classified-initial-right-pos: var(--circle-diameter);
-
+    --classified-left-pos: 0;
+    
     animation-name: circle-glow, circle-classify;
     animation-duration: var(--animation-duration), calc(var(--animation-duration) / 3);
     animation-timing-function: ease-in-out, ease-in-out;
@@ -167,46 +155,73 @@
     animation-direction: alternate;
 }
 
-#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-row {
-    --classified-top-pos: 0;
+/* 
+    Groups are all the circles which have the same animation-delay.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-group {
+    animation-delay: 0s, 0s;
 }
 
-#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-row {
-    --classified-top-pos: var(--circle-diameter);
-    
-    /*
-        need the circle groups to have a height and a width equal to the full size of the parent.
-        each group will need to be absolutely positioned
-        each will need to have a selector, so each circle can be initially positioned relative to the index of the circle group.
-    */
-
-    /* display: none; */
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-middle-group {
+    animation-delay: calc(0s - var(--animation-duration) / 3), 0s;
 }
 
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-group {
+    animation-delay: calc(0s - 2 * var(--animation-duration) / 3), 0s;
+}
+
+/*
+    Columns are unaffected by grouping.
+    All classified circles in the left column will have the same x coordinate.
+    The same applies to the right column.
+*/
 #bu-classification-circles .bu-classification-circle.classifying-circle.classified-left-col {
-    --classified-right-pos: calc(-100% + (var(--circle-diameter) * 2) + var(--circle-margin));
+    --classified-left-pos: calc(100% - (var(--circle-diameter) * 2) - var(--circle-margin));
 }
 
 #bu-classification-circles .bu-classification-circle.classifying-circle.classified-right-col {
-    --classified-right-pos: calc(-100% + (var(--circle-diameter)));
+    --classified-left-pos: calc(100% - (var(--circle-diameter)));
 }
 
-#bu-classification-circles > .bu-circles-group {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    height: 100%;
-    width: 100%;
+/* 
+    Putting all the circles in the top group at the top.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-group.classified-top-row {
+    --classified-top-pos: 0;
 }
 
-#bu-classification-circles > .bu-circles-group > .bu-classification-circle.classifying-circle:first-of-type {
-    top: 0;
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-group.classified-bottom-row {
+    --classified-top-pos: calc(var(--circle-diameter) + var(--circle-margin));
 }
 
-#bu-classification-circles > .bu-circles-group > .bu-classification-circle.classifying-circle:nth-of-type(2) {
-    /* --classified-initial-top-pos: var(--circle-diameter); */
+/* 
+    Putting all the circles in the middle group at the bottom.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-middle-group.classified-top-row {
+    --classified-top-pos: calc(50% - var(--circle-diameter) / 2 - var(--circle-margin));
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-middle-group.classified-bottom-row {
+    --classified-top-pos: calc(50% + var(--circle-diameter) / 2);
+}
+
+/* 
+    Putting all the circles in the bottom group at the bottom.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-group.classified-top-row {
+    --classified-top-pos: calc(100% - 2 * var(--circle-diameter) - var(--circle-margin));
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-group.classified-bottom-row {
+    --classified-top-pos: calc(100% - var(--circle-diameter));
+}
+
+/* 
+    Vertically positions the circles, based on their index.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle {
+    /* --circle-index is set in the parent div within the JSX code. */
+    --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin)));
 }
 
 @keyframes circle-glow {
@@ -235,51 +250,24 @@
     }
 }
 
-@keyframes circle-rotate {
-    0% {
-        transform: rotateZ(0deg);
-        top: 0vh;
-    }
-    
-    50% {
-        transform: rotateZ(360deg);
-    }
-
-    100% {
-        transform: rotateZ(720deg);
-    }
-}
-
 @keyframes circle-classify {
     0% {
-        /*
-            This is needed, otherwise the animation will do a little jump to the initial position of the circle selector.
-            We can't specify the initial position within the selector because 100% refers to the circle's width, not the
-            width of the parent element like what we have here.
-        */
         top: var(--classified-initial-top-pos);
-        /* right: calc(100% - (var(--circle-diameter))); */
-        right: 0;
+        left: 0;
     }
     
     5% {
         top: var(--classified-initial-top-pos);
-        /* right: calc(100% - (var(--circle-diameter))); */
-        right: 0;
+        left: 0;
     }
 
     90% {
-        /* 
-            NGL, I don't know why right has to be negative here.
-            Perhaps it has to do with a row-reverse, but I had it working with positive numbers earlier.
-        */
-
-        top: calc(100% - var(--classified-top-pos));
-        right: var(--classified-right-pos);
+        top: var(--classified-top-pos);
+        left: var(--classified-left-pos);
     }
 
     100% {
-        top: calc(100% - var(--classified-top-pos));
-        right: var(--classified-right-pos);
+        top: var(--classified-top-pos);
+        left: var(--classified-left-pos);
     }
 }

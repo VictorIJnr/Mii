@@ -17,7 +17,7 @@
     }
 
     #bu-intro-classification > #bu-classification-circles {
-        min-height: calc(var(--circle-diameter) * 10);
+        min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
     }
 }
 

@@ -24,12 +24,17 @@ function UStylA(props) {
         So, it'd help if I got to know the user a little better.
     </p>
 
-    const buCirclesGroup = <div className="bu-circles-group">
-        <div className="bu-classification-circle classifying-circle classified-left-col classified-top-row" />
-        <div className="bu-classification-circle classifying-circle classified-right-col classified-top-row" />
-        <div className="bu-classification-circle classifying-circle classified-left-col classified-bottom-row" />
-        <div className="bu-classification-circle classifying-circle classified-right-col classified-bottom-row" />
-    </div>
+    const buClassificationCircles = [
+        <div className="bu-classification-circle classifying-circle classified-middle-group classified-right-col classified-top-row" />,
+        <div className="bu-classification-circle classifying-circle classified-bottom-group classified-left-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-top-group classified-left-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-bottom-group classified-right-col classified-top-row" />,
+        <div className="bu-classification-circle classifying-circle classified-top-group classified-right-col classified-top-row" />,
+        <div className="bu-classification-circle classifying-circle classified-bottom-group classified-right-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-top-group classified-left-col classified-top-row" />,
+        <div className="bu-classification-circle classifying-circle classified-middle-group classified-right-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-top-group classified-right-col classified-bottom-row" />,
+    ];
 
     return <Content>
         <SeparatorSection id="bu-overview">
@@ -73,10 +78,13 @@ function UStylA(props) {
                         and then spits out groupings - called equivalence classes - of people who share similar attributes.
                     </p>
                 </div>
-                <div id="bu-classification-circles">
-                    {buCirclesGroup}
-                    {/* {buCirclesGroup} */}
-                    {/* {buCirclesGroup} */}
+                <div id="bu-classification-circles" style={{ "--num-circles": buClassificationCircles.length }}>
+                    {/*
+                        --num-circles and --circle-index are used in the CSS for dynamically setting the height of the div, and positioning the circles respectively.
+                    */}
+                    {buClassificationCircles.map((circle, index) => <div style={{ "--circle-index": index }}>
+                        {circle}
+                    </div>)}
                 </div>
             </SeparatorDiv>
         </SeparatorSection>

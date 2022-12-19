@@ -12,3 +12,7 @@
     align-items: center;
     text-align: center;
 }
+
+#taste-intro > h2 {
+    margin-top: 2.5vh;
+}

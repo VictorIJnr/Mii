@@ -52,7 +52,7 @@ function Bloopy() {
                 <MiniPlayer src="https://d1cuiew8u1gk5n.cloudfront.net/bloopy/gameplay-shifted.mp4" />
                 <p>
                     Towards the end, this is what I had. Cute, right?<br />
-                    I had something that was simple and performed well. I couldn't ask for more from my first app.
+                    I made something that was simple and performed well. I couldn't ask for more from my first app.
                     {/* That's even when you take into account that everything you see was done with a blank surface, a game loop, and a lot of "fun" math for pixel-based collision detection. */}
                 </p>
             </SeparatorDiv>

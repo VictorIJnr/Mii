@@ -256,12 +256,12 @@
         left: 0;
     }
     
-    5% {
+    15% {
         top: var(--classified-initial-top-pos);
         left: 0;
     }
 
-    90% {
+    85% {
         top: var(--classified-top-pos);
         left: var(--classified-left-pos);
     }

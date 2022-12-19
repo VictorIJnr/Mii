@@ -73,7 +73,8 @@ function UStylA(props) {
                         <br /><br />
 
                         bu works the same way.
-                        <br />
+                        <br /><br />
+                        
                         It takes different attributes from a dataset of people (in my case, from text posts), analyses the information,
                         and then spits out groupings - called equivalence classes - of people who share similar attributes.
                     </p>
@@ -90,7 +91,7 @@ function UStylA(props) {
         </SeparatorSection>
         <SeparatorSection id="bu-outro">
             <div>
-                <h2>That's as far as I got</h2>
+                <h2>And that's as far as I got</h2>
                 <p>
                     Well, besides my experiments regarding different methods to generate equivalence classes,
                     and my analysis of different machine learning models for classification.

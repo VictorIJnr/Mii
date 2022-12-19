@@ -18,7 +18,7 @@ import "../animations.css";
 function Mii(props) {
     const isBeingFriendly = Math.random() < 0.25;
     const greeting = isBeingFriendly
-        ? <h1 className="fade-in"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
+        ? <h1 className="fade-in hello-glow"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
         : <h1 className="fade-in">Hi!</h1>
 
     return <Content>

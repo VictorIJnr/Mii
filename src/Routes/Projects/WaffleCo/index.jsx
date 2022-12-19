@@ -33,8 +33,8 @@ function WaffleCo(props) {
             <Highlight image={waffleCo}>
                 <p>
                     So, why did I bother making a website for a restaurant?<br />
-                    Boredom. That and the fact that I had been learning HTML, CSS, and JS a few months prior, so I wanted to test myself.<br /><br />
-                    Plus, I had fun, and learnt a lot about Bootstrap whilst making it. That matters more than getting paid for it. Right?
+                    Boredom. That and the fact that I had been learning HTML, CSS, and JS a few months prior, so I wanted to test myself,
+                    and use it as an opportunity to learn about Bootstrap.
                 </p>
             </Highlight>
         </SeparatorSection>
@@ -46,7 +46,7 @@ function WaffleCo(props) {
             </div>
             <p>
                 I loved this at the time, especially the diagonal menu (who thinks of that?).<br />
-                Although, it <i>may</i> not be up to my standards of today.<br /><br />
+                Although, it's not up to my standards of today.<br /><br />
                 
                 This was a chance to use Bootstrap's grids and carousels, even though I acted as though responsive design didn't exist.<br />
                 If you'd like to take a look, it's on my GitHub Pages. For your sake, I hope you're not on mobile.

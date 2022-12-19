@@ -14,6 +14,10 @@
     animation: fade-in-post-greeting 2.8s;
 }
 
+.hello-glow {
+    animation: glowing-text 3s infinite alternate;
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -75,5 +79,15 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes glowing-text {
+    80% {
+        color: var(--dark-theme-font-colour);
+    }
+
+    100% {
+        color: var(--dark-theme-orange);
     }
 }

@@ -37,6 +37,10 @@
     text-align: center;
 }
 
+#bu-intro > #bu-intro-video-wrapper::after {
+    display: none;
+}
+
 #bu-intro > #bu-intro-video-wrapper,
 #bu-intro-video-wrapper > #bu-intro-video {
     position: relative;
@@ -100,11 +104,13 @@
 #bu-intro-classification > #bu-classification-overview {
     display: flex;
 
-    flex: 3;
+    flex: 1;
     flex-direction: column;
     
     justify-content: center;
     align-items: center;
+
+    width: 75%;
 }
 
 #bu-intro-classification > #bu-classification-overview > h2 {
@@ -124,6 +130,9 @@
     flex-direction: column;
 
     align-items: center;
+    
+    width: 50%;
+    min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
 }
 
 #bu-classification-circles .bu-classification-circle {
@@ -222,6 +231,25 @@
 #bu-classification-circles .bu-classification-circle.classifying-circle {
     /* --circle-index is set in the parent div within the JSX code. */
     --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin)));
+}
+
+#bu-outro p {
+    margin: 0;
+}
+
+#bu-outro-links {
+    text-align: center;
+}
+
+#bu-outro-link-container {
+    display: flex;
+
+    margin-top: 1vh;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: baseline;
 }
 
 @keyframes circle-glow {

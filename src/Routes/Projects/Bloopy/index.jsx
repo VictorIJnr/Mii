@@ -65,8 +65,8 @@ function Bloopy() {
                     Alternatively, I kept a blog during it's creation. I've updated the theme, but the content remains unchanged from when I was 17.
                 </p>
                 <div id="link-container">
+                    <LinkedIcon icon={faBook} path="https://victorsepq.weebly.com" size="3x" externalLink={true} />
                     <LinkedIcon icon={faGithub} path="https://github.com/VictorIJnr/bloopy" size="3x" externalLink={true} />
-                    <LinkedIcon icon={faBook} path="https://victorsepq.weebly.com/" size="3x" externalLink={true} />
                 </div>
             </SeparatorDiv>
         </SeparatorSection>

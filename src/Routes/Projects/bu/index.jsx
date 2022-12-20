@@ -8,6 +8,9 @@ import SeparatorSection from "../../../Components/Layout/SeparatorSection";
 
 import "./stylish.css";
 import "./responsive.css";
+import LinkedIcon from "../../../Components/Navigation/LinkedIcon";
+import { faBook } from "@fortawesome/pro-light-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 /**
  * Project page for bu.
@@ -90,7 +93,7 @@ function UStylA(props) {
             </SeparatorDiv>
         </SeparatorSection>
         <SeparatorSection id="bu-outro">
-            <div>
+            <SeparatorDiv id="bu-outro-summary">
                 <h2>And that's as far as I got</h2>
                 <p>
                     Well, besides my experiments regarding different methods to generate equivalence classes,
@@ -104,10 +107,20 @@ function UStylA(props) {
 
                     I might've been a little ambitious.
                 </p>
-            </div>
-            <div>
-                <p>I could go into more detail here, but, at that point, you'd be better off reading my paper.</p>
-            </div>
+            </SeparatorDiv>
+            <SeparatorDiv id="bu-outro-links">
+                <p>
+                    I could go into more detail here, but, at that point, you'd be better off reading my paper.
+                    <br /><br />
+                    There's also the codebase for bu in case you want to see how I used an autoencoder for dimensionality reduction.
+                    <br />
+                    I don't know why you would, but it's here for you mate. Knock yourself out.
+                </p>
+                <div id="bu-outro-link-container">
+                    <LinkedIcon icon={faBook} path="https://github.com/VictorIJnr/bu/raw/master/SH_Report.pdf" externalLink={true} size="3x" />
+                    <LinkedIcon icon={faGithub} path="https://github.com/VictorIJnr/bu" externalLink={true} size="3x" />
+                </div>
+            </SeparatorDiv>
         </SeparatorSection>
     </Content>
 }

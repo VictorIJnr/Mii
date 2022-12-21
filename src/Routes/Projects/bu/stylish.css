@@ -114,11 +114,6 @@
 
     flex: 1;
     flex-direction: column;
-    
-    /* justify-content: center; */
-    /* align-items: center; */
-
-    width: var(--content-width);
 }
 
 #bu-intro-classification > #bu-classification-overview > h2 {
@@ -138,7 +133,6 @@
 
     align-items: center;
     
-    width: var(--content-width);
     min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
 }
 
@@ -247,12 +241,9 @@
     align-items: center;
 }
 
+#bu-summary p,
 #bu-outro p {
     margin: 0;
-}
-
-#bu-summary {
-    width: var(--content-width);    
 }
 
 #bu-outro-links {
@@ -261,7 +252,6 @@
     align-items: center;
     flex-direction: column;
 
-    /* justify-content: center; */
     text-align: center;
 }
 

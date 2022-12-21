@@ -3,6 +3,7 @@
         align-items: center;
     }
 
+    #bu-intro-video-wrapper,
     #bu-intro-video-wrapper > p {
         margin: 0;
     }
@@ -16,8 +17,20 @@
         flex-direction: column;
     }
 
+    #bu-intro-classification > #bu-classification-overview {
+        align-items: center;
+    }
+
     #bu-intro-classification > #bu-classification-circles {
         min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
+    }
+
+    #bu-summary > div {
+        display: flex;
+
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -46,7 +59,17 @@
         align-items: center;
     }
 
+    #bu-classification-overview {
+        width: var(--content-width);
+    }
+
     #bu-intro-classification > #bu-classification-circles {
+        width: var(--content-width);
+        
         min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
+    }
+
+    #bu-summary {
+        width: var(--content-width);    
     }
 }

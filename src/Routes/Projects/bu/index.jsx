@@ -117,7 +117,7 @@ function UStylA(props) {
                     <br /><br />
                     There's also the codebase for bu in case you want to see how I used an autoencoder for dimensionality reduction.
                     <br />
-                    I don't know why you would, but it's here for you mate. Knock yourself out.
+                    I don't know why you would, but it's here for you sis. Knock yourself out.
                 </p>
                 <div id="bu-outro-link-container">
                     <LinkedIcon icon={faBook} path="https://github.com/VictorIJnr/bu/raw/master/SH_Report.pdf" externalLink={true} size="3x" />

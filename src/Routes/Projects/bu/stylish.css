@@ -1,3 +1,11 @@
+#bu {
+    --content-width: 62.5%;
+}
+
+#bu h2 {
+    margin-top: 0;
+}
+
 #bu-overview {
     display: flex;
 
@@ -107,14 +115,13 @@
     flex: 1;
     flex-direction: column;
     
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
 
-    width: 75%;
+    width: var(--content-width);
 }
 
 #bu-intro-classification > #bu-classification-overview > h2 {
-    margin-top: 0;
     margin-bottom: 2.5vh;
 }
 
@@ -131,7 +138,7 @@
 
     align-items: center;
     
-    width: 50%;
+    width: var(--content-width);
     min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
 }
 
@@ -233,11 +240,28 @@
     --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin)));
 }
 
+#bu-outro {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
 #bu-outro p {
     margin: 0;
 }
 
+#bu-summary {
+    width: var(--content-width);    
+}
+
 #bu-outro-links {
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
+    /* justify-content: center; */
     text-align: center;
 }
 

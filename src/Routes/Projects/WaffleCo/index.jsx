@@ -39,6 +39,7 @@ function WaffleCo(props) {
             </Highlight>
         </SeparatorSection>
         <SeparatorSection id="waffle-outro">
+            <h2>It won't bite</h2>
             <div id="waffle-outro-images">
                 <HighlightImage image={waffleStory} />
                 <HighlightImage image={waffleCarousel} />

@@ -39,7 +39,7 @@ function UStylA(props) {
         <div className="bu-classification-circle classifying-circle classified-top-group classified-right-col classified-bottom-row" />,
     ];
 
-    return <Content>
+    return <Content id="bu">
         <SeparatorSection id="bu-overview">
             <h1>bu</h1>
             <p>
@@ -92,7 +92,7 @@ function UStylA(props) {
                 </div>
             </SeparatorDiv>
         </SeparatorSection>
-        <SeparatorSection id="bu-outro">
+        <SeparatorSection id="bu-summary">
             <SeparatorDiv id="bu-outro-summary">
                 <h2>And that's as far as I got</h2>
                 <p>
@@ -108,7 +108,10 @@ function UStylA(props) {
                     I might've been a little ambitious.
                 </p>
             </SeparatorDiv>
+        </SeparatorSection>
+        <SeparatorSection id="bu-outro">
             <SeparatorDiv id="bu-outro-links">
+                <h2>Take a look</h2>
                 <p>
                     I could go into more detail here, but, at that point, you'd be better off reading my paper.
                     <br /><br />

@@ -24,3 +24,7 @@ section.separator-section::after {
 
     border-bottom: 1px solid var(--dark-theme-orange);
 }
+
+section.separator-section > .separator-div:last-of-type {
+    margin-bottom: 0;
+}

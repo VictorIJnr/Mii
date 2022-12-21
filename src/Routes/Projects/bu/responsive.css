@@ -40,10 +40,9 @@
     }
 
     #bu-intro-classification {
-        /* I'm doing this here because the flow of the JSX code is nicer. kekw */
         flex-direction: column;
 
-        text-align: center;
+        text-align: left;
         align-items: center;
     }
 

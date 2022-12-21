@@ -59,10 +59,16 @@ function Bloopy() {
         </SeparatorSection>
         <SeparatorSection id="bloopy-outro">
             <SeparatorDiv>
+                <h2>Knock yourself out</h2>
                 <p>
-                    Although Bloopy is no longer on the Google Play Store, feel free to check out the mess of a codebase I wrote.<br />
-                    I've improved since then, promise.<br /><br />
+                    Although Bloopy is no longer on the Google Play Store, feel free to check out the mess of a codebase I wrote.
+                    <br />
+                    I've improved since then, promise.
+                    <br /><br />
+                    
                     Alternatively, I kept a blog during it's creation. I've updated the theme, but the content remains unchanged from when I was 17.
+                    <br />
+                    It won't bite, it's a nice way to what I was like back then. Cringe and all.
                 </p>
                 <div id="link-container">
                     <LinkedIcon icon={faBook} path="https://victorsepq.weebly.com" size="3x" externalLink={true} />

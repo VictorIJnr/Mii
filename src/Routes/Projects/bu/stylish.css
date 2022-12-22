@@ -232,6 +232,7 @@
 #bu-classification-circles .bu-classification-circle.classifying-circle {
     /* --circle-index is set in the parent div within the JSX code. */
     --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin)));
+    --classified-initial-left-pos: calc(var(--circle-column-index) * (var(--circle-diameter) + var(--circle-margin)));
 }
 
 #bu-outro {
@@ -295,12 +296,12 @@
 @keyframes circle-classify {
     0% {
         top: var(--classified-initial-top-pos);
-        left: 0;
+        left: var(--classified-initial-left-pos);
     }
     
     15% {
         top: var(--classified-initial-top-pos);
-        left: 0;
+        left: var(--classified-initial-left-pos);
     }
 
     85% {

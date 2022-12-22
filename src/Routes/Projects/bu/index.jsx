@@ -1,6 +1,10 @@
 import React from "react";
 
+import { faBook } from "@fortawesome/pro-light-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import MiniPlayer from "../../../Components/MiniPlayer";
+import LinkedIcon from "../../../Components/Navigation/LinkedIcon";
 
 import Content from "../../../Components/Layout/Content";
 import SeparatorDiv from "../../../Components/Layout/SeparatorDiv";
@@ -8,9 +12,6 @@ import SeparatorSection from "../../../Components/Layout/SeparatorSection";
 
 import "./stylish.css";
 import "./responsive.css";
-import LinkedIcon from "../../../Components/Navigation/LinkedIcon";
-import { faBook } from "@fortawesome/pro-light-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 /**
  * Project page for bu.
@@ -38,6 +39,9 @@ function UStylA(props) {
         <div className="bu-classification-circle classifying-circle classified-middle-group classified-right-col classified-bottom-row" />,
         <div className="bu-classification-circle classifying-circle classified-top-group classified-right-col classified-bottom-row" />,
     ];
+    
+    const numCircles = buClassificationCircles.length;
+    const numInitialColumns = 2;
 
     return <Content id="bu">
         <SeparatorSection id="bu-overview">
@@ -82,11 +86,13 @@ function UStylA(props) {
                         and then spits out groupings - called equivalence classes - of people who share similar attributes.
                     </p>
                 </div>
-                <div id="bu-classification-circles" style={{ "--num-circles": buClassificationCircles.length }}>
+                <div id="bu-classification-circles" style={{ "--num-circles": numCircles }}>
                     {/*
                         --num-circles and --circle-index are used in the CSS for dynamically setting the height of the div, and positioning the circles respectively.
+
                     */}
-                    {buClassificationCircles.map((circle, index) => <div style={{ "--circle-index": index }}>
+                    {buClassificationCircles.map((circle, index) =>
+                    <div style={{ "--circle-index": index, "--circle-column-index": Math.floor(index / (numCircles / numInitialColumns)) }}>
                         {circle}
                     </div>)}
                 </div>

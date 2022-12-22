@@ -21,10 +21,6 @@
         align-items: center;
     }
 
-    #bu-intro-classification > #bu-classification-circles {
-        min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
-    }
-
     #bu-summary > div {
         display: flex;
 
@@ -65,8 +61,6 @@
 
     #bu-intro-classification > #bu-classification-circles {
         width: var(--content-width);
-        
-        min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
     }
 
     #bu-summary {

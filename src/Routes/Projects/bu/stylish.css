@@ -124,6 +124,8 @@
     --animation-duration: 10s;
     --circle-diameter: 25px;
     --circle-margin: calc(var(--circle-diameter) / 4);
+
+    --classification-circles-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
     
     position: relative;
     display: flex;
@@ -133,7 +135,7 @@
 
     align-items: center;
     
-    min-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
+    min-height: var(--classification-circles-height);
 }
 
 #bu-classification-circles .bu-classification-circle {
@@ -231,7 +233,9 @@
 */
 #bu-classification-circles .bu-classification-circle.classifying-circle {
     /* --circle-index is set in the parent div within the JSX code. */
-    --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin)));
+    /* --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin))); */
+
+    --classified-initial-top-pos: calc(var(--column-top-pos) + (var(--circle-index) * (var(--circle-diameter) + var(--circle-margin))));
     --classified-initial-left-pos: calc(var(--circle-column-index) * (var(--circle-diameter) + var(--circle-margin)));
 }
 

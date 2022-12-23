@@ -32,10 +32,13 @@ function UStylA(props) {
         <div className="bu-classification-circle classifying-circle classified-middle-group classified-right-col classified-top-row" />,
         <div className="bu-classification-circle classifying-circle classified-bottom-group classified-left-col classified-bottom-row" />,
         <div className="bu-classification-circle classifying-circle classified-top-group classified-left-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-middle-group classified-left-col classified-top-row" />,
         <div className="bu-classification-circle classifying-circle classified-bottom-group classified-right-col classified-top-row" />,
         <div className="bu-classification-circle classifying-circle classified-top-group classified-right-col classified-top-row" />,
-        <div className="bu-classification-circle classifying-circle classified-bottom-group classified-right-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-bottom-group classified-left-col classified-top-row" />,
         <div className="bu-classification-circle classifying-circle classified-top-group classified-left-col classified-top-row" />,
+        <div className="bu-classification-circle classifying-circle classified-bottom-group classified-right-col classified-bottom-row" />,
+        <div className="bu-classification-circle classifying-circle classified-middle-group classified-left-col classified-bottom-row" />,
         <div className="bu-classification-circle classifying-circle classified-middle-group classified-right-col classified-bottom-row" />,
         <div className="bu-classification-circle classifying-circle classified-top-group classified-right-col classified-bottom-row" />,
     ];
@@ -87,14 +90,23 @@ function UStylA(props) {
                     </p>
                 </div>
                 <div id="bu-classification-circles" style={{ "--num-circles": numCircles }}>
-                    {/*
-                        --num-circles and --circle-index are used in the CSS for dynamically setting the height of the div, and positioning the circles respectively.
+                    {buClassificationCircles.map((circle, index) => {
+                        const maxCirclesPerColumn = Math.ceil(numCircles / numInitialColumns);
 
-                    */}
-                    {buClassificationCircles.map((circle, index) =>
-                    <div style={{ "--circle-index": index, "--circle-column-index": Math.floor(index / (numCircles / numInitialColumns)) }}>
-                        {circle}
-                    </div>)}
+                        const columnIndex = Math.floor(index / (numCircles / numInitialColumns));
+                        const circleIndex = index % maxCirclesPerColumn;
+
+                        const numCirclesInColumn = columnIndex + 1 < numInitialColumns
+                            ? maxCirclesPerColumn
+                            : numCircles - (maxCirclesPerColumn * (numInitialColumns - 1));
+
+                        return <div key={`Circle: ${circle.props.className}`} style={{ "--circle-index": circleIndex, 
+                            "--circle-column-index": columnIndex,
+                            "--circle-column-height": `calc(${numCirclesInColumn} * (var(--circle-diameter) + var(--circle-margin)))`,
+                            "--column-top-pos": `calc((var(--classification-circles-height) / 2) - (var(--circle-column-height) / 2))` }}>
+                            {circle}
+                        </div>
+                    })}
                 </div>
             </SeparatorDiv>
         </SeparatorSection>

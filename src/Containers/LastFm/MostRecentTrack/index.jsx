@@ -22,7 +22,7 @@ function MostRecentTrack(props) {
     function getRecentTracks() {
         console.log("Retrieving my most recent track from LastFM.");
 
-        axios.get("http://ws.audioscrobbler.com/2.0/", {
+        axios.get("https://ws.audioscrobbler.com/2.0/", {
             params: {
                 "api_key": process.env.REACT_APP_LAST_FM_API_KEY,
                 "method": "user.getrecenttracks",

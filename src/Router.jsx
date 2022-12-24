@@ -2,12 +2,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Mii from "./Routes/Mii";
+import Career from "./Routes/Career";
 import Playground from "./Routes/Playground";
 
 import Projects from "./Routes/Projects/";
 import Bloopy from "./Routes/Projects/Bloopy/";
 import UStylA from "./Routes/Projects/bu";
-import Career from "./Routes/Projects/Career";
 import WaffleCo from "./Routes/Projects/WaffleCo";
 
 /**

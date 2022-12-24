@@ -6,7 +6,6 @@
     border: none;
 
     align-items: center;
-    /* justify-content: flex-end; */
 }
 
 #friendly > * {
@@ -23,10 +22,6 @@
 
     padding-bottom: 4.5rem;
     padding-top: 4.5rem;
-}
-
-#greeting > * {
-    /* flex: 1; */
 }
 
 #greeting > h1 > a {

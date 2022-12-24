@@ -2,6 +2,12 @@
     display: flex;
 
     justify-content: center;
+
+    /*
+        This is here so it doesn't jump around on mobile if the browser does some nonsense that alters the bottom.
+        I've seen said nonsense on Firefox, and Firefox Focus.
+    */
+    transition: all 0.5s ease-in-out;
 }
 
 #navigation-menu > .linked-icon-wrapper {

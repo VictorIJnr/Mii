@@ -21,7 +21,7 @@ function MostPlayedTrack(props) {
     function getMostPlayedTrack() {
         console.log(`Retrieving my most played track from Last.fm for the time frame "${props.timeFrame}".`);
 
-        axios.get("http://ws.audioscrobbler.com/2.0/", {
+        axios.get("https://ws.audioscrobbler.com/2.0/", {
             params: {
                 "api_key": process.env.REACT_APP_LAST_FM_API_KEY,
                 "method": "user.gettoptracks",

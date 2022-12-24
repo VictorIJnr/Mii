@@ -7,6 +7,7 @@ import Playground from "./Routes/Playground";
 import Projects from "./Routes/Projects/";
 import Bloopy from "./Routes/Projects/Bloopy/";
 import UStylA from "./Routes/Projects/bu";
+import Career from "./Routes/Projects/Career";
 import WaffleCo from "./Routes/Projects/WaffleCo";
 
 /**
@@ -15,6 +16,7 @@ import WaffleCo from "./Routes/Projects/WaffleCo";
 function Router() {
     return <Routes>
         <Route path="/" element={<Mii />}/>
+        <Route path="/career" element={<Career />} />
         <Route path="/playground" element={<Playground />}/>
         <Route path="/projects" element={<Projects />}/>
         <Route path="/projects/bloopy" element={<Bloopy />} />

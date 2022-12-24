@@ -5,6 +5,14 @@
         width: 100%;
         text-align: center;
     }
+
+    #greeting .linked-icon > svg {
+        font-size: 2em;
+    }
+
+    #projects-highlights .highlight-card {
+        width: 75%;
+    }
 }
 
 @media screen and (min-width: 1280px) {

@@ -1,9 +1,9 @@
 import React from "react";
 
-import Content from "../../../Components/Layout/Content";
+import Content from "../../Components/Layout/Content";
 
-import Highlight from "../../../Components/Highlight";
-import SeparatorSection from "../../../Components/Layout/SeparatorSection";
+import Highlight from "../../Components/Highlight";
+import SeparatorSection from "../../Components/Layout/SeparatorSection";
 
 /**
  * Route depicting my career so far.

@@ -2,11 +2,9 @@
     #navigation-menu {
         position: fixed;
 
-        /* The height is set in the responsive CSS for the Content component.*/
-        height: var(--navigation-height);
         width: 100%;
 
-        top: calc(100% - var(--navigation-height));
+        bottom: 0;
         background-color: var(--bg-colour);
 
         /* Need this to be large enough such that it's above everything else. */

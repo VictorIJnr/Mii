@@ -7,7 +7,7 @@
     .content {
         --navigation-height: 10vh;
         
-        margin-bottom: var(var(--navigation-height));
+        margin-bottom: var(--navigation-height);
         flex-direction: column-reverse;
     }
 }

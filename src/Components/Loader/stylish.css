@@ -1,5 +1,10 @@
-.loadDiv {
+div.loader {
     display: flex;
+    
     justify-content: center;
     align-items: center;
+
+    color: var(--dark-theme-orange);
+
+    animation: fa-spin 1.25s infinite linear;
 }

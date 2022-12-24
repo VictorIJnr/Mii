@@ -1,0 +1,34 @@
+.linked-info-handle {
+    transition: all 0.75s ease-in-out;
+
+    overflow: hidden;
+}
+
+.linked-info-handle.horizontal-info-handle {
+    transform: translateX(67%);
+}
+
+.linked-info-handle.vertical-info-handle {
+    transform: translateY(50%);
+}
+
+.linked-info-handle .info-handle-summary {
+    background-color: var(--bg-colour);
+}
+
+.linked-info-handle:hover:not(.selected-info-handle) {
+    transform: translate(0%);
+}
+
+.linked-info-handle:hover:not(.selected-info-handle) .info-handle-summary {
+    /* background-color: var(--dark-theme-orange); */
+    text-decoration: underline;
+}
+
+.linked-info-handle a:hover {
+    text-decoration: none;
+}
+
+.selected-info-handle .info-handle-caption {
+    color: var(--dark-theme-font-colour);
+}

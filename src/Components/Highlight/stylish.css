@@ -1,0 +1,121 @@
+.highlight-container {
+    position: relative;
+    display: flex;
+    
+    width: 75%;
+}
+
+.highlight-container::after {
+    position: absolute;
+    content: "";
+
+    bottom: 0;
+    left: 31.25%;
+    width: 37.5%;
+
+    border-bottom: 1px solid var(--dark-theme-orange);
+}
+
+.highlight-card {
+    display: flex;
+    position: relative;
+
+    flex: 1;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight-card > a.highlight-link {
+    width: fit-content;
+}
+
+.highlight-card > a.highlight-svg-link {
+    width: 100%;
+}
+
+/* Don't know why, but, having the asterisk like this looks weird :3 */
+.highlight-card * {
+    transition: all 0.75s ease-in-out;
+}
+
+.highlight-card-info {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    z-index: 2;
+    color: var(--dark-theme-font-colour);
+}
+
+.highlight-card-info.hovered-image {
+    color: var(--dark-theme-orange);
+}
+
+.highlight-description {
+    flex: 1;
+    align-self: center;
+
+    text-align: center;
+}
+
+.highlight-description > p {
+    margin: 0;
+}
+
+.highlight-image {
+    border-radius: 5px;
+}
+
+.highlight-image.highlight-svg-image {
+    width: 100%;
+}
+
+.highlight-image.hovered-image {
+    z-index: -1;
+    transform: scale(1.05);
+}
+
+.highlight-image-container {
+    position: relative;
+    overflow: hidden;
+
+    /* border-radius: 5px; */
+}
+
+.highlight-image-overlay {
+    position: absolute;
+
+    bottom: 0;
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    background-image: linear-gradient(to top, var(--bg-colour) calc(1.75rem), rgba(255, 0, 0, 0));
+    opacity: 0.8;
+}
+
+h3.highlight-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    bottom: 5%;
+    left: 5%;
+
+    border-bottom: none;
+}
+
+.highlight-card-arrow {
+    position: absolute;
+
+    bottom: 5%;
+    right: 5%;
+}

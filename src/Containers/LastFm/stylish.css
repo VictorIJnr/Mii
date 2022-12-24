@@ -1,0 +1,42 @@
+.most-played-track,
+.most-recent-track {
+    position: relative;
+    display: flex;
+    
+    flex: 1;
+    flex-direction: column;
+    
+    margin: 0vh 2.5vw;
+    margin-top: 2.5vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.most-played-track > *,
+.most-recent-track > * {
+    flex: 1;
+}
+
+.most-played-track > h3,
+.most-recent-track > h3 {
+    margin-top: 0;
+}
+
+/* If the description is too large, we don't want the other components increasing in size. */
+.most-played-track > h3,
+.most-played-track > .spotify-player,
+.most-recent-track > h3,
+.most-played-track > .spotify-player {
+    flex-grow: 0;
+}
+
+.most-played-track > p,
+.most-recent-track > p {
+    margin-top: 2.5vh;
+    text-align: center;
+}
+
+.most-recent-track > p.currently-playing > svg {
+    color: var(--dark-theme-orange);
+}

@@ -1,0 +1,90 @@
+#friendly {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    border: none;
+
+    align-items: center;
+    /* justify-content: flex-end; */
+}
+
+#friendly > * {
+    display: flex;
+    flex: 1;
+}
+
+#greeting {
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    justify-content: center;
+
+    padding-bottom: 4.5rem;
+    padding-top: 4.5rem;
+}
+
+#greeting > * {
+    /* flex: 1; */
+}
+
+#greeting > h1 > a {
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+}
+
+#greeting h1,
+#greeting h2,
+#greeting h3 {
+    border-bottom: none;
+}
+
+#greeting h1:not(:first-child),
+#greeting h2, 
+#greeting h3 { 
+    margin-top: 0vh;
+}
+
+#greeting h3 {
+    font-size: 1.5rem;
+}
+
+#mii-contact-links {
+    display: flex;
+    flex-direction: row;
+
+    align-items: baseline;
+    justify-content: center;
+}
+
+#projects-overview {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#projects-overview > p,
+#playground-overview > p {
+    display: inline-block;
+    text-align: center;
+
+    margin-bottom: 0;
+}
+
+#projects-overview > svg {
+    margin-top: 1vh;
+}
+
+#projects-highlights .highlight-container b {
+    color: var(--dark-theme-light-orange);
+    font-style: italic;
+}
+
+.mii-hidden {
+    display: none;
+    height: 0%;
+}

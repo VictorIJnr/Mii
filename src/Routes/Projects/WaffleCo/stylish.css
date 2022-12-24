@@ -1,0 +1,63 @@
+#waffle-overview {
+    text-align: center;
+    align-items: center;
+}
+
+#waffle-overview > h1 {
+    margin-bottom: 2.5vh;
+}
+
+#waffle-overview > p {
+    margin-bottom: 0;
+}
+
+#waffle-intro {
+    display: flex;
+    margin-bottom: 0;
+}
+
+#waffle-motivation {
+    display: flex;
+    
+    flex-direction: row;
+}
+
+#waffle-intro .highlight-container {
+    margin: 0;
+    padding: 0;
+}
+
+#waffle-intro .highlight-container::after {
+    width: 0;
+    height: 0;
+
+    border: none;
+}
+
+#waffle-outro {
+    display: flex;
+    
+    align-items: center;
+}
+
+#waffle-outro > * {
+    flex: 1;
+}
+
+#waffle-outro > #waffle-outro-images {
+    display: flex;
+    
+    margin-top: 2.5vh;
+
+    width: 100%;
+}
+
+#waffle-outro > p {
+    margin-top: 2.5vh;
+    text-align: center;
+}
+
+#waffle-outro > p:last-of-type {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}

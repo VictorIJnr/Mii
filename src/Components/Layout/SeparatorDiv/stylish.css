@@ -1,0 +1,25 @@
+div.separator-div {
+    position: relative;
+    
+    flex: 1;
+
+    width: 100%;
+
+    margin-bottom: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+
+div.separator-div::after {
+    --width: 12.5%;
+
+    position: absolute;
+    content: "";
+
+    bottom: 0;
+
+    width: var(--width);
+    left: calc((100% - var(--width)) / 2);
+
+    border-bottom: 1px solid var(--dark-theme-font-colour);
+    opacity: 0.25;
+}

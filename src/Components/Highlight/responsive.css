@@ -1,0 +1,55 @@
+@media screen and (max-height: 500px) {
+    .highlight-container {
+        margin-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+    .highlight-card {
+        width: fit-content;
+        align-self: center;
+    }
+
+    .highlight-image {
+        height: 50vh;
+    }
+}
+
+@media screen and (min-height: 500px) {
+    .highlight-image {
+        width: 100%;
+        max-height: 30vh;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .highlight-container {
+        flex-direction: column;
+    }
+
+    .highlight-description {
+        margin-top: 2vh;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .highlight-container {
+        flex-direction: row;
+    }
+
+    /* This looks weird if reversed on a phone, or other small screen device. */
+    .highlight-container.reversed-highlight {
+        flex-direction: row-reverse;
+    }
+    
+    :not(.reversed-highlight) .highlight-description {
+        margin-left: 10%;
+    }
+    
+    .reversed-highlight .highlight-description {
+        margin-right: 10%;
+    }
+    
+    .highlight-image {
+        transform: scale(1.25);
+    }
+}

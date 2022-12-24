@@ -1,8 +1,28 @@
+body {
+    min-height: 100vh;
+}
+
 body, 
-.site {
-    background-color: #f7f7f7;
+#site {
+    display: flex;
+
+    background-color: var(--bg-colour);
     margin: 0;
     padding: 0;
+
+    --fa-primary-color: var(--dark-theme-orange);
+    --fa-secondary-color: var(--dark-theme-font-colour);
+
+    max-width: 100vw;
+}
+
+#root {
+    display: flex;
+    flex: 1;
+}
+
+#site {
+    flex: 1;
 }
 
 a i::before {
@@ -43,19 +63,6 @@ button:hover {
 
 button:focus {
     outline: 0;
-}
-
-#friendly {
-    /* margin-top: 33vh; */
-    text-align: center;
-    vertical-align: middle;
-    border: none;
-}
-
-#friendly > h1 > a {
-    text-decoration: none;
-    color: inherit;
-    cursor: default;
 }
 
 .center-text {

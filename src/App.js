@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React from "react";
 
-import Routes from './Routes';
+import Router from "./Router";
 
-class App extends Component {
+import "./variables.css";
 
-    render() {
-        return (<div className="site container-fluid">
-            <Routes />
-        </div>);
-    }
-
+/**
+ * Initial component to handle the rendering of the entire website.
+ */
+function App() {
+    return <div id="site">
+        <Router />
+    </div>
 }
 
 export default App;

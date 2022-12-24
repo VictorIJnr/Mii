@@ -1,0 +1,113 @@
+.content.bloopy-content #main-content p {
+    margin-top: 1vh;
+
+    text-align: center;
+}
+
+#bloopy-overview {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+#bloopy-overview > h1 {
+    width: fit-content;
+}
+
+#bloopy-overview > p {
+    margin-top: 2.5vh;
+    margin-bottom: 0;
+}
+
+#bloopy-graphics > div {
+    position: relative;
+    flex: 1;
+
+    width: 100%;
+    padding-bottom: 2.5vh;
+}
+
+#bloopy-graphics > div::after {
+    --width: 12.5%;
+
+    position: absolute;
+    content: "";
+
+    bottom: 0;
+
+    width: var(--width);
+    left: calc((100% - var(--width)) / 2);
+
+    border-bottom: 1px solid var(--dark-theme-font-colour);
+    opacity: 0.25;
+}
+
+#bloopy-mascot {
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+#bloopy-mascot .highlight-card {
+    margin: 2.5vh 0;
+}
+
+#bloopy-animations {
+    display: flex;
+    margin: 2.5vh 0;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#bloopy-animations > div {
+    margin-bottom: 2.5vh;
+}
+
+#bloopy-gameplay > div > .player-wrapper {
+    --player-height: 75vh;
+    
+    height: var(--player-height);
+
+    /*
+        The "padding" at the bottom that comes with the video is 10% of the video's height.
+        The "padding" at the top is only 5% of the video's height.
+        This is just making the difference consistent.
+    */
+    padding-top: calc(var(--player-height) * 0.05);
+}
+
+#bloopy-gameplay p,
+#bloopy-outro h2 {
+    margin-top: 0;
+}
+
+#bloopy-outro > div {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+#bloopy-outro #link-container {
+    display: flex;
+
+    margin: 2.5vh 0;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#bloopy-graphics .separator-div:last-of-type,
+#bloopy-gameplay .separator-div:last-of-type,
+#bloopy-outro .separator-div:last-of-type{
+    margin-bottom: 0vh;
+}

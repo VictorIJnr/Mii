@@ -1,0 +1,320 @@
+#bu {
+    --content-width: 62.5%;
+}
+
+#bu h2 {
+    margin-top: 0;
+}
+
+#bu-overview {
+    display: flex;
+
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+#bu-overview video {
+    width: 100%;
+}
+
+#bu-overview > p {
+    margin-top: 1.5vh;
+    margin-bottom: 0vh;
+}
+
+#bu-overview > p > span {
+    color: var(--dark-theme-orange);
+    
+    font-style: italic;
+    font-weight: bold;
+}
+
+#bu-intro {
+    position: relative;
+    display: flex;
+
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 100%;
+
+    text-align: center;
+}
+
+#bu-intro > #bu-intro-video-wrapper::after {
+    display: none;
+}
+
+#bu-intro > #bu-intro-video-wrapper,
+#bu-intro-video-wrapper > #bu-intro-video {
+    position: relative;
+}
+
+#bu-intro-video-wrapper > #bu-intro-video video {
+    max-width: 100%;
+}
+
+#bu-mini-player-overlay {
+    position: absolute;
+
+    top: 0;
+    
+    height: 100%;
+    width: 100%;
+
+    z-index: 32;
+}
+
+#bu-mini-player-overlay > #bu-overlay-colour {
+    position: absolute;
+
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--bg-colour);
+    opacity: 0.7;
+
+    z-index: -1;
+}
+
+#bu-mini-player-overlay > #bu-overlay-content {
+    display: flex;
+
+    height: 100%;
+}
+
+#bu-mini-player-overlay > #bu-overlay-content > div {
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: left;
+
+    opacity: 0.9;
+}
+
+#bu-mini-player-overlay > #bu-overlay-content > div > * {
+    margin: 0;
+}
+
+#bu-intro-classification {
+    display: flex;
+}
+
+#bu-intro-classification > #bu-classification-overview {
+    display: flex;
+
+    flex: 1;
+    flex-direction: column;
+}
+
+#bu-intro-classification > #bu-classification-overview > h2 {
+    margin-bottom: 2.5vh;
+}
+
+#bu-intro-classification > #bu-classification-circles {
+    --animation-duration: 10s;
+    --circle-diameter: 25px;
+    --circle-margin: calc(var(--circle-diameter) / 4);
+
+    --classification-circles-height: calc(var(--num-circles) * (var(--circle-diameter) + var(--circle-margin)));
+    
+    position: relative;
+    display: flex;
+    
+    flex: 1;
+    flex-direction: column;
+
+    align-items: center;
+    
+    min-height: var(--classification-circles-height);
+}
+
+#bu-classification-circles .bu-classification-circle {
+    position: absolute;
+
+    height: var(--circle-diameter);
+    width: var(--circle-diameter);
+
+    border-radius: 50%;
+    opacity: 0.75;
+}
+
+#bu-classification-circles .bu-classification-circle:first-of-type {
+    animation-duration: calc(var(--animation-duration) / 5);
+}
+
+#bu-classification-circles .bu-classification-circle:last-of-type {
+    /* animation-delay: calc(var(--animation-duration) / 2); */
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle {
+    --classified-top-pos: 0;
+    --classified-left-pos: 0;
+    
+    animation-name: circle-glow, circle-classify;
+    animation-duration: var(--animation-duration), calc(var(--animation-duration) / 3);
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* 
+    Groups are all the circles which have the same animation-delay.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-group {
+    animation-delay: 0s, 0s;
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-middle-group {
+    animation-delay: calc(0s - var(--animation-duration) / 3), 0s;
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-group {
+    animation-delay: calc(0s - 2 * var(--animation-duration) / 3), 0s;
+}
+
+/*
+    Columns are unaffected by grouping.
+    All classified circles in the left column will have the same x coordinate.
+    The same applies to the right column.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-left-col {
+    --classified-left-pos: calc(100% - (var(--circle-diameter) * 2) - var(--circle-margin));
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-right-col {
+    --classified-left-pos: calc(100% - (var(--circle-diameter)));
+}
+
+/* 
+    Putting all the circles in the top group at the top.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-group.classified-top-row {
+    --classified-top-pos: 0;
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-top-group.classified-bottom-row {
+    --classified-top-pos: calc(var(--circle-diameter) + var(--circle-margin));
+}
+
+/* 
+    Putting all the circles in the middle group at the bottom.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-middle-group.classified-top-row {
+    --classified-top-pos: calc(50% - var(--circle-diameter) / 2 - var(--circle-margin));
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-middle-group.classified-bottom-row {
+    --classified-top-pos: calc(50% + var(--circle-diameter) / 2);
+}
+
+/* 
+    Putting all the circles in the bottom group at the bottom.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-group.classified-top-row {
+    --classified-top-pos: calc(100% - 2 * var(--circle-diameter) - var(--circle-margin));
+}
+
+#bu-classification-circles .bu-classification-circle.classifying-circle.classified-bottom-group.classified-bottom-row {
+    --classified-top-pos: calc(100% - var(--circle-diameter));
+}
+
+/* 
+    Vertically positions the circles, based on their index.
+*/
+#bu-classification-circles .bu-classification-circle.classifying-circle {
+    /* --circle-index is set in the parent div within the JSX code. */
+    /* --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin))); */
+
+    --classified-initial-top-pos: calc(var(--column-top-pos) + (var(--circle-index) * (var(--circle-diameter) + var(--circle-margin))));
+    --classified-initial-left-pos: calc(var(--circle-column-index) * (var(--circle-diameter) + var(--circle-margin)));
+}
+
+#bu-outro {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+#bu-summary p,
+#bu-outro p {
+    margin: 0;
+}
+
+#bu-outro-links {
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+#bu-outro-link-container {
+    display: flex;
+
+    margin-top: 1vh;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: baseline;
+}
+
+@keyframes circle-glow {
+    0% {
+        background-color: var(--dark-theme-orange);
+    }
+
+    20% {
+        background-color: #EE5253;
+    }
+
+    40% {
+        background-color: #8C7AE6;
+    }
+
+    60% {
+        background-color: #0984E3;
+    }
+
+    80% {
+        background-color: #55EFC4;
+    }
+
+    100% {
+        background-color: #FFFA65;
+    }
+}
+
+@keyframes circle-classify {
+    0% {
+        top: var(--classified-initial-top-pos);
+        left: var(--classified-initial-left-pos);
+    }
+    
+    15% {
+        top: var(--classified-initial-top-pos);
+        left: var(--classified-initial-left-pos);
+    }
+
+    85% {
+        top: var(--classified-top-pos);
+        left: var(--classified-left-pos);
+    }
+
+    100% {
+        top: var(--classified-top-pos);
+        left: var(--classified-left-pos);
+    }
+}

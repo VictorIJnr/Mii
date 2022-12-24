@@ -1,0 +1,13 @@
+#navigation-menu {
+    display: flex;
+
+    justify-content: center;
+}
+
+#navigation-menu > .linked-icon-wrapper {
+    flex: 1;
+}
+
+#navigation-menu .linked-icon {
+    padding-left: 0.75vw;
+}

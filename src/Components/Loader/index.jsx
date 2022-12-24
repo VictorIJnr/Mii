@@ -1,6 +1,7 @@
 import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faSpinnerThird } from "@fortawesome/pro-thin-svg-icons";
 
 import "./stylish.css";
 
@@ -9,8 +10,8 @@ import "./stylish.css";
 * Solely used when data is currently being loaded.
 */
 function Loader() {
-    return <div className="loadDiv">
-        <FontAwesomeIcon icon={faSpinner} size="3x" pulse/>
+    return <div className="loader">
+        <FontAwesomeIcon icon={faSpinnerThird} size="3x" />
     </div>;
 }
 

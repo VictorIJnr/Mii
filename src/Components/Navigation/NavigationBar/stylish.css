@@ -1,0 +1,11 @@
+#nav-info-handles {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+#nav-info-handles svg {
+    --fa-primary-color: var(--dark-theme-orange);
+    --fa-secondary-color: var(--dark-theme-font-colour);
+}

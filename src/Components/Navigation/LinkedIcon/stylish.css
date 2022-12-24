@@ -1,0 +1,45 @@
+.linked-icon-wrapper {
+    position: relative;
+    
+    margin-left: 1vw;
+
+    width: fit-content;
+}
+
+.linked-icon-wrapper:first-of-type {
+    margin-top: 1.5vh;
+}
+
+.linked-icon-wrapper:not(:first-of-type) {
+    margin-top: 1vh;
+}
+
+.linked-icon,
+.linked-icon {
+    display: flex;
+    flex-direction: row;
+
+    align-items: baseline;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.linked-icon:hover {
+    text-decoration: none;
+
+    color: var(--dark-theme-font-colour);
+    --fa-primary-color: var(--dark-theme-font-colour);
+}
+
+.linked-icon > svg {
+    margin-right: 0.5rem;
+}
+
+/* I don't want to drop an !important here, so I'm being overly specific. */
+.linked-icon-wrapper > .linked-icon > p.link-description {
+    margin-bottom: 0;
+    
+    font-size: 1.5rem;
+    font-family: "desire-pro", serif;
+    letter-spacing: 1px;
+}

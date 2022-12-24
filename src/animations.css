@@ -1,0 +1,93 @@
+.fade-in {
+    animation: fade-in 0.7s;
+}
+
+.fade-in.delay {
+    animation: fade-in-delay 1.4s;
+}
+
+.fade-in.long-delay {
+    animation: fade-in-long-delay 2.1s;
+}
+
+.load-post-greeting {
+    animation: fade-in-post-greeting 2.8s;
+}
+
+.hello-glow {
+    animation: glowing-text 3s infinite alternate;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-delay {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-long-delay {
+    0% {
+        opacity: 0;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    67% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-post-greeting {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes glowing-text {
+    80% {
+        color: var(--dark-theme-font-colour);
+    }
+
+    100% {
+        color: var(--dark-theme-orange);
+    }
+}

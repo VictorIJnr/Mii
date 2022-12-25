@@ -32,7 +32,13 @@
 }
 
 .linked-icon > svg {
+    /* min-width allows all icons to be the same size, instead of some being thinner than others. */
+    min-width: 1.5em;
     margin-right: 0.5rem;
+}
+
+.linked-icon > p {
+    flex: 3;
 }
 
 /* I don't want to drop an !important here, so I'm being overly specific. */

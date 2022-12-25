@@ -38,6 +38,10 @@
         margin: 0;
         padding-bottom: 0.25vh;
     }
+
+    #navigation-menu p.link-description {
+        margin: 0vh 2.5vw;
+    }
 }
 
 @media screen and (min-width: 1280px) {

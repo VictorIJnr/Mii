@@ -1,7 +1,7 @@
 import React from "react";
 
 import { faCatSpace } from "@fortawesome/pro-duotone-svg-icons";
-import { faCode, faHeart, faHouseChimneyBlank } from "@fortawesome/sharp-solid-svg-icons";
+import { faCode, faHeart, faHouseChimneyBlank, faUserTie } from "@fortawesome/sharp-solid-svg-icons";
 
 import { faCatSpace as faCatSolid } from "@fortawesome/pro-solid-svg-icons";
 
@@ -20,6 +20,7 @@ function NavigationMenu(props) {
 
     return <div id="navigation-menu">
         <LinkedIcon path="/" caption="Home" icon={faHouseChimneyBlank} selectedIcon={faHouseChimneyBlank} />
+        <LinkedIcon path="/career" caption="Career" icon={faUserTie} selectedIcon={faUserTie} />
         <LinkedIcon path="/projects" caption="Projects" icon={faCode} selectedIcon={faCode} />
 
         {/* We could change this to the paw-claws pro icon, because Sk8terTiger. */}

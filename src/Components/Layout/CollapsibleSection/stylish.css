@@ -1,0 +1,17 @@
+.collapsible-section {
+    display: flex;
+    position: relative;
+
+    width: 100%;
+}
+
+.collapsible-header .highlight-image.highlight-svg-image {
+    /* min-height: 7.5vh; */
+    /* width: auto; */
+}
+
+.header-summary {
+    color: var(--dark-theme-light-orange);
+    font-weight: bold;
+    font-style: italic;
+}

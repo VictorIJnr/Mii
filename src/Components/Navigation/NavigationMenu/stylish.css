@@ -17,3 +17,8 @@
 #navigation-menu .linked-icon {
     padding-left: 0.75vw;
 }
+
+#navigation-menu .linked-icon > svg {
+    /* min-width allows all icons to be the same size, instead of some being thinner than others. */
+    min-width: 1.5em;
+}

@@ -3,11 +3,42 @@
     position: relative;
 
     width: 100%;
+    flex-direction: column;
 }
 
-.collapsible-header .highlight-image.highlight-svg-image {
-    /* min-height: 7.5vh; */
-    /* width: auto; */
+.collapsible-header {
+    display: flex;
+    
+    align-items: center;
+}
+
+.collapsible-header .collapse-icon {
+    transition: all 0.625s ease-in-out;
+}
+
+.collapsible-header .collapse-icon.expanded-icon {
+    /* color: var(--dark-theme-light-orange); */
+    transform: rotateZ(-180deg);
+}
+
+.collapsible-header div.separator-div::after {
+    border-bottom: none;
+}
+
+.collapsible-header .highlight-container {
+    margin: 0;
+    padding: 0;
+
+    margin-right: 2.5vw;
+}
+
+.collapsible-header:hover .highlight-image {
+    z-index: -1;
+    transform: scale(1);
+}
+
+.collapsible-header:hover .highlight-card-info {
+    color: var(--dark-theme-orange);
 }
 
 .header-summary {

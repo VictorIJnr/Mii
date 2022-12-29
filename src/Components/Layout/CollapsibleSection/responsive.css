@@ -1,0 +1,23 @@
+@media screen and (max-width: 960px) {
+    .collapsible-header {
+        flex-direction: column;
+    }
+
+    .collapsible-header .collapse-icon {
+        font-size: 2em;
+    }
+
+    .collapsible-header .highlight-container {
+        margin-bottom: 2.5vh;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .collapsible-header {
+        flex-direction: row;
+    }
+
+    .collapsible-header .highlight-container {
+        margin-right: 2.5vw;
+    }
+}

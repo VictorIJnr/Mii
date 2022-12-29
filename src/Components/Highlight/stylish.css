@@ -73,19 +73,20 @@
 }
 
 .highlight-image.highlight-svg-image {
-    width: 100%;
+    /* SVGs are rendered fine if they have a project path, since the arrow helps determing the size of the SVG. */
+    /* But I want something generic, and width: 100% didn't give me that. */
+    
+    min-height: 10vh;
 }
 
 .highlight-image.hovered-image {
     z-index: -1;
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 .highlight-image-container {
     position: relative;
     overflow: hidden;
-
-    /* border-radius: 5px; */
 }
 
 .highlight-image-overlay {

@@ -4,6 +4,7 @@ import Content from "../Components/Layout/Content";
 import Taste from "../Containers/Taste";
 
 import "./stylish.css";
+import "./responsive.css";
 
 /**
  * The Playground route.
@@ -11,7 +12,7 @@ import "./stylish.css";
  * That's it. Just fun shit :D
  */
 function Playground() {
-    return <Content>
+    return <Content id="playground">
         <h1>Let's have some fun here</h1>
         <section id="playground-overview">
             <p>

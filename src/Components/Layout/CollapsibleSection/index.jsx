@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCaretDown } from "@fortawesome/pro-thin-svg-icons";
 
-import Highlight from "../../Highlight";
+import HighlightImage from "../../Highlight/HighlightImage";
 import SeparatorSection from "../SeparatorSection";
 
 import "./stylish.css";
@@ -15,18 +15,40 @@ import "./responsive.css";
 function CollapsibleSection(props) {
     const [isExpanded, setExpanded] = useState(props.expanded);
 
-    const collapseIconClasses = classNames("collapse-icon", {
-        "expanded-icon": isExpanded
+    function createCollapseIcon(isOverlay) {
+        const collapseIconClasses = classNames("collapse-icon", {
+            "expanded-icon": isExpanded,
+            "highlight-card-arrow": isOverlay
+        });
+
+        //? I know Sonarlint is mad. But:
+        //? https://www.reddit.com/r/reactnative/comments/u2fgfb/comment/i4j92rr/?utm_source=share&utm_medium=web2x&context=3
+        //? I'm not disabling the rule, because it's nice to know about.
+        return <FontAwesomeIcon className={collapseIconClasses} icon={faCircleCaretDown} size="2x"
+            onClick={() => setExpanded(!isExpanded)} />
+    }
+
+    const contentClasses = classNames("collapsible-content", {
+        "minimised-content": isExpanded
     });
 
     return <SeparatorSection className="collapsible-section">
         <div className="collapsible-header">
-            <Highlight image={props.headerImage} title={props.headerTitle}>
-                <p className="header-summary">{props.headerSummary}</p>
-            </Highlight>
-            <FontAwesomeIcon className={collapseIconClasses} icon={faCircleCaretDown} size="3x" onClick={() => setExpanded(!isExpanded)} />
+            <div className="header-highlight highlight-container">
+                <div className="header-image-overlay">
+                    <HighlightImage image={props.headerImage} title={props.headerTitle} />
+                    <div className="highlight-card-info">
+                        {createCollapseIcon(true)}
+                    </div>
+                </div>
+                <div className="highlight-description">
+                    <p className="header-summary">{props.headerSummary}</p>
+                </div>
+            </div>
+            
+            {createCollapseIcon(false)}
         </div>
-        <div className="collapsible-content">
+        <div className={contentClasses}>
             {props.children}
         </div>
     </SeparatorSection>

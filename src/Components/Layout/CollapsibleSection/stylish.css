@@ -13,7 +13,7 @@
 }
 
 .collapsible-header .collapse-icon {
-    transition: all 0.625s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .collapsible-header .collapse-icon.expanded-icon {
@@ -37,8 +37,32 @@
     transform: scale(1);
 }
 
-.collapsible-header:hover .highlight-card-info {
+.collapsible-header:hover .highlight-card .highlight-card-info {
     color: var(--dark-theme-orange);
+}
+
+.header-highlight.highlight-container {
+    margin: 0;
+
+    width: 100%;
+}
+
+.header-highlight.highlight-container::after {
+    border-bottom: none;
+}
+
+.header-highlight.highlight-container .header-image-overlay {
+    flex: 1;
+}
+
+.header-image-overlay {
+    position: relative;
+}
+
+.header-image-overlay > .collapse-icon {
+    position: absolute;
+
+    bottom: 1vh;
 }
 
 .header-summary {

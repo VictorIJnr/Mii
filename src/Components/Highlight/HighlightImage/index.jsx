@@ -20,8 +20,6 @@ function HighlightImage(props) {
 
     const isImageSVG = props.image.endsWith(".svg");
 
-    console.log(`[HighlightImage] Is this a fucking SVG:\t${isImageSVG}`);
-
     const linkClasses = classNames({
         "highlight-link": !isImageSVG,
         "highlight-svg-link": isImageSVG

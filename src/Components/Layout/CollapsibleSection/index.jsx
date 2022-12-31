@@ -28,8 +28,10 @@ function CollapsibleSection(props) {
             onClick={() => setExpanded(!isExpanded)} />
     }
 
+    console.log(`Am I a big boi:\t${isExpanded}`);
+
     const contentClasses = classNames("collapsible-content", {
-        "minimised-content": isExpanded
+        "minimised-content": !isExpanded
     });
 
     return <SeparatorSection className="collapsible-section">

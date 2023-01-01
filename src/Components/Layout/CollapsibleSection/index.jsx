@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -14,6 +14,13 @@ import "./responsive.css";
 /* Layout component to allow for a SeparatorSection to be expanded, and minimised at will. */
 function CollapsibleSection(props) {
     const [isExpanded, setExpanded] = useState(props.expanded);
+    const [contentHeight, setContentHeight] = useState(0);
+
+    const contentRef = useRef();
+
+    useEffect(() => {
+        setContentHeight(contentRef.current.scrollHeight);
+    });
 
     function createCollapseIcon(isOverlay) {
         const collapseIconClasses = classNames("collapse-icon", {
@@ -28,10 +35,8 @@ function CollapsibleSection(props) {
             onClick={() => setExpanded(!isExpanded)} />
     }
 
-    console.log(`Am I a big boi:\t${isExpanded}`);
-
     const contentClasses = classNames("collapsible-content", {
-        "minimised-content": !isExpanded
+        "minimised-content": !isExpanded,
     });
 
     return <SeparatorSection className="collapsible-section">
@@ -50,7 +55,7 @@ function CollapsibleSection(props) {
             
             {createCollapseIcon(false)}
         </div>
-        <div className={contentClasses}>
+        <div className={contentClasses} style={{"--content-height": `${contentHeight}px`}} ref={contentRef}>
             {props.children}
         </div>
     </SeparatorSection>

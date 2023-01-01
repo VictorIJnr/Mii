@@ -44,25 +44,18 @@
 }
 
 .collapsible-content {
-    height: 100%;
+    /* --content-height is set in the JS as we need to know how large the content is, in pixels, in order for us to have a transition. */
+    max-height: var(--content-height);
     opacity: 1;
 
-    background-color: blue;
-
-    transition: all 0.75s ease-in-out;
-}
-
-.collapsible-content * {
+    overflow: hidden;
     transition: all 0.75s ease-in-out;
 }
 
 .collapsible-content.minimised-content {
-    height: 0%;
+    max-height: 0;
+    
     opacity: 0;
-}
-
-.collapsible-content.minimised-content * {
-    height: 0%;
 }
 
 .header-highlight.highlight-container {

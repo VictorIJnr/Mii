@@ -1,10 +1,12 @@
+import { faQuestionCircle } from "@fortawesome/pro-thin-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import "./stylish.css";
 
 function Helper(props) {
     return <div id="wrapper">
-        <a href="#help" data-toggle="collapse"><i className="far fa-question-circle"></i></a>
+        <a href="#help" data-toggle="collapse"><FontAwesomeIcon icon={faQuestionCircle} size="2x" /></a>
         <p id="sneaky">
             You're not supposed to be here are you? No. No you're not. Don't worry,
             this tag shouldn't be here either. But I've spent too much time debugging

@@ -20,7 +20,14 @@
 
     align-items: baseline;
 
+    color: var(--dark-theme-orange);
+    text-decoration: none;
+
     transition: all 0.5s ease-in-out;
+}
+
+.linked-icon.selected-linked-icon {
+    color: var(--dark-theme-font-colour);
 }
 
 .linked-icon:hover {

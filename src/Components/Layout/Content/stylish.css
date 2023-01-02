@@ -61,13 +61,6 @@
     width: fit-content;
 }
 
-.content a {
-    color: var(--dark-theme-orange);
-    text-decoration: none;
-    /* color: #5F27CD; */
-    /* color: #af93e6; */
-}
-
 .content-gutter {
     flex: 1
 }

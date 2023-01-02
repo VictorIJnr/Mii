@@ -35,11 +35,13 @@ function CollapsibleSection(props) {
             onClick={() => setExpanded(!isExpanded)} />
     }
 
+    const sectionClasses = classNames("collapsible-section", props.className);
+
     const contentClasses = classNames("collapsible-content", {
         "minimised-content": !isExpanded,
     });
 
-    return <SeparatorSection className="collapsible-section">
+    return <SeparatorSection id={props.id} className={sectionClasses}>
         <div className="collapsible-header">
             <div className="header-highlight highlight-container">
                 <div className="header-image-overlay">
@@ -49,30 +51,45 @@ function CollapsibleSection(props) {
                     </div>
                 </div>
                 <div className="highlight-description">
-                    <p className="header-summary">{props.headerSummary}</p>
+                    {props.headerSummaryComponent !== null
+                        ? <div className="header-summary">{props.headerSummaryComponent}</div>
+                        : <p className="header-summary">{props.headerSummary}</p>
+                    }
                 </div>
             </div>
-            
+
             {createCollapseIcon(false)}
         </div>
-        <div className={contentClasses} style={{"--content-height": `${contentHeight}px`}} ref={contentRef}>
+        <div className={contentClasses} style={{ "--content-height": `${contentHeight}px` }} ref={contentRef}>
             {props.children}
         </div>
     </SeparatorSection>
 }
 
 CollapsibleSection.propTypes = {
-    headerImage: PropTypes.string.isRequired,
-    headerSummary: PropTypes.string.isRequired,
-    headerTitle: PropTypes.string.isRequired,
+    //? The id to give the component.
+    id: PropTypes.string,
+
+    //? Custom class(es) to be applied to the component.
+    className: PropTypes.string,
 
     //? Whether the section is expanded.
     //? Should only be used for the initial state. The expansion logic for the sectionis handled internally in the component.
-    expanded: PropTypes.bool
+    expanded: PropTypes.bool,
+
+    headerImage: PropTypes.string.isRequired,
+    headerSummary: PropTypes.string,
+    headerSummaryComponent: PropTypes.element,
+    headerTitle: PropTypes.string.isRequired
 }
 
 CollapsibleSection.defaultProps = {
-    expanded: false
+    id: "",
+    className: "",
+    expanded: false,
+    
+    headerSummary: "",
+    headerSummaryComponent: null
 }
 
 export default CollapsibleSection;

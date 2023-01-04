@@ -35,7 +35,7 @@ function Career() {
                 <p>
                     Working as a part of the <TextLink text="Control Center" url="https://www.everbridge.com/products/control-center/" /> team,
                     I'm automating our testing processes to help deliver product iterations faster, without comprimising on quality.
-                    <br />
+                    <br /><br />
                     I have also concurrently worked as a scrum master, assisted with manual testing, and lent a hand implementing product features
                     whenever necessary.
                 </p>
@@ -65,7 +65,7 @@ function Career() {
                     </div>
                 </div>
             </SeparatorDiv>
-            <SeparatorDiv>
+            <SeparatorDiv id="responsibilities">
                 <h2>Responsibilities</h2>
                 <div id="responsibilities-list">
                     <div>

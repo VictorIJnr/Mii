@@ -33,8 +33,6 @@ div:is(#overview, #responsibilities, #technologies) > h2 {
 
 div:is(#responsibilities-list, #technologies-list) {
     display: flex;
-
-    flex-direction: row;
 }
 
 div:is(#responsibilities-list, #technologies-list) > * {

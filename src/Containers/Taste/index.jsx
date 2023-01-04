@@ -52,7 +52,7 @@ function Taste(props) {
         //? Repeating them's just messy. 🤮
         console.log("I can't imagine anyone being bored enough to look through the console on my website. But you're here now aren't you?");
         console.log("In which case, I'll help you kill some more time, and give you a better insight into my questionable taste in music.");
-        console.log("Knock yourself out: https://www.last.fm/user/Sk8terTiger");
+        console.log("Have fun: https://www.last.fm/user/Sk8terTiger");
     }
 
     const timeFrames = ["7day", "1month", "3month", "6month", "12month", "overall"];
@@ -63,9 +63,12 @@ function Taste(props) {
     const secondTimeFrame = getRandomElementInArray(timeFrames);
 
     const tasteIntro = <div id="taste-intro">
-        <h2>Who doesn't like music?</h2>
-        <p>Don't judge my taste too much. Or do. You do you.<br />You'll see a few songs here, some good, and some that won't win a Grammy anytime soon
-            but I still love them regardless.</p>
+        <h2>I listen to too much music</h2>
+        <p>
+            Don't judge my taste too harshly. Or do. You do you.
+            <br />
+            I think these songs are neat, some are good, and some won't win a Grammy anytime soon.
+        </p>
     </div>;
 
     return <section id="music-taste">

@@ -15,6 +15,7 @@ import waffleStory from "../../../assets/images/WaffleCo/story.png";
 
 import "./stylish.css";
 import "./responsive.css";
+import SeparatorDiv from "../../../Components/Layout/SeparatorDiv";
 
 /**
  * The project page for the WaffleCo website.
@@ -22,12 +23,14 @@ import "./responsive.css";
 function WaffleCo(props) {
     return <Content>
         <SeparatorSection id="waffle-overview">
-            <h1>St Andy's Waffle Co</h1>
-            <p>
-                In my defence, I never asked to be paid. I also never got in touch with them about the website...<br />
-                Fantastic Streaky Back Waffles though.
-                Anyway, I had fun, and learnt a lot making it. That matters more than getting paid for it. Right?
-            </p>
+            <SeparatorDiv>
+                <h1>St Andy's Waffle Co</h1>
+                <p>
+                    In my defence, I never asked to be paid. I also never got in touch with them about the website...<br />
+                    Fantastic Streaky Back Waffles though.
+                    Anyway, I had fun, and learnt a lot making it. That matters more than getting paid for it. Right?
+                </p>
+            </SeparatorDiv>
         </SeparatorSection>
         <SeparatorSection id="waffle-intro">
             <Highlight image={waffleCo}>
@@ -40,20 +43,22 @@ function WaffleCo(props) {
         </SeparatorSection>
         <SeparatorSection id="waffle-outro">
             <h2>It won't bite</h2>
-            <div id="waffle-outro-images">
+            <SeparatorDiv id="waffle-outro-images">
                 <HighlightImage image={waffleStory} />
                 <HighlightImage image={waffleCarousel} />
                 <HighlightImage image={waffleGallery} />
-            </div>
-            <p>
-                I loved this at the time, especially the diagonal menu (who thinks of that?).<br />
-                Although, it's not up to my standards of today.<br /><br />
-                
-                This was a chance to use Bootstrap's grids and carousels, even though I acted as though responsive design didn't exist.<br />
-                If you'd like to take a look, it's on my GitHub Pages. For your sake, I hope you're not on mobile.
-            </p>
-            <LinkedIcon icon={faPancakes} size="3x" path="https://victorijnr.github.io/WaffleCo/" externalLink={true} />
-            <p><s>I know this looks like a stack of pancakes, just pretend they're waffles.</s></p>
+            </SeparatorDiv>
+            <SeparatorDiv id="waffle-outro-text">
+                <p>
+                    I loved this at the time, especially the diagonal menu (who thinks of that?).<br />
+                    Although, it's not up to my standards of today.<br /><br />
+                    
+                    This was a chance to use Bootstrap's grids and carousels, even though I acted as though responsive design didn't exist.<br />
+                    If you'd like to take a look, it's on my GitHub Pages. For your sake, I hope you're not on mobile.
+                </p>
+                <LinkedIcon icon={faPancakes} size="3x" path="https://victorijnr.github.io/WaffleCo/" externalLink={true} />
+                <p><s>I know this looks like a stack of pancakes, just pretend they're waffles.</s></p>
+            </SeparatorDiv>
         </SeparatorSection>
     </Content>
 }

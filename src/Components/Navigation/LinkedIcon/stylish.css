@@ -14,14 +14,20 @@
     margin-top: 1vh;
 }
 
-.linked-icon,
 .linked-icon {
     display: flex;
     flex-direction: row;
 
     align-items: baseline;
 
+    color: var(--dark-theme-orange);
+    text-decoration: none;
+
     transition: all 0.5s ease-in-out;
+}
+
+.linked-icon.selected-linked-icon {
+    color: var(--dark-theme-font-colour);
 }
 
 .linked-icon:hover {
@@ -33,6 +39,10 @@
 
 .linked-icon > svg {
     margin-right: 0.5rem;
+}
+
+.linked-icon > p {
+    flex: 3;
 }
 
 /* I don't want to drop an !important here, so I'm being overly specific. */

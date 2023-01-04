@@ -28,6 +28,10 @@
         flex-direction: column;
         align-items: center;
     }
+
+    #bu-outro-link-container .linked-icon-wrapper {
+        margin: 0 5vw;
+    }
 }
 
 @media screen and (min-width: 641px) {
@@ -65,5 +69,9 @@
 
     #bu-summary {
         width: var(--content-width);    
+    }
+
+    #bu-outro-link-container .linked-icon-wrapper {
+        margin: 0 2.5vw;
     }
 }

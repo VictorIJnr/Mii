@@ -21,4 +21,8 @@
     #greeting h3 {
         text-align: left;
     }
+
+    #playground.content {
+        margin-bottom: 0;
+    }
 }

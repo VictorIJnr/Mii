@@ -5,6 +5,7 @@ import waffles from "../../assets/images/waffles.png";
 
 import Highlight from "../../Components/Highlight";
 import Content from "../../Components/Layout/Content";
+import SeparatorDiv from "../../Components/Layout/SeparatorDiv";
 import SeparatorSection from "../../Components/Layout/SeparatorSection";
 
 import "../stylish.css";
@@ -15,14 +16,16 @@ import "../stylish.css";
 function Projects(props) {
     return <Content>
         <SeparatorSection id="projects-overview">
-            <h1>Some Stuff I've Worked On</h1>
-            <p>
-                These are a few personal projects that I've done over the years.
-                <br />
-                I'm constantly playing around with anything I find interesting, and I've recently began learning Kotlin so I can do make something cool using NFC.
-                <br /><br />
-                But, some projects in progress will remain private, for now. I don't want to accidentally Zuckerberg myself.<br />
-            </p>
+            <SeparatorDiv>
+                <h1>Some Stuff I've Worked On</h1>
+                <p>
+                    These are a few personal projects that I've done over the years.
+                    <br />
+                    I'm constantly playing around with anything I find interesting, and I've recently began learning Kotlin so I can do make something cool using NFC.
+                    <br /><br />
+                    But, some projects in progress will remain private, for now. I don't want to accidentally Zuckerberg myself.<br />
+                </p>
+            </SeparatorDiv>
         </SeparatorSection>
         <SeparatorSection id="projects-highlights">
             <Highlight title="bu" image="https://d1cuiew8u1gk5n.cloudfront.net/bu/highlight-images/blocks.jpeg" projectPath="bu">

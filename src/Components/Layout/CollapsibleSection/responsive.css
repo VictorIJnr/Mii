@@ -1,0 +1,39 @@
+@media screen and (max-width: 960px) {
+    .collapsible-header {
+        flex-direction: column;
+    }
+
+    .collapsible-header .collapse-icon {
+        font-size: 2em;
+    }
+
+    .collapsible-header .highlight-container {
+        margin-bottom: 2.5vh;
+    }
+
+    .collapsible-header > .collapse-icon {
+        display: none;
+    }
+
+    .header-image-overlay > div.highlight-card-info > .collapse-icon {
+        display: initial;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .collapsible-header {
+        flex-direction: row;
+    }
+
+    .collapsible-header .highlight-container {
+        margin-right: 2.5vw;
+    }
+
+    .collapsible-header > .collapse-icon {
+        display: initial;
+    }
+
+    .header-image-overlay > div.highlight-card-info > .collapse-icon {
+        display: none;
+    }
+}

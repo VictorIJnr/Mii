@@ -6,7 +6,7 @@
     margin-top: 0;
 }
 
-#bu-overview {
+#bu-overview > div {
     display: flex;
 
     flex: 1;
@@ -20,12 +20,12 @@
     width: 100%;
 }
 
-#bu-overview > p {
+#bu-overview > div > p {
     margin-top: 1.5vh;
     margin-bottom: 0vh;
 }
 
-#bu-overview > p > span {
+#bu-overview > div > p > span {
     color: var(--dark-theme-orange);
     
     font-style: italic;
@@ -148,14 +148,6 @@
     opacity: 0.75;
 }
 
-#bu-classification-circles .bu-classification-circle:first-of-type {
-    animation-duration: calc(var(--animation-duration) / 5);
-}
-
-#bu-classification-circles .bu-classification-circle:last-of-type {
-    /* animation-delay: calc(var(--animation-duration) / 2); */
-}
-
 #bu-classification-circles .bu-classification-circle.classifying-circle {
     --classified-top-pos: 0;
     --classified-left-pos: 0;
@@ -233,8 +225,6 @@
 */
 #bu-classification-circles .bu-classification-circle.classifying-circle {
     /* --circle-index is set in the parent div within the JSX code. */
-    /* --classified-initial-top-pos: calc(var(--circle-index) * (var(--circle-diameter) + var(--circle-margin))); */
-
     --classified-initial-top-pos: calc(var(--column-top-pos) + (var(--circle-index) * (var(--circle-diameter) + var(--circle-margin))));
     --classified-initial-left-pos: calc(var(--circle-column-index) * (var(--circle-diameter) + var(--circle-margin)));
 }
@@ -263,9 +253,9 @@
 #bu-outro-link-container {
     display: flex;
 
-    margin-top: 1vh;
+    margin-top: 1em;
 
-    width: 100%;
+    flex-direction: row;
 
     justify-content: center;
     align-items: baseline;

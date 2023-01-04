@@ -1,13 +1,19 @@
-#waffle-overview {
-    text-align: center;
+#waffle-overview > div {
+    display: flex;
+
+    flex-direction: column;
+
     align-items: center;
+    justify-content: center;
+
+    text-align: center;
 }
 
-#waffle-overview > h1 {
+#waffle-overview > div > h1 {
     margin-bottom: 2.5vh;
 }
 
-#waffle-overview > p {
+#waffle-overview > div > p {
     margin-bottom: 0;
 }
 
@@ -20,18 +26,6 @@
     display: flex;
     
     flex-direction: row;
-}
-
-#waffle-intro .highlight-container {
-    margin: 0;
-    padding: 0;
-}
-
-#waffle-intro .highlight-container::after {
-    width: 0;
-    height: 0;
-
-    border: none;
 }
 
 #waffle-outro {
@@ -52,12 +46,24 @@
     width: 100%;
 }
 
-#waffle-outro > p {
+#waffle-outro-text {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+}
+
+#waffle-outro-text > p {
     margin-top: 2.5vh;
     text-align: center;
 }
 
-#waffle-outro > p:last-of-type {
+#waffle-outro-text > p:last-of-type {
     font-size: 0.75rem;
     margin-bottom: 0;
+}
+
+#waffle-outro-text > .linked-icon-wrapper,
+#waffle-outro-text > .linked-icon-wrapper svg {
+    margin: 0;
 }

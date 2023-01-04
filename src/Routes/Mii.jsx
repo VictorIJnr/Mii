@@ -16,7 +16,7 @@ import "../animations.css";
  * tidbits of information for different sections on the website.
  */
 function Mii(props) {
-    const isBeingFriendly = Math.random() < 0.25;
+    const isBeingFriendly = Math.random() < 0.1;
     const greeting = isBeingFriendly
         ? <h1 className="fade-in hello-glow"><a href="https://www.imdb.com/title/tt4652838/?ref_=adv_li_tt">Hello friend!</a></h1>
         : <h1 className="fade-in">Hi!</h1>

@@ -48,12 +48,14 @@ function UStylA(props) {
 
     return <Content id="bu">
         <SeparatorSection id="bu-overview">
-            <h1>bu</h1>
-            <p>
-                I officially called this "User Stylometry Association", but that's a mouthful.<br />
-                So this is "bu", derived from the fact that I wanted to create a means of allowing virtual assistants to feel more 
-                <span> b</span>espoke for <span>u</span>sers.
-            </p>
+            <SeparatorDiv>
+                <h1>bu</h1>
+                <p>
+                    I officially called this "User Stylometry Association", but that's a mouthful.<br />
+                    So this is "bu", derived from the fact that I wanted to create a means of allowing virtual assistants to feel more 
+                    <span> b</span>espoke for <span>u</span>sers.
+                </p>
+            </SeparatorDiv>
         </SeparatorSection>
         <SeparatorSection id="bu-intro">
             <SeparatorDiv id="bu-intro-video-wrapper">

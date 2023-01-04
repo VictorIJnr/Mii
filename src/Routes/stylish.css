@@ -54,7 +54,8 @@
     justify-content: center;
 }
 
-#projects-overview {
+#projects-overview > div,
+#playground-overview > div {
     display: flex;
     flex-direction: column;
 
@@ -62,8 +63,8 @@
     align-items: center;
 }
 
-#projects-overview > p,
-#playground-overview > p {
+#projects-overview > div > p,
+#playground-overview > div > p {
     display: inline-block;
     text-align: center;
 

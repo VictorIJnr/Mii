@@ -23,9 +23,9 @@ function NotFound(props) {
     const routeInfo = routes[Math.floor(Math.random() * routes.length)];
 
     return <Content>
-        <h1 style={{ marginTop: 0 }}>What did you do?</h1>
+        <h1 style={{ marginTop: 0 }}>Something went wrong</h1>
         <p style={{ textAlign: "center" }}>
-            Either you tried to explore somewhere that doesn't exist, or my hosting messed up.
+            Either you tried to explore somewhere that doesn't exist, or I've messed up somewhere.
             <br />
             Regardless, how about you take a look at <TextLink path={routeInfo.path} text={routeInfo.displayText} />.
         </p>

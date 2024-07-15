@@ -14,7 +14,7 @@ import TextLink from "../../Components/Navigation/TextLink";
  */
 function Career() {
     const everbridgeSummary = <p>
-        Software Development Engineer in Test (QE II)
+        Senior Software Development Engineer in Test
         <br />
         December 2019 - Present
     </p>

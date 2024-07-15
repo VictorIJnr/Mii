@@ -33,7 +33,7 @@ function Mii(props) {
             <div id="greeting">
                 {/* Add state to make sure we don't animate after having already loaded the home page. */}
                 {greeting}
-                <h2 className="fade-in delay">I'm Victor, a software engineer in test at Everbridge.</h2>
+                <h2 className="fade-in delay">I'm Victor, a Senior Software Engineer in Test at Everbridge.</h2>
                 <h3 className="fade-in long-delay">Welcome to my website! Check out some stuff I've worked on, or just get in touch!</h3>
                 <div id="mii-contact-links" className="fade-in long-delay">
                     <LinkedIcon icon={faGithub} size="3x" path="https://github.com/VictorIJnr" externalLink={true} />
